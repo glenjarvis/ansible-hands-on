@@ -12,7 +12,8 @@ same base image but needs to be configured differently.
 
 If you manually configure those machines, what happens when you suddenly have a
 surge in traffic and need four more web servers? Or, what if one finds a
-vulnerability in a library like Heartbleed in OpenSSL as we recently
+vulnerability in a library like
+[Heartbleed](http://en.wikipedia.org/wiki/Heartbleed) in OpenSSL as we recently
 encountered. A very safe option would be to rebuild these machines from
 scratch. If they were built manually, rebuilding these machines within minutes
 from scratch would be daunting, tedious and error prone.
