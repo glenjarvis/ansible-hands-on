@@ -1,4 +1,4 @@
-lappy> python access_machine.py 
+prompt> python access_machine.py 
 What is the path to your Amazon pem key?
 --> ./my_example_key.pem
 
