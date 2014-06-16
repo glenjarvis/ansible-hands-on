@@ -9,7 +9,10 @@ What is the IP address of the Amazon Linux free tier machine?
 Command to execute: ssh -i ./my_example_key.pem ec2-user@demo_01.glenjarvis.com
 
 
-Last login: Mon Jun 16 21:07:51 2014 from 50-0-160-200.dsl.static.sonic.net
+The authenticity of host 'demo_01.glenjarvis.com (demo_01.glenjarvis.com)' can't be established.
+RSA key fingerprint is b0:67:86:d1:1a:03:ee:b0:02:5e:60:41:87:0b:45:8b.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'demo_01.glenjarvis.com' (RSA) to the list of known hosts.
 
        __|  __|_  )
        _|  (     /   Amazon Linux AMI
@@ -18,9 +21,8 @@ Last login: Mon Jun 16 21:07:51 2014 from 50-0-160-200.dsl.static.sonic.net
 https://aws.amazon.com/amazon-linux-ami/2014.03-release-notes/
 11 package(s) needed for security, out of 33 available
 Run "sudo yum update" to apply all updates.
-[ec2-user@ip-172-31-42-236 ~]$ exit
+[ec2-user@ip-172-31-42-238 ~]$ exit
 logout
 Connection to demo_01.glenjarvis.com closed.
-
 
 
