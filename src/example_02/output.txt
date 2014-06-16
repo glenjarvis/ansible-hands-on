@@ -1,0 +1,331 @@
+prompt> python auto_update_machine.py 
+What is the path to your Amazon pem key?
+--> ./my_example_key.pem
+
+
+What is the IP address of the Amazon Linux free tier machine?
+--> demo_02.glenjarvis.com
+
+Command to execute: ssh -i ./my_example_key.pem ec2-user@demo_02.glenjarvis.com -t 'sudo yum update -y'
+
+
+The authenticity of host 'demo_02.glenjarvis.com (demo_02.glenjarvis.com)' can't be established.
+RSA key fingerprint is 8c:68:47:75:99:76:26:72:07:25:32:8e:98:e6:00:b0.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'demo_02.glenjarvis.com' (RSA) to the list of known hosts.
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main/latest                                                          | 2.1 kB     00:00     
+amzn-updates/latest                                                       | 2.3 kB     00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package aws-amitools-ec2.noarch 0:1.5.2-0.0.amzn1 will be updated
+---> Package aws-amitools-ec2.noarch 0:1.5.3-0.0.amzn1 will be an update
+---> Package aws-apitools-as.noarch 0:1.0.61.4-1.0.amzn1 will be updated
+---> Package aws-apitools-as.noarch 0:1.0.61.5-1.0.amzn1 will be an update
+---> Package aws-apitools-ec2.noarch 0:1.6.13.0-1.1.amzn1 will be updated
+---> Package aws-apitools-ec2.noarch 0:1.7.0.2-1.0.amzn1 will be an update
+---> Package aws-cfn-bootstrap.noarch 0:1.3-17.amzn1 will be updated
+---> Package aws-cfn-bootstrap.noarch 0:1.4-0.amzn1 will be an update
+---> Package aws-cli.noarch 0:1.3.6-1.0.amzn1 will be updated
+---> Package aws-cli.noarch 0:1.3.17-1.1.amzn1 will be an update
+---> Package cloud-init.noarch 0:0.7.2-7.20.amzn1 will be updated
+---> Package cloud-init.noarch 0:0.7.2-7.27.amzn1 will be an update
+---> Package curl.x86_64 0:7.36.0-2.44.amzn1 will be updated
+---> Package curl.x86_64 0:7.36.0-2.45.amzn1 will be an update
+---> Package cyrus-sasl.x86_64 0:2.1.23-13.13.amzn1 will be updated
+---> Package cyrus-sasl.x86_64 0:2.1.23-13.15.amzn1 will be an update
+---> Package cyrus-sasl-lib.x86_64 0:2.1.23-13.13.amzn1 will be updated
+---> Package cyrus-sasl-lib.x86_64 0:2.1.23-13.15.amzn1 will be an update
+---> Package cyrus-sasl-plain.x86_64 0:2.1.23-13.13.amzn1 will be updated
+---> Package cyrus-sasl-plain.x86_64 0:2.1.23-13.15.amzn1 will be an update
+---> Package ec2-net-utils.noarch 0:0.4-1.20.amzn1 will be updated
+---> Package ec2-net-utils.noarch 0:0.4-1.22.amzn1 will be an update
+---> Package ec2-utils.noarch 0:0.4-1.20.amzn1 will be updated
+---> Package ec2-utils.noarch 0:0.4-1.22.amzn1 will be an update
+---> Package elfutils-libelf.x86_64 0:0.157-2.14.amzn1 will be updated
+---> Package elfutils-libelf.x86_64 0:0.158-3.16.amzn1 will be an update
+---> Package glibc.x86_64 0:2.17-36.81.amzn1 will be updated
+---> Package glibc.x86_64 0:2.17-55.84.amzn1 will be an update
+---> Package glibc-common.x86_64 0:2.17-36.81.amzn1 will be updated
+---> Package glibc-common.x86_64 0:2.17-55.84.amzn1 will be an update
+---> Package kernel.x86_64 0:3.10.42-52.145.amzn1 will be installed
+---> Package libcurl.x86_64 0:7.36.0-2.44.amzn1 will be updated
+---> Package libcurl.x86_64 0:7.36.0-2.45.amzn1 will be an update
+---> Package libicu.x86_64 0:50.1.2-8.10.amzn1 will be updated
+---> Package libicu.x86_64 0:50.1.2-11.12.amzn1 will be an update
+---> Package libpwquality.x86_64 0:1.2.3-1.2.amzn1 will be updated
+---> Package libpwquality.x86_64 0:1.2.3-1.5.amzn1 will be an update
+---> Package libtasn1.x86_64 0:2.3-3.4.amzn1 will be updated
+---> Package libtasn1.x86_64 0:2.3-6.6.amzn1 will be an update
+---> Package libxml2.x86_64 0:2.9.1-1.1.29.amzn1 will be updated
+---> Package libxml2.x86_64 0:2.9.1-1.1.31.amzn1 will be an update
+---> Package nspr.x86_64 0:4.10.2-1.19.amzn1 will be updated
+---> Package nspr.x86_64 0:4.10.4-1.21.amzn1 will be an update
+---> Package nss.x86_64 0:3.15.3-3.32.amzn1 will be updated
+---> Package nss.x86_64 0:3.16.0-1.35.amzn1 will be an update
+---> Package nss-softokn.x86_64 0:3.14.3-9.15.amzn1 will be updated
+---> Package nss-softokn.x86_64 0:3.16.0-1.19.amzn1 will be an update
+---> Package nss-softokn-freebl.x86_64 0:3.14.3-9.15.amzn1 will be updated
+---> Package nss-softokn-freebl.x86_64 0:3.16.0-1.19.amzn1 will be an update
+---> Package nss-sysinit.x86_64 0:3.15.3-3.32.amzn1 will be updated
+---> Package nss-sysinit.x86_64 0:3.16.0-1.35.amzn1 will be an update
+---> Package nss-tools.x86_64 0:3.15.3-3.32.amzn1 will be updated
+---> Package nss-tools.x86_64 0:3.16.0-1.35.amzn1 will be an update
+---> Package nss-util.x86_64 0:3.15.3-1.19.amzn1 will be updated
+---> Package nss-util.x86_64 0:3.16.0-1.22.amzn1 will be an update
+---> Package pam.x86_64 0:1.1.8-1.25.amzn1 will be updated
+---> Package pam.x86_64 0:1.1.8-9.29.amzn1 will be an update
+---> Package python-boto.noarch 0:2.27.0-1.0.amzn1 will be updated
+---> Package python-boto.noarch 0:2.29.1-1.0.amzn1 will be an update
+---> Package python-botocore.noarch 0:0.40.0-1.0.amzn1 will be updated
+---> Package python-botocore.noarch 0:0.51.0-1.0.amzn1 will be an update
+---> Package python-jmespath.noarch 0:0.3.1-1.0.amzn1 will be updated
+---> Package python-jmespath.noarch 0:0.4.1-1.0.amzn1 will be an update
+---> Package readline.x86_64 0:6.2-6.13.amzn1 will be updated
+---> Package readline.x86_64 0:6.2-9.14.amzn1 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=================================================================================================
+ Package                   Arch          Version                       Repository           Size
+=================================================================================================
+Installing:
+ kernel                    x86_64        3.10.42-52.145.amzn1          amzn-updates         12 M
+Updating:
+ aws-amitools-ec2          noarch        1.5.3-0.0.amzn1               amzn-updates        103 k
+ aws-apitools-as           noarch        1.0.61.5-1.0.amzn1            amzn-updates        6.4 M
+ aws-apitools-ec2          noarch        1.7.0.2-1.0.amzn1             amzn-updates         14 M
+ aws-cfn-bootstrap         noarch        1.4-0.amzn1                   amzn-updates        816 k
+ aws-cli                   noarch        1.3.17-1.1.amzn1              amzn-updates        446 k
+ cloud-init                noarch        0.7.2-7.27.amzn1              amzn-updates        334 k
+ curl                      x86_64        7.36.0-2.45.amzn1             amzn-updates        275 k
+ cyrus-sasl                x86_64        2.1.23-13.15.amzn1            amzn-updates         85 k
+ cyrus-sasl-lib            x86_64        2.1.23-13.15.amzn1            amzn-updates        151 k
+ cyrus-sasl-plain          x86_64        2.1.23-13.15.amzn1            amzn-updates         32 k
+ ec2-net-utils             noarch        0.4-1.22.amzn1                amzn-updates         11 k
+ ec2-utils                 noarch        0.4-1.22.amzn1                amzn-updates        7.6 k
+ elfutils-libelf           x86_64        0.158-3.16.amzn1              amzn-updates        316 k
+ glibc                     x86_64        2.17-55.84.amzn1              amzn-updates        5.6 M
+ glibc-common              x86_64        2.17-55.84.amzn1              amzn-updates         28 M
+ libcurl                   x86_64        7.36.0-2.45.amzn1             amzn-updates        244 k
+ libicu                    x86_64        50.1.2-11.12.amzn1            amzn-updates        9.6 M
+ libpwquality              x86_64        1.2.3-1.5.amzn1               amzn-updates         75 k
+ libtasn1                  x86_64        2.3-6.6.amzn1                 amzn-updates        246 k
+ libxml2                   x86_64        2.9.1-1.1.31.amzn1            amzn-updates        718 k
+ nspr                      x86_64        4.10.4-1.21.amzn1             amzn-updates        132 k
+ nss                       x86_64        3.16.0-1.35.amzn1             amzn-updates        975 k
+ nss-softokn               x86_64        3.16.0-1.19.amzn1             amzn-updates        487 k
+ nss-softokn-freebl        x86_64        3.16.0-1.19.amzn1             amzn-updates        219 k
+ nss-sysinit               x86_64        3.16.0-1.35.amzn1             amzn-updates         48 k
+ nss-tools                 x86_64        3.16.0-1.35.amzn1             amzn-updates        838 k
+ nss-util                  x86_64        3.16.0-1.22.amzn1             amzn-updates         77 k
+ pam                       x86_64        1.1.8-9.29.amzn1              amzn-updates        805 k
+ python-boto               noarch        2.29.1-1.0.amzn1              amzn-updates        1.9 M
+ python-botocore           noarch        0.51.0-1.0.amzn1              amzn-updates        2.8 M
+ python-jmespath           noarch        0.4.1-1.0.amzn1               amzn-updates         37 k
+ readline                  x86_64        6.2-9.14.amzn1                amzn-updates        214 k
+
+Transaction Summary
+=================================================================================================
+Install   1 Package
+Upgrade  32 Packages
+
+Total download size: 88 M
+Downloading packages:
+(1/33): aws-amitools-ec2-1.5.3-0.0.amzn1.noarch.rpm                       | 103 kB     00:00     
+(2/33): aws-apitools-as-1.0.61.5-1.0.amzn1.noarch.rpm                     | 6.4 MB     00:00     
+(3/33): aws-apitools-ec2-1.7.0.2-1.0.amzn1.noarch.rpm                     |  14 MB     00:00     
+(4/33): aws-cfn-bootstrap-1.4-0.amzn1.noarch.rpm                          | 816 kB     00:00     
+(5/33): aws-cli-1.3.17-1.1.amzn1.noarch.rpm                               | 446 kB     00:00     
+(6/33): cloud-init-0.7.2-7.27.amzn1.noarch.rpm                            | 334 kB     00:00     
+(7/33): curl-7.36.0-2.45.amzn1.x86_64.rpm                                 | 275 kB     00:00     
+(8/33): cyrus-sasl-2.1.23-13.15.amzn1.x86_64.rpm                          |  85 kB     00:00     
+(9/33): cyrus-sasl-lib-2.1.23-13.15.amzn1.x86_64.rpm                      | 151 kB     00:00     
+(10/33): cyrus-sasl-plain-2.1.23-13.15.amzn1.x86_64.rpm                   |  32 kB     00:00     
+(11/33): ec2-net-utils-0.4-1.22.amzn1.noarch.rpm                          |  11 kB     00:00     
+(12/33): ec2-utils-0.4-1.22.amzn1.noarch.rpm                              | 7.6 kB     00:00     
+(13/33): elfutils-libelf-0.158-3.16.amzn1.x86_64.rpm                      | 316 kB     00:00     
+(14/33): glibc-2.17-55.84.amzn1.x86_64.rpm                                | 5.6 MB     00:00     
+(15/33): glibc-common-2.17-55.84.amzn1.x86_64.rpm                         |  28 MB     00:01     
+(16/33): kernel-3.10.42-52.145.amzn1.x86_64.rpm                           |  12 MB     00:00     
+(17/33): libcurl-7.36.0-2.45.amzn1.x86_64.rpm                             | 244 kB     00:00     
+(18/33): libicu-50.1.2-11.12.amzn1.x86_64.rpm                             | 9.6 MB     00:01     
+(19/33): libpwquality-1.2.3-1.5.amzn1.x86_64.rpm                          |  75 kB     00:00     
+(20/33): libtasn1-2.3-6.6.amzn1.x86_64.rpm                                | 246 kB     00:00     
+(21/33): libxml2-2.9.1-1.1.31.amzn1.x86_64.rpm                            | 718 kB     00:00     
+(22/33): nspr-4.10.4-1.21.amzn1.x86_64.rpm                                | 132 kB     00:00     
+(23/33): nss-3.16.0-1.35.amzn1.x86_64.rpm                                 | 975 kB     00:00     
+(24/33): nss-softokn-3.16.0-1.19.amzn1.x86_64.rpm                         | 487 kB     00:00     
+(25/33): nss-softokn-freebl-3.16.0-1.19.amzn1.x86_64.rpm                  | 219 kB     00:00     
+(26/33): nss-sysinit-3.16.0-1.35.amzn1.x86_64.rpm                         |  48 kB     00:00     
+(27/33): nss-tools-3.16.0-1.35.amzn1.x86_64.rpm                           | 838 kB     00:00     
+(28/33): nss-util-3.16.0-1.22.amzn1.x86_64.rpm                            |  77 kB     00:00     
+(29/33): pam-1.1.8-9.29.amzn1.x86_64.rpm                                  | 805 kB     00:00     
+(30/33): python-boto-2.29.1-1.0.amzn1.noarch.rpm                          | 1.9 MB     00:00     
+(31/33): python-botocore-0.51.0-1.0.amzn1.noarch.rpm                      | 2.8 MB     00:00     
+(32/33): python-jmespath-0.4.1-1.0.amzn1.noarch.rpm                       |  37 kB     00:00     
+(33/33): readline-6.2-9.14.amzn1.x86_64.rpm                               | 214 kB     00:00     
+-------------------------------------------------------------------------------------------------
+Total                                                             12 MB/s |  88 MB  00:00:07     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : nss-softokn-freebl-3.16.0-1.19.amzn1.x86_64                                  1/65 
+  Updating   : glibc-common-2.17-55.84.amzn1.x86_64                                         2/65 
+  Updating   : glibc-2.17-55.84.amzn1.x86_64                                                3/65 
+  Updating   : nspr-4.10.4-1.21.amzn1.x86_64                                                4/65 
+  Updating   : nss-util-3.16.0-1.22.amzn1.x86_64                                            5/65 
+  Updating   : nss-softokn-3.16.0-1.19.amzn1.x86_64                                         6/65 
+  Updating   : nss-sysinit-3.16.0-1.35.amzn1.x86_64                                         7/65 
+  Updating   : nss-3.16.0-1.35.amzn1.x86_64                                                 8/65 
+  Updating   : cyrus-sasl-lib-2.1.23-13.15.amzn1.x86_64                                     9/65 
+  Updating   : python-jmespath-0.4.1-1.0.amzn1.noarch                                      10/65 
+  Updating   : python-botocore-0.51.0-1.0.amzn1.noarch                                     11/65 
+  Updating   : libcurl-7.36.0-2.45.amzn1.x86_64                                            12/65 
+  Updating   : curl-7.36.0-2.45.amzn1.x86_64                                               13/65 
+  Updating   : pam-1.1.8-9.29.amzn1.x86_64                                                 14/65 
+  Updating   : libpwquality-1.2.3-1.5.amzn1.x86_64                                         15/65 
+  Updating   : python-boto-2.29.1-1.0.amzn1.noarch                                         16/65 
+  Updating   : cloud-init-0.7.2-7.27.amzn1.noarch                                          17/65 
+  Updating   : cyrus-sasl-2.1.23-13.15.amzn1.x86_64                                        18/65 
+  Updating   : aws-amitools-ec2-1.5.3-0.0.amzn1.noarch                                     19/65 
+  Updating   : ec2-utils-0.4-1.22.amzn1.noarch                                             20/65 
+  Updating   : ec2-net-utils-0.4-1.22.amzn1.noarch                                         21/65 
+  Updating   : aws-cli-1.3.17-1.1.amzn1.noarch                                             22/65 
+  Updating   : cyrus-sasl-plain-2.1.23-13.15.amzn1.x86_64                                  23/65 
+  Updating   : nss-tools-3.16.0-1.35.amzn1.x86_64                                          24/65 
+  Updating   : libtasn1-2.3-6.6.amzn1.x86_64                                               25/65 
+  Updating   : elfutils-libelf-0.158-3.16.amzn1.x86_64                                     26/65 
+  Updating   : readline-6.2-9.14.amzn1.x86_64                                              27/65 
+  Updating   : libxml2-2.9.1-1.1.31.amzn1.x86_64                                           28/65 
+  Updating   : libicu-50.1.2-11.12.amzn1.x86_64                                            29/65 
+  Updating   : aws-cfn-bootstrap-1.4-0.amzn1.noarch                                        30/65 
+  Updating   : aws-apitools-as-1.0.61.5-1.0.amzn1.noarch                                   31/65 
+  Updating   : aws-apitools-ec2-1.7.0.2-1.0.amzn1.noarch                                   32/65 
+  Installing : kernel-3.10.42-52.145.amzn1.x86_64                                          33/65 
+  Cleanup    : nss-tools-3.15.3-3.32.amzn1.x86_64                                          34/65 
+  Cleanup    : cyrus-sasl-2.1.23-13.13.amzn1.x86_64                                        35/65 
+  Cleanup    : aws-cli-1.3.6-1.0.amzn1.noarch                                              36/65 
+  Cleanup    : python-botocore-0.40.0-1.0.amzn1.noarch                                     37/65 
+  Cleanup    : ec2-net-utils-0.4-1.20.amzn1.noarch                                         38/65 
+  Cleanup    : ec2-utils-0.4-1.20.amzn1.noarch                                             39/65 
+  Cleanup    : cloud-init-0.7.2-7.20.amzn1.noarch                                          40/65 
+  Cleanup    : aws-amitools-ec2-1.5.2-0.0.amzn1.noarch                                     41/65 
+  Cleanup    : curl-7.36.0-2.44.amzn1.x86_64                                               42/65 
+  Cleanup    : libcurl-7.36.0-2.44.amzn1.x86_64                                            43/65 
+  Cleanup    : nss-sysinit-3.15.3-3.32.amzn1.x86_64                                        44/65 
+  Cleanup    : nss-3.15.3-3.32.amzn1.x86_64                                                45/65 
+  Cleanup    : nss-softokn-3.14.3-9.15.amzn1.x86_64                                        46/65 
+  Cleanup    : nss-util-3.15.3-1.19.amzn1.x86_64                                           47/65 
+  Cleanup    : libpwquality-1.2.3-1.2.amzn1.x86_64                                         48/65 
+  Cleanup    : pam-1.1.8-1.25.amzn1.x86_64                                                 49/65 
+  Cleanup    : cyrus-sasl-plain-2.1.23-13.13.amzn1.x86_64                                  50/65 
+  Cleanup    : cyrus-sasl-lib-2.1.23-13.13.amzn1.x86_64                                    51/65 
+  Cleanup    : nspr-4.10.2-1.19.amzn1.x86_64                                               52/65 
+  Cleanup    : libicu-50.1.2-8.10.amzn1.x86_64                                             53/65 
+  Cleanup    : libxml2-2.9.1-1.1.29.amzn1.x86_64                                           54/65 
+  Cleanup    : readline-6.2-6.13.amzn1.x86_64                                              55/65 
+  Cleanup    : elfutils-libelf-0.157-2.14.amzn1.x86_64                                     56/65 
+  Cleanup    : libtasn1-2.3-3.4.amzn1.x86_64                                               57/65 
+  Cleanup    : python-boto-2.27.0-1.0.amzn1.noarch                                         58/65 
+  Cleanup    : python-jmespath-0.3.1-1.0.amzn1.noarch                                      59/65 
+  Cleanup    : aws-cfn-bootstrap-1.3-17.amzn1.noarch                                       60/65 
+  Cleanup    : aws-apitools-as-1.0.61.4-1.0.amzn1.noarch                                   61/65 
+  Cleanup    : aws-apitools-ec2-1.6.13.0-1.1.amzn1.noarch                                  62/65 
+  Cleanup    : glibc-common-2.17-36.81.amzn1.x86_64                                        63/65 
+  Cleanup    : nss-softokn-freebl-3.14.3-9.15.amzn1.x86_64                                 64/65 
+  Cleanup    : glibc-2.17-36.81.amzn1.x86_64                                               65/65 
+  Verifying  : cyrus-sasl-2.1.23-13.15.amzn1.x86_64                                         1/65 
+  Verifying  : libcurl-7.36.0-2.45.amzn1.x86_64                                             2/65 
+  Verifying  : nss-3.16.0-1.35.amzn1.x86_64                                                 3/65 
+  Verifying  : python-boto-2.29.1-1.0.amzn1.noarch                                          4/65 
+  Verifying  : aws-amitools-ec2-1.5.3-0.0.amzn1.noarch                                      5/65 
+  Verifying  : kernel-3.10.42-52.145.amzn1.x86_64                                           6/65 
+  Verifying  : cloud-init-0.7.2-7.27.amzn1.noarch                                           7/65 
+  Verifying  : cyrus-sasl-lib-2.1.23-13.15.amzn1.x86_64                                     8/65 
+  Verifying  : libpwquality-1.2.3-1.5.amzn1.x86_64                                          9/65 
+  Verifying  : pam-1.1.8-9.29.amzn1.x86_64                                                 10/65 
+  Verifying  : libtasn1-2.3-6.6.amzn1.x86_64                                               11/65 
+  Verifying  : curl-7.36.0-2.45.amzn1.x86_64                                               12/65 
+  Verifying  : nss-tools-3.16.0-1.35.amzn1.x86_64                                          13/65 
+  Verifying  : python-jmespath-0.4.1-1.0.amzn1.noarch                                      14/65 
+  Verifying  : glibc-2.17-55.84.amzn1.x86_64                                               15/65 
+  Verifying  : nss-softokn-freebl-3.16.0-1.19.amzn1.x86_64                                 16/65 
+  Verifying  : nss-util-3.16.0-1.22.amzn1.x86_64                                           17/65 
+  Verifying  : nspr-4.10.4-1.21.amzn1.x86_64                                               18/65 
+  Verifying  : elfutils-libelf-0.158-3.16.amzn1.x86_64                                     19/65 
+  Verifying  : ec2-utils-0.4-1.22.amzn1.noarch                                             20/65 
+  Verifying  : glibc-common-2.17-55.84.amzn1.x86_64                                        21/65 
+  Verifying  : ec2-net-utils-0.4-1.22.amzn1.noarch                                         22/65 
+  Verifying  : python-botocore-0.51.0-1.0.amzn1.noarch                                     23/65 
+  Verifying  : aws-cli-1.3.17-1.1.amzn1.noarch                                             24/65 
+  Verifying  : nss-softokn-3.16.0-1.19.amzn1.x86_64                                        25/65 
+  Verifying  : cyrus-sasl-plain-2.1.23-13.15.amzn1.x86_64                                  26/65 
+  Verifying  : aws-apitools-ec2-1.7.0.2-1.0.amzn1.noarch                                   27/65 
+  Verifying  : aws-apitools-as-1.0.61.5-1.0.amzn1.noarch                                   28/65 
+  Verifying  : readline-6.2-9.14.amzn1.x86_64                                              29/65 
+  Verifying  : libxml2-2.9.1-1.1.31.amzn1.x86_64                                           30/65 
+  Verifying  : libicu-50.1.2-11.12.amzn1.x86_64                                            31/65 
+  Verifying  : aws-cfn-bootstrap-1.4-0.amzn1.noarch                                        32/65 
+  Verifying  : nss-sysinit-3.16.0-1.35.amzn1.x86_64                                        33/65 
+  Verifying  : libtasn1-2.3-3.4.amzn1.x86_64                                               34/65 
+  Verifying  : ec2-net-utils-0.4-1.20.amzn1.noarch                                         35/65 
+  Verifying  : aws-cfn-bootstrap-1.3-17.amzn1.noarch                                       36/65 
+  Verifying  : nss-sysinit-3.15.3-3.32.amzn1.x86_64                                        37/65 
+  Verifying  : glibc-2.17-36.81.amzn1.x86_64                                               38/65 
+  Verifying  : cyrus-sasl-2.1.23-13.13.amzn1.x86_64                                        39/65 
+  Verifying  : cyrus-sasl-plain-2.1.23-13.13.amzn1.x86_64                                  40/65 
+  Verifying  : python-botocore-0.40.0-1.0.amzn1.noarch                                     41/65 
+  Verifying  : aws-apitools-ec2-1.6.13.0-1.1.amzn1.noarch                                  42/65 
+  Verifying  : nss-tools-3.15.3-3.32.amzn1.x86_64                                          43/65 
+  Verifying  : nspr-4.10.2-1.19.amzn1.x86_64                                               44/65 
+  Verifying  : aws-cli-1.3.6-1.0.amzn1.noarch                                              45/65 
+  Verifying  : libpwquality-1.2.3-1.2.amzn1.x86_64                                         46/65 
+  Verifying  : nss-3.15.3-3.32.amzn1.x86_64                                                47/65 
+  Verifying  : ec2-utils-0.4-1.20.amzn1.noarch                                             48/65 
+  Verifying  : elfutils-libelf-0.157-2.14.amzn1.x86_64                                     49/65 
+  Verifying  : libcurl-7.36.0-2.44.amzn1.x86_64                                            50/65 
+  Verifying  : python-boto-2.27.0-1.0.amzn1.noarch                                         51/65 
+  Verifying  : libxml2-2.9.1-1.1.29.amzn1.x86_64                                           52/65 
+  Verifying  : glibc-common-2.17-36.81.amzn1.x86_64                                        53/65 
+  Verifying  : aws-amitools-ec2-1.5.2-0.0.amzn1.noarch                                     54/65 
+  Verifying  : python-jmespath-0.3.1-1.0.amzn1.noarch                                      55/65 
+  Verifying  : readline-6.2-6.13.amzn1.x86_64                                              56/65 
+  Verifying  : nss-softokn-freebl-3.14.3-9.15.amzn1.x86_64                                 57/65 
+  Verifying  : cyrus-sasl-lib-2.1.23-13.13.amzn1.x86_64                                    58/65 
+  Verifying  : libicu-50.1.2-8.10.amzn1.x86_64                                             59/65 
+  Verifying  : curl-7.36.0-2.44.amzn1.x86_64                                               60/65 
+  Verifying  : nss-util-3.15.3-1.19.amzn1.x86_64                                           61/65 
+  Verifying  : aws-apitools-as-1.0.61.4-1.0.amzn1.noarch                                   62/65 
+  Verifying  : pam-1.1.8-1.25.amzn1.x86_64                                                 63/65 
+  Verifying  : nss-softokn-3.14.3-9.15.amzn1.x86_64                                        64/65 
+  Verifying  : cloud-init-0.7.2-7.20.amzn1.noarch                                          65/65 
+
+Installed:
+  kernel.x86_64 0:3.10.42-52.145.amzn1                                                           
+
+Updated:
+  aws-amitools-ec2.noarch 0:1.5.3-0.0.amzn1      aws-apitools-as.noarch 0:1.0.61.5-1.0.amzn1     
+  aws-apitools-ec2.noarch 0:1.7.0.2-1.0.amzn1    aws-cfn-bootstrap.noarch 0:1.4-0.amzn1          
+  aws-cli.noarch 0:1.3.17-1.1.amzn1              cloud-init.noarch 0:0.7.2-7.27.amzn1            
+  curl.x86_64 0:7.36.0-2.45.amzn1                cyrus-sasl.x86_64 0:2.1.23-13.15.amzn1          
+  cyrus-sasl-lib.x86_64 0:2.1.23-13.15.amzn1     cyrus-sasl-plain.x86_64 0:2.1.23-13.15.amzn1    
+  ec2-net-utils.noarch 0:0.4-1.22.amzn1          ec2-utils.noarch 0:0.4-1.22.amzn1               
+  elfutils-libelf.x86_64 0:0.158-3.16.amzn1      glibc.x86_64 0:2.17-55.84.amzn1                 
+  glibc-common.x86_64 0:2.17-55.84.amzn1         libcurl.x86_64 0:7.36.0-2.45.amzn1              
+  libicu.x86_64 0:50.1.2-11.12.amzn1             libpwquality.x86_64 0:1.2.3-1.5.amzn1           
+  libtasn1.x86_64 0:2.3-6.6.amzn1                libxml2.x86_64 0:2.9.1-1.1.31.amzn1             
+  nspr.x86_64 0:4.10.4-1.21.amzn1                nss.x86_64 0:3.16.0-1.35.amzn1                  
+  nss-softokn.x86_64 0:3.16.0-1.19.amzn1         nss-softokn-freebl.x86_64 0:3.16.0-1.19.amzn1   
+  nss-sysinit.x86_64 0:3.16.0-1.35.amzn1         nss-tools.x86_64 0:3.16.0-1.35.amzn1            
+  nss-util.x86_64 0:3.16.0-1.22.amzn1            pam.x86_64 0:1.1.8-9.29.amzn1                   
+  python-boto.noarch 0:2.29.1-1.0.amzn1          python-botocore.noarch 0:0.51.0-1.0.amzn1       
+  python-jmespath.noarch 0:0.4.1-1.0.amzn1       readline.x86_64 0:6.2-9.14.amzn1                
+
+Complete!
+Connection to demo_02.glenjarvis.com closed.
+
+
+
