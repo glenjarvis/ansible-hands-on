@@ -9,8 +9,8 @@ What is the path to your Amazon pem key?
 What is the IP address of the Amazon Linux free tier machine?
 --> demos.glenjarvis.com
 
-The authenticity of host 'demo_04.glenjarvis.com (demo_04.glenjarvis.com)' can't be established.
-RSA key fingerprint is 6e:b4:07:0d:d8:c5:6b:29:09:a0:de:50:8c:1c:17:bf.
+The authenticity of host 'demos.glenjarvis.com (54.213.37.199)' can't be established.
+RSA key fingerprint is ef:59:04:b1:f0:74:e4:0b:ef:92:ee:0a:ef:be:8b:dc.
 Are you sure you want to continue connecting (yes/no)? yes
 demos.glenjarvis.com | success >> {
     "changed": false, 
