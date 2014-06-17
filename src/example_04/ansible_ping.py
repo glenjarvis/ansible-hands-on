@@ -49,7 +49,7 @@ def configure():
     entry = "{machine_address} {pkf}={pem_file_path}\n".format(**args)
 
     with open(ANSIBLE_HOSTS_FILE, 'w') as ansible_hosts_file:
-        ansible_hosts_file.write("[example]\n")
+        ansible_hosts_file.write("[webservers]\n")
         ansible_hosts_file.write(entry)
 
     print "\n"
@@ -66,7 +66,7 @@ def example_04():
     """Configure `ansible_hosts` and run ansible ping command"""
 
     os.environ['ANSIBLE_HOSTS'] = ANSIBLE_HOSTS_FILE
-    cmd = "ansible example -m ping -u ec2-user"
+    cmd = "ansible webservers -m ping -u ec2-user"
     subprocess.call(cmd, shell=True)
 
 if __name__ == '__main__':

@@ -1,19 +1,18 @@
-prompt> ./ansible_ping.py 
+prompt> python ansible_ping.py
 Configuring `ansible_hosts` file...
 
 
 What is the path to your Amazon pem key?
---> ./my_example_key.pem 
+--> ./my_example_key.pem
 
 
 What is the IP address of the Amazon Linux free tier machine?
---> demo_04.glenjarvis.com        
-
+--> demos.glenjarvis.com
 
 The authenticity of host 'demo_04.glenjarvis.com (demo_04.glenjarvis.com)' can't be established.
 RSA key fingerprint is 6e:b4:07:0d:d8:c5:6b:29:09:a0:de:50:8c:1c:17:bf.
 Are you sure you want to continue connecting (yes/no)? yes
-demo_04.glenjarvis.com | success >> {
+demos.glenjarvis.com | success >> {
     "changed": false, 
     "ping": "pong"
 }
