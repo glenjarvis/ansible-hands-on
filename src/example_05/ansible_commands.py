@@ -14,39 +14,16 @@ import subprocess
 
 ANSIBLE_HOSTS_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    'ansible_hosts')
+    '../example_06/ansible_hosts')  # This is not a mistake (we will use in 6)
 
 
-def configure():
-    """An example to show how one executes remote commands via ssh"""
-
-    args = {}
-
-    print "Configuring `ansible_hosts` file...\n\n"
-    print "What is the path to your Amazon pem key?"
-    args['pem_file_path'] = raw_input('--> ')
-
-    if not os.path.exists(args['pem_file_path']):
-        print "Nope. This file cannot be found: {pem_file_path}".format(**args)
-        sys.exit(1)
-
-    print "\n\nWhat is the IP address of the Amazon Linux free tier machine?"
-    args['machine_address'] = raw_input('--> ')
-    args['pkf'] = "ansible_ssh_private_key_file"
-    entry = "{machine_address} {pkf}={pem_file_path}\n".format(**args)
-
-    with open(ANSIBLE_HOSTS_FILE, 'w') as ansible_hosts_file:
-        ansible_hosts_file.write("[example]\n")
-        ansible_hosts_file.write(entry)
-
-    print "\n"
-
-
-def check_and_configure():
-    """Check if `ansible_hosts` file exists; Configure if it doesn't"""
+def check_ansible_hosts():
+    """Check if `ansible_hosts` file exists"""
 
     if not os.path.exists(ANSIBLE_HOSTS_FILE):
-        configure()
+        print "We are trying to use the `ansible_hosts` file from"
+        print "example 6. But, we can't find it. Doh!"
+        sys.exit(1)
 
 
 def example_05():
@@ -54,9 +31,9 @@ def example_05():
 
     print "Executing ansible command"
     os.environ['ANSIBLE_HOSTS'] = ANSIBLE_HOSTS_FILE
-    cmd = "ansible example -u ec2-user -a 'sudo yum update -y'"
+    cmd = "ansible webservers -u ec2-user -a 'sudo yum update -y'"
     subprocess.call(cmd, shell=True)
 
 if __name__ == '__main__':
-    check_and_configure()
+    check_ansible_hosts()
     example_05()

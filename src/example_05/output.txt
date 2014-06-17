@@ -1,22 +1,8 @@
 # NOTE: You don't get the output until the command is finished.
 
 prompt> python ansible_commands.py 
-Configuring `ansible_hosts` file...
-
-
-What is the path to your Amazon pem key?
---> ./my_example_key.pem
-
-
-What is the IP address of the Amazon Linux free tier machine?
---> 54.186.74.232
-
-
 Executing ansible command
-The authenticity of host '54.186.74.232 (54.186.74.232)' can't be established.
-RSA key fingerprint is 9a:54:58:d6:da:3b:f8:eb:07:d4:0a:c8:4e:33:e9:8a.
-Are you sure you want to continue connecting (yes/no)? yes
-54.186.74.232 | success | rc=0 >>
+demos.glenjarvis.com | success | rc=0 >>
 Loaded plugins: priorities, update-motd, upgrade-helper
 Resolving Dependencies
 --> Running transaction check
@@ -136,7 +122,7 @@ Upgrade  32 Packages
 Total download size: 88 M
 Downloading packages:
 --------------------------------------------------------------------------------
-Total                                               12 MB/s |  88 MB  00:07     
+Total                                              8.1 MB/s |  88 MB  00:10
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -310,5 +296,4 @@ Updated:
   readline.x86_64 0:6.2-9.14.amzn1                                              
 
 Complete!
-
 
