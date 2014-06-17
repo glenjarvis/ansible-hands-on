@@ -27,7 +27,7 @@ import subprocess
 
 ANSIBLE_HOSTS_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    'ansible_hosts')
+    '../example_06/ansible_hosts')
 
 
 def configure():
