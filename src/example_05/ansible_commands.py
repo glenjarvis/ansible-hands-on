@@ -14,7 +14,7 @@ import subprocess
 
 ANSIBLE_HOSTS_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../example_06/ansible_hosts')  # This is not a mistake (we will use in 6)
+    '../iterative_examples/ansible_hosts')  # This is not a mistake (we will use in 6)
 
 
 def check_ansible_hosts():
@@ -22,7 +22,7 @@ def check_ansible_hosts():
 
     if not os.path.exists(ANSIBLE_HOSTS_FILE):
         print "We are trying to use the `ansible_hosts` file from"
-        print "example 6. But, we can't find it. Doh!"
+        print "iterative_examples directory. But, we can't find it. Doh!"
         sys.exit(1)
 
 

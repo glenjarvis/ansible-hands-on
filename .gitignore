@@ -1,5 +1,5 @@
-# Example 4's auto generated ansible hosts file
-src/example_04/ansible_hosts
+# Auto generated ansible hosts file
+src/iterative_examples/ansible_hosts
 
 
 # Byte-compiled / optimized / DLL files
