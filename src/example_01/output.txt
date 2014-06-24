@@ -5,7 +5,6 @@ prompt> python access_machine.py
 
     ssh -i /Volumes/KEY/pem/glenjarvis_llc/com_glenjarvis_production.pem ec2-user@demos.glenjarvis.com
 
-
     Press the RETURN to execute the command now
     (and connect to the machine)
 --> 
