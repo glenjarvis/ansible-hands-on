@@ -3,20 +3,25 @@ prompt> python access_machine.py
 
     This is the command line you would need to connect to this instance:
 
-    ssh -i /home/glenjarvis/sample_key.pem ec2-user@demos.glenjarvis.com
+    ssh -i /Volumes/KEY/pem/glenjarvis_llc/com_glenjarvis_production.pem ec2-user@demos.glenjarvis.com
 
 
     Press the RETURN to execute the command now
     (and connect to the machine)
 --> 
-Last login: Tue Jun 24 05:16:18 2014 from c-76-21-58-72.hsd1.ca.comcast.net
+The authenticity of host 'demos.glenjarvis.com (demos.glenjarvis.com)' can't be established.
+RSA key fingerprint is 93:6e:9a:3c:aa:d9:71:a4:ad:48:d1:bf:41:4e:2a:89.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'demos.glenjarvis.com' (RSA) to the list of known hosts.
 
        __|  __|_  )
        _|  (     /   Amazon Linux AMI
       ___|\___|___|
 
 https://aws.amazon.com/amazon-linux-ami/2014.03-release-notes/
-[ec2-user@ip-172-31-47-24 ~]$ exit
+No packages needed for security; 4 packages available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-8-225 ~]$ exit
 logout
 Connection to demos.glenjarvis.com closed.
 
