@@ -1,6 +1,6 @@
-# Auto generated ansible hosts file
-src/iterative_examples/ansible_hosts
-
+# Auto generated ansible config/hosts files
+ansible_hosts
+ansible.cfg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
