@@ -46,6 +46,41 @@ Instance](http://aws.amazon.com/), I highly recommend [watching this
 video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
 
 
+## Getting Started (Installing and following-along)
+
+1. Clone this repo.
+```bash
+prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
+Cloning into 'ansible_tutorial'...
+remote: Reusing existing pack: 112, done.
+remote: Total 112 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (48/48), done.
+Checking connectivity... done.
+```
+2. Change to the src directory.
+```bash
+prompt> cd ansible_tutorial/src/
+```
+3. Configure the repo for your account and settings
+```bash
+prompt> python configure.py 
+
+    No configuration file found. Let me ask questions so that we can configure.
+    
+What is the path to your Amazon pem key?
+--> example_key.pem
+
+Configuring `ansible_hosts` file ./ansible_hosts...
+
+What is the IP address of the Amazon Linux free tier machine?
+--> demo.example.com
+
+Configuration is complete.
+```
+4. Follow the examples (starting with the `example_01` subdirectory).
+
+
 ## Bio
 Glen has been a full-time Python programmer since 2007 and has worked for
 companies such as IBM, UC Berkeley, Sprint, Informix, and many small start-ups.
@@ -70,3 +105,63 @@ the [Bay Area Python Interest Group](http://baypiggies.net/) organization.
 [Google+](https://plus.google.com/u/0/+GlenJarvis/posts)
 
 [LinkedIn](http://www.linkedin.com/in/glenjarvis)
+
+
+
+### Documentation for configure.py (if needed)
+
+Although this probably won't be needed, here is the coonfigure.py documentation
+that is used to help you configure your ansible.cfg and ansible_hosts files.
+
+
+```python
+Help on module configure:
+
+NAME
+    configure - Configure the demo repository to make it easier to learn/follow
+
+FILE
+    ...ansible-tutorial/src/configure.py
+
+DESCRIPTION
+    This takes the machine name and the AWS pem key path and configures the
+    ansible.cfg and ansible_hosts files. We also avoid the most common
+    gotcha (permissions on the downloaded key file) by setting the
+    permissions to be Read/Write for only the owner.
+
+FUNCTIONS
+    check_and_configure()
+        Check/configure `ansible.cfg` and `ansible_hosts`
+    
+    configure_config()
+        Assuming no ansible.cfg exists, ask questions and create a new one
+    
+    configure_hosts(hostfile)
+        Assuming no hostfile file exists, ask questions and create a new one
+    
+    fix_pem_permissons(pem_file_path)
+        Forcefully fix the PEM file permissions
+        
+        The larest problem that new users have when connecting ot their
+        first AWS instance is that the permissions on the *.pem key that
+        they downloaded is too permissive. It really isn't a *private* key
+        if anyone else on the system (group or other) can read the file.
+        
+        We change the permissions to the file given so that only the owner
+        can read or write. There really isn't a reason to allow write
+        permissions for the key, however, these are the default permissions
+        for an ssh key.
+    
+    get_configured_hosts()
+        Read the ansible.cfg file and parse hostfile pathname
+    
+    write_ansible_cfg_file(pem_file_path)
+        Given a validated pem_file_path, write the ansible configuration file
+
+DATA
+    ANSIBLE_CONFIG_FILENAME = './ansible.cfg'
+    ANSIBLE_CONFIG_FILEPATH = '...ansible-tutorial/src/ansible.cfg'
+    ANSIBLE_HOSTS_FILENAME = './ansible_hosts'
+    ANSIBLE_HOSTS_FILEPATH = '...ansible-tutorial/src/ansible_hosts'
+    BASE_FILE = '...ansible-tutorial/src'
+```
