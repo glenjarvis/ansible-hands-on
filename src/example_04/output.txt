@@ -1,18 +1,5 @@
-prompt> python ansible_ping.py
-Configuring `ansible_hosts` file...
-
-
-What is the path to your Amazon pem key?
---> ./my_example_key.pem
-
-
-What is the IP address of the Amazon Linux free tier machine?
---> demos.glenjarvis.com
-
-The authenticity of host 'demos.glenjarvis.com (54.213.37.199)' can't be established.
-RSA key fingerprint is ef:59:04:b1:f0:74:e4:0b:ef:92:ee:0a:ef:be:8b:dc.
-Are you sure you want to continue connecting (yes/no)? yes
-demos.glenjarvis.com | success >> {
+prompt> ansible -m 'ping' webservers
+54.187.91.231 | success >> {
     "changed": false, 
     "ping": "pong"
 }
