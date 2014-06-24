@@ -1,28 +1,24 @@
 prompt> python access_machine.py 
-What is the path to your Amazon pem key?
---> ./my_example_key.pem
 
 
-What is the IP address of the Amazon Linux free tier machine?
---> demo_01.glenjarvis.com
+    This is the command line you would need to connect to this instance:
 
-Command to execute: ssh -i ./my_example_key.pem ec2-user@demo_01.glenjarvis.com
+    ssh -i /home/glenjarvis/sample_key.pem ec2-user@demos.glenjarvis.com
 
 
-The authenticity of host 'demo_01.glenjarvis.com (demo_01.glenjarvis.com)' can't be established.
-RSA key fingerprint is b0:67:86:d1:1a:03:ee:b0:02:5e:60:41:87:0b:45:8b.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'demo_01.glenjarvis.com' (RSA) to the list of known hosts.
+    Press the RETURN to execute the command now
+    (and connect to the machine)
+--> 
+Last login: Tue Jun 24 05:16:18 2014 from c-76-21-58-72.hsd1.ca.comcast.net
 
        __|  __|_  )
        _|  (     /   Amazon Linux AMI
       ___|\___|___|
 
 https://aws.amazon.com/amazon-linux-ami/2014.03-release-notes/
-11 package(s) needed for security, out of 33 available
-Run "sudo yum update" to apply all updates.
-[ec2-user@ip-172-31-42-238 ~]$ exit
+[ec2-user@ip-172-31-47-24 ~]$ exit
 logout
-Connection to demo_01.glenjarvis.com closed.
+Connection to demos.glenjarvis.com closed.
+
 
 
