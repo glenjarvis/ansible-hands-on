@@ -72,7 +72,7 @@ def get_host(hostfile):
     with open(hostfile, 'r') as open_hostfile:
         data = open_hostfile.readlines()
 
-    return data[1]
+    return data[1].strip()
 
 
 def example_01(pem_file_path, machine_address):
