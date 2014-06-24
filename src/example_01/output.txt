@@ -3,7 +3,7 @@ prompt> python access_machine.py
 
     This is the command line you would need to connect to this instance:
 
-    ssh -i /Volumes/KEY/pem/glenjarvis_llc/com_glenjarvis_production.pem ec2-user@demos.glenjarvis.com
+    ssh -i /home/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com
 
     Press the RETURN to execute the command now
     (and connect to the machine)
