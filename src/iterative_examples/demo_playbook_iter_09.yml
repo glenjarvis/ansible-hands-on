@@ -1,0 +1,28 @@
+---
+- include: demo_playbook_iter_05.yml our_desired_package_name=nginx
+- hosts: webservers
+  remote_user: ec2-user
+  vars:
+     demo_message: 'Hello World (of course)'
+  handlers:
+  - name: print-or-not
+    debug: msg='Message is {{ demo_message }}'
+  - name: start-nginx
+    service: state=started name=nginx
+    sudo: yes
+  - name: stop-nginx
+    service: state=started name=nginx
+    sudo: yes
+  - name: fizz
+    debug: msg='fizz'
+  - name: buzz
+    debug: msg='buzz'
+  tasks:
+  - name: Show off debugging and something special
+    shell: echo "This is a debugging task. What happens when it ends?"
+    notify:
+     - start-nginx
+     - print-or-not
+     - buzz
+     - fizz
+     - stop-nginx
