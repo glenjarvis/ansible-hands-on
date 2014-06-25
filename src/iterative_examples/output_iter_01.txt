@@ -1,16 +1,16 @@
-prompt> ansible-playbook demo_playbook_iter_00.yml 
+prompt> ansible-playbook demo_playbook_iter_01.yml
 
 PLAY [webservers] ************************************************************* 
 
 GATHERING FACTS *************************************************************** 
-The authenticity of host '54.213.22.252 (54.213.22.252)' can't be established.
+The authenticity of host 'demos.glenjarvis.com (demos.glenjarvis.com)' can't be established.
 RSA key fingerprint is c3:dc:2a:f4:c4:5c:6b:52:ef:75:f2:20:10:0b:81:a6.
 Are you sure you want to continue connecting (yes/no)? yes
-ok: [54.213.22.252]
+ok: [demos.glenjarvis.com]
 
 TASK: [Make sure all OS patches are applied] ********************************** 
-changed: [54.213.22.252]
+changed: [demos.glenjarvis.com]
 
 PLAY RECAP ******************************************************************** 
-54.213.22.252              : ok=2    changed=1    unreachable=0    failed=0   
+demos.glenjarvis.com       : ok=2    changed=1    unreachable=0    failed=0   
 
