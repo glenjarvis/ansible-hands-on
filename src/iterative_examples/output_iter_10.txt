@@ -1,3 +1,0 @@
-Don't try to run this playbook. It's intentinally insane with every option to
-show off. And, it just isn't worth setting up your system (as part of this
-demo) to demo it. However, feel free to play on your own.
