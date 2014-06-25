@@ -1,0 +1,21 @@
+prompt> ansible-playbook  demo_playbook_iter_03.yml
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Make sure all OS patches are applied] ********************************** 
+changed: [demos.glenjarvis.com]
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Install our needed packages for AWS Linux] ***************************** 
+changed: [demos.glenjarvis.com]
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=4    changed=2    unreachable=0    failed=0   
+
