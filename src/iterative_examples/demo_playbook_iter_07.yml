@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  remote_user: ec2-user
+  vars:
+    our_desired_package_name: nginx
+  tasks:
+  - name: Make sure all OS patches are applied
+    shell: yum update -y
+    sudo: yes 
+  - name: Install our needed packages for AWS Linux
+    yum: state=present name={{ our_desired_package_name }}
+    sudo: yes
+  - name: Start the nginx service
+    service: state=started name=nginx
+    sudo: yes
