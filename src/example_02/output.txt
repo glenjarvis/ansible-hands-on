@@ -10,7 +10,7 @@ prompt> python auto_update_machine.py
     (and connect to the machine)
 --> 
 
-Command to execute: ssh -i /Volumes/KEY/pem/glenjarvis_llc/com_glenjarvis_production.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
+Command to execute: ssh -i /home/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
 
 
 Loaded plugins: priorities, update-motd, upgrade-helper
