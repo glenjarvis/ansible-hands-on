@@ -96,7 +96,7 @@ order the examples should be executed:
 3. `( cd src/example_02; python auto_update_machine.py )`
 4. `( cd src/example_03; less README.txt )` (Read the `README.txt` file; it's not really meant to be executed)
 5. `( cd src/example_04; ansible webservers -m ping; ansible webservers -vvv -m ping )`
-6. `( cd src/example_05; ansible webservers -a 'sudo yum update -y' )`
+6. `( cd src/example_05; ansible webservers -vvv -a 'sudo yum update -y' )`
 7. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml )`
 8. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml )`
 9. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml )`
