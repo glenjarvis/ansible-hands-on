@@ -15,6 +15,7 @@ things:
 import os
 import sys
 import subprocess
+import textwrap
 import ConfigParser
 
 ANSIBLE_CFG = "./ansible.cfg"
@@ -82,14 +83,15 @@ def example_01(pem_file_path, machine_address):
         pem_file_path=pem_file_path,
         machine_address=machine_address)
 
-    print """
+    print(textwrap.dedent("""
+    This example illustrates how to connect to your VM with ssh.
 
     This is the command line you would need to connect to this instance:
 
-    {0}
+        {0}
 
-    Press the RETURN to execute the command now
-    (and connect to the machine)""".format(cmd)
+    Press RETURN to execute the command now:
+    """)).format(cmd).strip("\n")
     raw_input('--> ')
     subprocess.call(cmd, shell=True)
 
