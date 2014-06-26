@@ -1,7 +1,6 @@
 ---
 - include: demo_playbook_iter_01.yml
 - hosts: webservers
-  remote_user: ec2-user
   vars:
     our_desired_package_name: git
   tasks:

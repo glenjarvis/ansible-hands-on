@@ -1,5 +1,4 @@
 - name: Demonstrate our work in a directory (now called a 'role')
   hosts: webservers
-  remote_user: ec2-user
   roles:
     - python_stack
