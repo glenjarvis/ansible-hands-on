@@ -38,7 +38,7 @@ def fix_pem_permissons(pem_file_path):
     os.chmod(pem_file_path, stat.S_IRUSR | stat.S_IWUSR)
 
 
-def write_ansible_cfg_file(pem_file_path):
+def write_ansible_cfg_file(pem_file_path, user):
 
     """Given a validated pem_file_path, write the ansible configuration file"""
 
@@ -47,7 +47,7 @@ def write_ansible_cfg_file(pem_file_path):
     config.add_section('defaults')
     config.set('defaults', 'hostfile', ANSIBLE_HOSTS_FILENAME)
     config.set('defaults', 'private_key_file', pem_file_path)
-    config.set('defaults', 'remote_user', 'ec2-user')
+    config.set('defaults', 'remote_user', user)
 
     with open(ANSIBLE_CONFIG_FILENAME, 'wb') as config_file:
         config.write(config_file)
@@ -70,7 +70,10 @@ def configure_config():
             pem_file_path=pem_file_path)
         sys.exit(1)
 
-    write_ansible_cfg_file(pem_file_path)
+    print "\nWhat user to use to ssh to the remote system [ec2-user]?"
+    user = raw_input('--> ') or 'ec2-user'
+
+    write_ansible_cfg_file(pem_file_path, user)
     print
 
 
