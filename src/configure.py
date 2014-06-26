@@ -61,7 +61,7 @@ def configure_config():
     No configuration file found. Let me ask questions so that we can configure.
     """
 
-    print "What is the path to your Amazon pem key?"
+    print "What is the path to your .pem key for ssh access to the virtual machine?"
     pem_file_path = raw_input('--> ')
     pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
@@ -96,7 +96,7 @@ def configure_hosts(hostfile):
 
     print "Configuring `ansible_hosts` file {0}...\n".format(hostfile)
 
-    print "What is the IP address of the Amazon Linux free tier machine?"
+    print "\n\nWhat is the IP address of the virtual machine?"
     machine_address = raw_input('--> ')
 
     with open(hostfile, 'w') as ansible_hosts_file:
@@ -106,6 +106,12 @@ def configure_hosts(hostfile):
 
 def check_and_configure():
     """Check/configure `ansible.cfg` and `ansible_hosts`"""
+
+    print "This script creates configuration files for using Ansible to "
+    print "configure a newly-created virtual machine."
+    print "It has been tested by the author on an AWS free tier VM."
+    print "This has the best chance of working on an AWS free tier VM, or "
+    print "failing that, on a VM with a recent version of CentOS."
 
     if not os.path.exists(ANSIBLE_CONFIG_FILEPATH):
         configure_config()
