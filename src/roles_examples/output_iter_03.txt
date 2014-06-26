@@ -1,0 +1,88 @@
+prompt> ansible-playbook demo_play_role_03.yml
+
+PLAY [Demonstrate a Django setup (But Django service NOT started)] ************
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [python_stack | Add non-privileged] ************************************* 
+ok: [demos.glenjarvis.com]
+
+TASK: [python_stack | Create $HOME/.ssh directory] **************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [python_stack | Temporarily grant ec2-user's access to webuser] ********* 
+ok: [demos.glenjarvis.com]
+
+TASK: [python_stack | Upload virtualenv package] ****************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [python_stack | Extract virtualenv source code] ************************* 
+changed: [demos.glenjarvis.com]
+
+TASK: [python_stack | Clean up compressed file] ******************************* 
+changed: [demos.glenjarvis.com]
+
+TASK: [python_stack | Check if virtualenv is already installed] *************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [python_stack | Create virtualenv] ************************************** 
+skipping: [demos.glenjarvis.com]
+
+TASK: [python_stack | Clean up install files] ********************************* 
+changed: [demos.glenjarvis.com]
+
+TASK: [python_stack | Upload $HOME/.bashrc] *********************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [python_stack | Revoke ec2-user's access to webuser] ******************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Install our needed packages for AWS Linux] ********** 
+ok: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Temporarily grant ec2-user's access to webuser] ***** 
+ok: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Upload static files to non-priviledged account] ***** 
+changed: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Extract sample_project.tar initial static files] **** 
+changed: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Clean-up sample_project.tar] ************************ 
+changed: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Revoke ec2-user's access to webuser] **************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Upload /etc/nginx/nginx.conf] *********************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [web_server_nginx | Upload /etc/nginx/conf.d/our_demo.conf] ************* 
+ok: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Temporarily grant ec2-user's access to webuser] **** 
+ok: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Install Django Software] *************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Upload Django's manage.py] ************************* 
+changed: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Upload Initial Django (tiny) Deployment] *********** 
+changed: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Extract virtualenv source code] ******************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Clean-up Django delivery tarball] ****************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [app_server_django | Revoke ec2-user's access to webuser] *************** 
+ok: [demos.glenjarvis.com]
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=26   changed=13   unreachable=0    failed=0   
+
