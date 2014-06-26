@@ -85,7 +85,7 @@ Configuration is complete.
 Here is a list of the examples just in case there's any confusion in which
 order the examples should be executed:
 
-0. Configure (see instructions above)
+0. cd src; python configure.py (see instructions above)
 1. cd src/example1; python access_machine.py
 2. cd src/example2; python auto_update_machine.py
 3. cd src/example3; Read the README file (it's not really meant to be executed)
