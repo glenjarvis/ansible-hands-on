@@ -85,7 +85,7 @@ Configuration is complete.
 Here is a list of the examples just in case there's any confusion in which
 order the examples should be executed:
 
-0. Configure (see isntructions above)
+0. Configure (see instructions above)
 1. cd src/example1; python access_machine.py
 2. cd src/example2; python auto_update_machine.py
 3. cd src/example3; Read the README file (it's not really meant to be executed)
@@ -100,7 +100,7 @@ order the examples should be executed:
 12. cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml
 13. cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml
 14. cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml
-15. cd src/playbook_examples; Read (but dont' execute): pedantically_commented_playbook.yml
+15. cd src/playbook_examples; Read (but don't execute): pedantically_commented_playbook.yml
 16. cd src/role_examples; ansible-playbook demo_play_role_01.yml
 17. cd src/role_examples; ansible-playbook demo_play_role_02.yml
 19. cd src/role_examples; ansible-playbook demo_play_role_03.yml
