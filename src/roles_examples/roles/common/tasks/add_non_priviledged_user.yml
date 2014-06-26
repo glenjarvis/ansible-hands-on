@@ -1,0 +1,3 @@
+- name: Add non-privileged
+  user: name={{ non_priviledged_user }} uid={{ non_priviledged_user_uid}}
+  sudo: yes

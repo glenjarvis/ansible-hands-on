@@ -1,0 +1,4 @@
+---
+- name: Install our needed packages for AWS Linux
+  yum: state=present name=git
+  sudo: yes

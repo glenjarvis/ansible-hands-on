@@ -1,0 +1,7 @@
+---
+python_stack_non_priviledged_user: webuser
+python_stack_virtualenv_directory: virtualenv-1.11
+python_stack_virtualenv_filename: '{{ python_stack_virtualenv_directory }}.tar.gz'
+virtualenv_install_directory: /home/{{ python_stack_non_priviledged_user }}/.virtualenv/{{ python_stack_virtualenv_directory }}
+python_stack_python_path: '{{ virtualenv_install_directory }}/bin/python'
+python_stack_pip_path: '{{ virtualenv_install_directory }}/bin/pip'

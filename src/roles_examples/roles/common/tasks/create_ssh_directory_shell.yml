@@ -1,0 +1,7 @@
+- name: Create $HOME/.ssh directory
+  file: state=directory
+          path=/home/{{ non_priviledged_user }}/.ssh
+          owner={{ non_priviledged_user }}
+          group={{ non_priviledged_user }}
+          mode=0700
+  sudo: yes
