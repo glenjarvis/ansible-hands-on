@@ -7,7 +7,6 @@
 
 - name: Demonstrate a Django setup (But Django service NOT started)
   hosts: webservers
-  remote_user: ec2-user
   roles:
     - web_server_nginx
     - app_server_django

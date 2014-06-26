@@ -1,7 +1,6 @@
 ---
 - include: demo_playbook_iter_01.yml
 - hosts: webservers
-  remote_user: ec2-user
   tasks:
   - name: Install our needed packages for AWS Linux
     yum: state=present name=git
