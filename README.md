@@ -49,35 +49,41 @@ video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
 ## Getting Started (Installing and following-along)
 
 1. Clone this repo.
-```bash
-prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
-Cloning into 'ansible_tutorial'...
-remote: Reusing existing pack: 112, done.
-remote: Total 112 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (48/48), done.
-Checking connectivity... done.
-```
+
+    ```bash
+    prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
+    Cloning into 'ansible_tutorial'...
+    remote: Reusing existing pack: 112, done.
+    remote: Total 112 (delta 0), reused 0 (delta 0)
+    Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
+    Resolving deltas: 100% (48/48), done.
+    Checking connectivity... done.
+    ```
+
 2. Change to the src directory.
-```bash
-prompt> cd ansible_tutorial
-```
+
+    ```bash
+    prompt> cd ansible_tutorial
+    ```
+
 3. Configure the repo for your account and settings
-```bash
-prompt> ( cd src; python configure.py )
 
-    No configuration file found. Let me ask questions so that we can configure.
+    ```bash
+    prompt> ( cd src; python configure.py )
 
-What is the path to your Amazon pem key?
---> example_key.pem
+        No configuration file found. Let me ask questions so that we can configure.
 
-Configuring `ansible_hosts` file ./ansible_hosts...
+    What is the path to your Amazon pem key?
+    --> example_key.pem
 
-What is the IP address of the Amazon Linux free tier machine?
---> demo.example.com
+    Configuring `ansible_hosts` file ./ansible_hosts...
 
-Configuration is complete.
-```
+    What is the IP address of the Amazon Linux free tier machine?
+    --> demo.example.com
+
+    Configuration is complete.
+    ```
+
 4. Follow the examples (starting with the `example_01` subdirectory).
 
 ## Examples
