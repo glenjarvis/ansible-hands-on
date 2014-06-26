@@ -35,7 +35,7 @@ the easiest tool to get started with if you are new in the machine build
 automation frameworks.
 
 We will start with a newly built machine and obtain it's public IP address. We
-will configure the `ansible_host` file with the IP address, and add/build plays
+will configure the `ansible_hosts` file with the IP address, and add/build plays
 (like recipes) to gradually configure that machine so that it is a
 [Django](https://www.djangoproject.com/) web server running in the cloud. When
 we are finished, we should have a running machine and a recipe to easily build
