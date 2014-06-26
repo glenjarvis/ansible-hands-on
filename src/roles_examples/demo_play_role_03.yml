@@ -1,0 +1,13 @@
+# There won't be time to set up handlers for starting Django
+# services. I've cut the gunicorn and foreman demos to save time
+# (too much info for one hour).
+#
+# You'll have to log in as webuser and do a:
+# python manage.py runserver
+
+- name: Demonstrate a Django setup (But Django service NOT started)
+  hosts: webservers
+  remote_user: ec2-user
+  roles:
+    - web_server_nginx
+    - app_server_django
