@@ -135,8 +135,9 @@ the [Bay Area Python Interest Group](http://baypiggies.net/) organization.
 
 ### Documentation for configure.py (if needed)
 
-Although this probably won't be needed, here is the configure.py documentation
-that is used to help you configure your ansible.cfg and ansible_hosts files.
+Although this probably won't be needed, here is the `configure.py`
+documentation that is used to help you configure your `ansible.cfg` and
+`ansible_hosts` files.
 
 
 ```python
