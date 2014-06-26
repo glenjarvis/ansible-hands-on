@@ -1,0 +1,5 @@
+- name: Demonstrate a working deploy of nginx (using python_webstack)
+  hosts: webservers
+  remote_user: ec2-user
+  roles:
+    - web_server_nginx

@@ -1,0 +1,45 @@
+---
+- name: Install our needed packages for AWS Linux
+  yum: state=present name=nginx
+  sudo: yes
+
+- include:
+    ../../common/tasks/grant_account_temp_permissions.yml
+
+- name: Upload static files to non-priviledged account
+  copy:
+    src: sample_project.tar
+    dest: /home/{{ python_stack_non_priviledged_user }}/sample_project.tar
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Extract sample_project.tar initial static files
+  shell: cd /home/{{ python_stack_non_priviledged_user }}; tar -xvf ./sample_project.tar
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+
+- name: Clean-up sample_project.tar
+  command: /bin/rm /home/{{ python_stack_non_priviledged_user }}/sample_project.tar
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- include:
+    ../../common/tasks/revoke_account_temp_permissions.yml
+
+- name: Upload /etc/nginx/nginx.conf
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+
+- name: Upload /etc/nginx/conf.d/our_demo.conf
+  template:
+    src: our_demo.conf
+    dest: /etc/nginx/conf.d/our_demo.conf
+    owner: root
+    group: root
+    mode: 0644
+  sudo: yes
+  notify:
+    - restart-nginx
