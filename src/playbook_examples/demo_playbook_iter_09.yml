@@ -11,14 +11,14 @@
     service: state=started name=nginx
     sudo: yes
   - name: stop-nginx
-    service: state=started name=nginx
+    service: state=stopped name=nginx
     sudo: yes
   - name: fizz
     debug: msg='fizz'
   - name: buzz
     debug: msg='buzz'
   tasks:
-  - name: Show off debugging and something special
+  - name: Show something special
     shell: echo "This is a debugging task. What happens when it ends?"
     notify:
      - start-nginx
