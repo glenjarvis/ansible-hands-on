@@ -5,6 +5,15 @@
   shell: '{{ python_stack_pip_path }} install Django==1.6.5'
   remote_user: '{{ python_stack_non_priviledged_user }}'
 
+# The django package that I uploaded was already configured and
+# tested with Gunicorn before I canned it. With over 20 examples
+# already (even if each took just 3 minutes), we are out of time.
+# Instead of having to back out a compressed file, I am just adding
+# gunicorn for now.
+- name: Install Gunicorn (not currently used)
+  shell: '{{ python_stack_pip_path }} install gunicorn==19.0.0'
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
 - name: Upload Django's manage.py
   copy:
     src: manage.py
