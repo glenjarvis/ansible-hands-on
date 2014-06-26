@@ -80,6 +80,31 @@ Configuration is complete.
 ```
 4. Follow the examples (starting with the `example_01` subdirectory).
 
+## Examples
+
+Here is a list of the examples just in case there's any confusion in which
+order the examples should be executed:
+
+0. Configure (see isntructions above)
+1. cd src/example1; python access_machine.py
+2. cd src/example2; python auto_update_machine.py
+3. cd src/example3; Read the README file (it's not really meant to be executed)
+4. cd src/example4; ansible -m 'ping' webservers
+5. cd src/example5; ansible webservers -a 'sudo yum update -y'
+6. cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml
+7. cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml
+8. cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml
+9. cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml
+10. cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml
+11. cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml
+12. cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml
+13. cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml
+14. cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml
+15. cd src/playbook_examples; Read (but dont' execute): pedantically_commented_playbook.yml
+16. cd src/role_examples; ansible-playbook demo_play_role_01.yml
+17. cd src/role_examples; ansible-playbook demo_play_role_02.yml
+19. cd src/role_examples; ansible-playbook demo_play_role_03.yml
+20. Exploration: Log into machine; sudo su - webuser; cd /home/webuser/sample_project; python manage.py runserver
 
 ## Bio
 Glen has been a full-time Python programmer since 2007 and has worked for
