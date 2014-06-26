@@ -63,6 +63,7 @@ def configure_config():
 
     print "What is the path to your Amazon pem key?"
     pem_file_path = raw_input('--> ')
+    pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
     if not os.path.exists(pem_file_path):
         print "Nope. This file cannot be found: {pem_file_path}".format(
