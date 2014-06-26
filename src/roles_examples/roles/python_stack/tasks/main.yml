@@ -1,0 +1,56 @@
+- include:
+    ../../common/tasks/add_non_priviledged_user.yml
+     non_priviledged_user_uid=1000
+     non_priviledged_user='{{ python_stack_non_priviledged_user }}'
+
+- include:
+    ../../common/tasks/create_ssh_directory_shell.yml
+     non_priviledged_user='{{ python_stack_non_priviledged_user }}'
+
+- include:
+    ../../common/tasks/grant_account_temp_permissions.yml
+
+- name: Upload virtualenv package
+  copy:
+    src: '{{ python_stack_virtualenv_filename }}'
+    dest: '/home/{{ python_stack_non_priviledged_user }}/{{ python_stack_virtualenv_filename }}'
+    owner: '{{ python_stack_non_priviledged_user }}'
+    group: '{{ python_stack_non_priviledged_user }}'
+    mode: 0600
+  sudo: yes
+
+- name: Extract virtualenv source code
+  # I couldn't get unarchive module to see source file
+  shell: 'cd /home/{{ python_stack_non_priviledged_user }}; tar -xvf {{ python_stack_virtualenv_filename }}'
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Clean up compressed file
+  shell: 'rm virtualenv-1.11.tar.gz'
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Check if virtualenv is already installed
+  command: /bin/ls {{ virtualenv_install_directory }}
+  register: is_virtualenv_installed
+  ignore_errors: yes
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Create virtualenv
+  command: '/usr/bin/env python /home/{{ python_stack_non_priviledged_user }}/{{ python_stack_virtualenv_directory }}/virtualenv.py {{ virtualenv_install_directory }}'
+  when: is_virtualenv_installed|failed
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Clean up install files
+  shell: 'rm -Rf /home/{{ python_stack_non_priviledged_user }}/{{ python_stack_virtualenv_directory }}'
+  remote_user: '{{ python_stack_non_priviledged_user }}'
+
+- name: Upload $HOME/.bashrc
+  template:
+    src: dot_bashrc
+    dest: '/home/{{ python_stack_non_priviledged_user }}/.bashrc'
+    owner: '{{ python_stack_non_priviledged_user }}'
+    group: '{{ python_stack_non_priviledged_user }}'
+    mode: 0600
+  sudo: yes
+
+- include:
+    ../../common/tasks/revoke_account_temp_permissions.yml

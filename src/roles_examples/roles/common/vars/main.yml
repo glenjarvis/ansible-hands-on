@@ -1,0 +1,3 @@
+---
+non_priviledged_user: 'webuser'
+non_priviledged_user_uid: '1000'

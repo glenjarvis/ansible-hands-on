@@ -1,0 +1,2 @@
+
+source $HOME/.virtualenv/{{ python_stack_virtualenv_directory }}/bin/activate

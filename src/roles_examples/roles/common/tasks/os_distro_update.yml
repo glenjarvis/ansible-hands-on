@@ -1,0 +1,4 @@
+---
+- name: Make sure all OS patches are applied
+  shell: yum update -y
+  sudo: yes
