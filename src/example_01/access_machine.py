@@ -31,7 +31,7 @@ BYPASS_PHRASE = """
 """
 
 
-def get_private_key_and_hostfile():
+def get_settings():
 
     """Read the ansible.cfg file and parse hostfile pathname"""
 
@@ -53,8 +53,11 @@ def get_private_key_and_hostfile():
         sys.exit(2)
 
     private_key = config.get('defaults', 'private_key_file')
+    remote_user = config.get('defaults', 'remote_user')
 
-    return (private_key, hostfile)
+    return {'private_key': private_key,
+            'remote_user': remote_user,
+            'hostfile': hostfile}
 
 
 def get_host(hostfile):
@@ -76,11 +79,12 @@ def get_host(hostfile):
     return data[1].strip()
 
 
-def example_01(pem_file_path, machine_address):
-    """An example to show how one connects to their EC2 instance"""
+def example_01(pem_file_path, remote_user, machine_address):
+    """An example to show how one connects to their instance"""
 
-    cmd = "ssh -i {pem_file_path} ec2-user@{machine_address}".format(
+    cmd = "ssh -i {pem_file_path} {remote_user}@{machine_address}".format(
         pem_file_path=pem_file_path,
+        remote_user=remote_user,
         machine_address=machine_address)
 
     print(textwrap.dedent("""
@@ -98,6 +102,9 @@ def example_01(pem_file_path, machine_address):
     print "\n"
 
 if __name__ == '__main__':
-    (private_key, hostfile) = get_private_key_and_hostfile()
+    settings = get_settings()
+    private_key = settings['private_key']
+    hostfile = settings['hostfile']
+    remote_user = settings['remote_user']
     machine_address = get_host(hostfile)
-    example_01(private_key, machine_address)
+    example_01(private_key, remote_user, machine_address)
