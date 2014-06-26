@@ -1,0 +1,191 @@
+#!/usr/bin/env python
+# pylint: disable=W0401,W0614,W0621,F0401,C0103,E0602
+
+# LICENSE: See BSD 3-clause license in
+#          https://github.com/glenjarvis/ansible_modules
+
+
+"""Ansble Module for granting/revoking ssh access to secondary accounts
+
+More details are in the Ansible Documentation (DOCUMENTATION variable)
+(in YAML format).
+"""
+
+DOCUMENTATION = """
+---
+module: ssh_secondary_access
+short_description:
+  Utility for granting/revoking secondary accounts with pem key
+description:
+  - If one is working with, for example, and Amazon Web Server
+  - (aws) Elastic Computer Cloud (EC2) node, the primary account has the
+  - ssh key in question.  Under some conditions, it may be desirable to
+  - temporarily grant ssh access (with the original key) to the secondary
+  - account.
+version_added: 0.0
+author: Glen Jarvis
+requirements:
+    - Linx/Unix/BSD systems with standard ssh libraries
+    - Master access user account (An account with .ssh/authorized_keys)
+    - Secondary account (The account to temporarily grant .ssh acccess)
+options:
+    action:
+        description:
+          - Which action should be taken (enable access to the secondary
+            account or disable it).
+        required: true
+        choices: ['enable', 'disable']
+        version_added: 0.0
+    key_file:
+        description:
+          - What is the name of the key file that holds authorized keys.
+            This normally is `authorized_keys` and should be left alone
+            unless configuration is needed.
+        required: false
+        default: 'authorized_keys'
+        version_added: 0.0
+    master_key_owner:
+        description:
+          - Human readable account name from /etc/passwd first field
+            (example 'ec2-user').
+        required: true
+        version_added: 0.0
+    secondary_key_owner:
+        description:
+          - Human readable account name from /etc/passwd first field
+            (example 'user1').
+        required: true
+        version_added: 0.0
+
+"""
+
+from ansible.module_utils.basic import *
+import os
+
+
+def get_key_directory(owner_username):
+    """Given an account username, return the ssh directory
+
+    This is the equivalent of '$HOME/.ssh' in bash
+    """
+    return os.path.join('/home', owner_username, '.ssh')
+
+
+def get_key_filename(module, is_backup=False):
+    """Return the authorized_keys filename from module parameters
+
+    By default, this is equivalent to:
+
+    $HOME/.ssh/authorized_keys
+
+    And, when is_backup is True, this is equivalent to:
+
+    $HOME/.ssh/authorized_keys_backup
+    """
+    key_filename = module.params['key_file']
+    if key_filename is None:
+        key_filename = "authorized_keys"
+
+    if is_backup:
+        key_filename = "{0}_backup".format(key_filename)
+
+    return key_filename
+
+
+def get_key_filepath(module, owner_username):
+    """Get key path ($HOME/.ssh/authorized_keys) for username"""
+
+    return os.path.join(get_key_directory(owner_username),
+                        get_key_filename(module))
+
+
+def get_backup_filename(module, owner_username):
+    """Get backup key path (....ssh/authorized_keys_backup) for username"""
+
+    return os.path.join(get_key_directory(owner_username),
+                        get_key_filename(module, is_backup=True))
+
+
+def backup(module, secondary_file_path, backup_file_path):
+    """Create a backup of the $HOME/.ssh/authorized_keys"""
+
+    if os.path.exists(backup_file_path):
+        module.exit_json(skipped=True,
+            msg="Already enabled; Backup file still exists: {0}".format(
+                backup_file_path))
+
+    if os.path.exists(secondary_file_path):
+        shutil.copy2(secondary_file_path, backup_file_path)
+    else:
+        open(backup_file_path, 'w').close()
+
+
+def enable(module):
+    """Given parameters from module, enable key access for user"""
+
+    master_file_path = get_key_filepath(
+        module,
+        module.params['master_key_owner'])
+    secondary_file_path = get_key_filepath(
+        module,
+        module.params['secondary_key_owner'])
+    backup_file_path = get_backup_filename(
+        module,
+        module.params['secondary_key_owner'])
+
+    if not os.path.exists(master_file_path):
+        module.exit_json(skipped=True,
+                         msg="There is no master key. Can not enable")
+
+    backup(module, secondary_file_path, backup_file_path)
+
+    # Grant permissions now by concatenating contents
+    with open(master_file_path, 'r') as f1:
+        permissions = f1.read()
+        with open(secondary_file_path, 'a') as f2:
+            f2.write(permissions)
+
+
+def disable(module):
+    """Given parameters from module, disable key access for user"""
+
+    owner = module.params['secondary_key_owner']
+    secondary_file_path = get_key_filepath(module, owner)
+    backup_file_path = get_backup_filename(module, owner)
+
+    if not os.path.exists(backup_file_path):
+        module.exit_json(skipped=True,
+                         msg="There is no backup file. Cannot disable")
+
+    # Now, we're ready to restore file to it's original location
+    shutil.move(backup_file_path, secondary_file_path)
+    uid = pwd.getpwnam(owner).pw_uid
+    gid = grp.getgrnam(owner).gr_gid
+    os.chown(secondary_file_path, uid, gid)
+
+
+def main(ansible_module):
+    """Main execution (after parsing) for this module"""
+
+    # Guaranteed to be 'enabled' (grant secondary access) or 'disabled'
+    action = ansible_module.params['action']
+
+    if action == 'enable':
+        enable(ansible_module)
+        ansible_module.exit_json()
+    else:
+        disable(ansible_module)
+        ansible_module.exit_json()
+
+
+if __name__ == "__main__":
+    ansible_module = AnsibleModule(
+        argument_spec=dict(
+            action=dict(choices=['enable', 'disable'],
+                        required=True),
+            master_key_owner=dict(required=True),
+            secondary_key_owner=dict(required=True),
+            key_file=dict(required=False),
+        )
+    )
+    main(ansible_module)
