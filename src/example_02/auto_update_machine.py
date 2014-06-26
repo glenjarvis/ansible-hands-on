@@ -14,6 +14,7 @@ have two things:
 import os
 import sys
 import subprocess
+import textwrap
 import ConfigParser
 
 ANSIBLE_CFG = "./ansible.cfg"
@@ -81,22 +82,20 @@ def example_02(pem_file_path, machine_address):
         pem_file_path=pem_file_path, machine_address=machine_address)
     new_cmd = "{0} -t 'sudo yum update -y'".format(old_cmd)
 
-    print """
-
+    print textwrap.dedent("""
     This is the command line you would need to update the operating
     system for this instance:
 
-    {0}
+        {0}
 
-    Press the RETURN to execute the command now
-    (and connect to the machine)""".format(new_cmd)
+    Press the RETURN to execute the command now:
+    """).format(new_cmd).strip("\n")
     raw_input('--> ')
 
-    print "\nCommand to execute: {}\n\n".format(new_cmd)
+    print "\nCommand to execute: {}\n".format(new_cmd)
 
     subprocess.call(new_cmd, shell=True)
 
-    print "\n"
 
 if __name__ == '__main__':
     (private_key, hostfile) = get_private_key_and_hostfile()
