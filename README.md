@@ -1,5 +1,13 @@
 # Successfully automating your machines in the cloud using Ansible
 
+
+## Videos of Talk
+
+* 26-June, 2014 ([Bay Area Python Interest Group (BayPIGgies)/Silicon Valley Python MeetUp Video](https://plus.google.com/hangouts/onair/watch?hid=hoaevent%2Fcf7vrv1f9q5e8bojpslfjjen8gk&ytl=ptzruazbRXY&hl=en)
+
+
+
+## Talk description
 As we have seen with the previous talk, "Red Pill, Blue Pill Virtual Machines
 and Virtual Environments"
 ( [GitHub](https://github.com/glenjarvis/red-pill-blue-pill) /
