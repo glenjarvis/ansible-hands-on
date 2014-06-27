@@ -6,6 +6,10 @@
 * 26-June, 2014 ([Bay Area Python Interest Group (BayPIGgies)/Silicon Valley Python MeetUp Video](https://plus.google.com/hangouts/onair/watch?hid=hoaevent%2Fcf7vrv1f9q5e8bojpslfjjen8gk&ytl=ptzruazbRXY&hl=en)
 
 
+## Practice Sessions
+
+* http://www.meetup.com/silicon-valley-python/events/191582452/
+
 
 ## Talk description
 As we have seen with the previous talk, "Red Pill, Blue Pill Virtual Machines
