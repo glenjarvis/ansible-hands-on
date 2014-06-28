@@ -92,7 +92,7 @@ def example_02(pem_file_path, machine_address):
     (and connect to the machine)""".format(new_cmd)
     raw_input('--> ')
 
-    print "\nCommand to execute: {}\n\n".format(new_cmd)
+    print "\nCommand to execute: {0}\n\n".format(new_cmd)
 
     subprocess.call(new_cmd, shell=True)
 
