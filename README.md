@@ -8,7 +8,32 @@
 
 ## Practice Sessions
 
-* http://www.meetup.com/silicon-valley-python/events/191582452/
+* Hands-On Training: Level 0: Successful Ansible
+  - Session 01:
+    - 28-June, 2014
+    - http://www.meetup.com/silicon-valley-python/events/191582452/
+  - Session 02:
+    - 28-June, 2014
+    - http://www.meetup.com/silicon-valley-python/events/191818442/
+  - Session 03:
+    - 12-July, 2014
+    -  http://www.meetup.com/silicon-valley-python/events/191819732/
+* Hands-On Training: Level 1: Successful Ansible
+  - Session 01:
+    - 28-June, 2014
+    - http://www.meetup.com/silicon-valley-python/events/191635482/
+  - Session 02:
+    - 12-July, 2014
+    - http://www.meetup.com/silicon-valley-python/events/191822302/
+  - Session 03:
+    - 19-July, 2014
+    - http://www.meetup.com/silicon-valley-python/events/191822552/
+* Hands-On Training: Level 2: Successful Ansible
+  - Not yet scheduled
+* Hands-On Training: Level 3: Successful Ansible
+  - Not yet scheduled
+* Hands-On Training: Level 4: Successful Ansible
+  - Not yet scheduled
 
 
 ## Talk description
