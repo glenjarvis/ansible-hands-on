@@ -1,6 +1,6 @@
-- name: Temporarily grant ec2-user's access to {{ python_stack_non_priviledged_user }}
+- name: Temporarily grant {{ ansible_ssh_user }}'s access to {{ python_stack_non_priviledged_user }}
   ssh_secondary_access:
     action: enable
     secondary_key_owner: '{{ python_stack_non_priviledged_user }}'
-    master_key_owner: ec2-user
+    master_key_owner: '{{ ansible_ssh_user }}'
   sudo: yes

@@ -1,7 +1,6 @@
 ---
 - include: demo_playbook_iter_05.yml our_desired_package_name=nginx
 - hosts: webservers
-  remote_user: ec2-user
   vars:
      demo_message: 'Hello World (of course)'
   handlers:

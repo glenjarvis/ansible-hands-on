@@ -1,6 +1,5 @@
 ---
 - hosts: webservers
-  remote_user: ec2-user
   tasks:
   - name: Make sure all OS patches are applied
     shell: yum update -y

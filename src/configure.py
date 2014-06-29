@@ -38,7 +38,7 @@ def fix_pem_permissons(pem_file_path):
     os.chmod(pem_file_path, stat.S_IRUSR | stat.S_IWUSR)
 
 
-def write_ansible_cfg_file(pem_file_path):
+def write_ansible_cfg_file(pem_file_path, user):
 
     """Given a validated pem_file_path, write the ansible configuration file"""
 
@@ -47,7 +47,7 @@ def write_ansible_cfg_file(pem_file_path):
     config.add_section('defaults')
     config.set('defaults', 'hostfile', ANSIBLE_HOSTS_FILENAME)
     config.set('defaults', 'private_key_file', pem_file_path)
-    config.set('defaults', 'remote_user', 'ec2-user')
+    config.set('defaults', 'remote_user', user)
 
     with open(ANSIBLE_CONFIG_FILENAME, 'wb') as config_file:
         config.write(config_file)
@@ -61,7 +61,7 @@ def configure_config():
     No configuration file found. Let me ask questions so that we can configure.
     """
 
-    print "What is the path to your Amazon pem key?"
+    print "What is the path to your .pem key for ssh access to the virtual machine?"
     pem_file_path = raw_input('--> ')
     pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
@@ -70,7 +70,10 @@ def configure_config():
             pem_file_path=pem_file_path)
         sys.exit(1)
 
-    write_ansible_cfg_file(pem_file_path)
+    print "\nWhat user to use to ssh to the remote system [ec2-user]?"
+    user = raw_input('--> ') or 'ec2-user'
+
+    write_ansible_cfg_file(pem_file_path, user)
     print "\n"
 
 
@@ -96,7 +99,7 @@ def configure_hosts(hostfile):
 
     print "Configuring `ansible_hosts` file {0}...\n\n".format(hostfile)
 
-    print "\n\nWhat is the IP address of the Amazon Linux free tier machine?"
+    print "\n\nWhat is the IP address of the virtual machine?"
     machine_address = raw_input('--> ')
 
     with open(hostfile, 'w') as ansible_hosts_file:
@@ -106,6 +109,12 @@ def configure_hosts(hostfile):
 
 def check_and_configure():
     """Check/configure `ansible.cfg` and `ansible_hosts`"""
+
+    print "This script creates configuration files for using Ansible to "
+    print "configure a newly-created virtual machine."
+    print "It has been tested by the author on an AWS free tier VM."
+    print "This has the best chance of working on an AWS free tier VM, or "
+    print "failing that, on a VM with a recent version of CentOS."
 
     if not os.path.exists(ANSIBLE_CONFIG_FILEPATH):
         configure_config()
