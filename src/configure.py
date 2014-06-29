@@ -61,7 +61,7 @@ def configure_config():
     No configuration file found. Let me ask questions so that we can configure.
     """
 
-    print "What is the path to your .pem key for ssh access to the virtual machine?"
+    print "What is the path to your .pem key file for  the virtual machine?"
     pem_file_path = raw_input('--> ')
     pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
