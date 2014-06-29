@@ -5,4 +5,4 @@ System packages for all of your machines.
 Here is the command that should ping your webservers. Just run this command
 from this directory:
 
-ansible webservers -a 'sudo yum update -y'
+    ansible webservers -vvv -a 'sudo yum update -y'
