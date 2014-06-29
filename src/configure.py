@@ -71,7 +71,7 @@ def configure_config():
         sys.exit(1)
 
     write_ansible_cfg_file(pem_file_path)
-    print "\n"
+    print
 
 
 def get_configured_hosts():
@@ -94,9 +94,9 @@ def configure_hosts(hostfile):
 
     """Assuming no hostfile file exists, ask questions and create a new one"""
 
-    print "Configuring `ansible_hosts` file {0}...\n\n".format(hostfile)
+    print "Configuring `ansible_hosts` file {0}...\n".format(hostfile)
 
-    print "\n\nWhat is the IP address of the Amazon Linux free tier machine?"
+    print "What is the IP address of the Amazon Linux free tier machine?"
     machine_address = raw_input('--> ')
 
     with open(hostfile, 'w') as ansible_hosts_file:
