@@ -1,82 +1,76 @@
 prompt> python auto_update_machine.py 
+This is the command line you would need to update the operating
+system for this instance:
 
+    ssh -i /Users/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
 
-    This is the command line you would need to update the operating
-    system for this instance:
-
-    ssh -i /home/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
-
-    Press the RETURN to execute the command now
-    (and connect to the machine)
+Press RETURN to execute the command now:
 --> 
 
-Command to execute: ssh -i /home/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
-
+Command to execute: ssh -i /Users/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com -t 'sudo yum update -y'
 
 Loaded plugins: priorities, update-motd, upgrade-helper
-amzn-main/latest                                                                                                                                         | 2.1 kB     00:00     
-amzn-updates/latest                                                                                                                                      | 2.3 kB     00:00     
+amzn-main/latest                                                                                  | 2.1 kB     00:00     
+amzn-updates/latest                                                                               | 2.3 kB     00:00     
 Resolving Dependencies
 --> Running transaction check
 ---> Package aws-cli.noarch 0:1.3.16-1.0.amzn1 will be updated
----> Package aws-cli.noarch 0:1.3.17-1.1.amzn1 will be an update
+---> Package aws-cli.noarch 0:1.3.19-1.0.amzn1 will be an update
 ---> Package cloud-init.noarch 0:0.7.2-7.26.amzn1 will be updated
 ---> Package cloud-init.noarch 0:0.7.2-7.27.amzn1 will be an update
 ---> Package openssl.x86_64 1:1.0.1h-1.75.amzn1 will be updated
 ---> Package openssl.x86_64 1:1.0.1h-1.76.amzn1 will be an update
 ---> Package python-botocore.noarch 0:0.50.0-1.0.amzn1 will be updated
----> Package python-botocore.noarch 0:0.51.0-1.0.amzn1 will be an update
+---> Package python-botocore.noarch 0:0.53.0-1.0.amzn1 will be an update
 --> Finished Dependency Resolution
 
 Dependencies Resolved
 
-================================================================================================================================================================================
- Package                                     Arch                               Version                                          Repository                                Size
-================================================================================================================================================================================
+=========================================================================================================================
+ Package                       Arch                 Version                             Repository                  Size
+=========================================================================================================================
 Updating:
- aws-cli                                     noarch                             1.3.17-1.1.amzn1                                 amzn-updates                             446 k
- cloud-init                                  noarch                             0.7.2-7.27.amzn1                                 amzn-updates                             334 k
- openssl                                     x86_64                             1:1.0.1h-1.76.amzn1                              amzn-updates                             1.7 M
- python-botocore                             noarch                             0.51.0-1.0.amzn1                                 amzn-updates                             2.8 M
+ aws-cli                       noarch               1.3.19-1.0.amzn1                    amzn-updates               475 k
+ cloud-init                    noarch               0.7.2-7.27.amzn1                    amzn-updates               334 k
+ openssl                       x86_64               1:1.0.1h-1.76.amzn1                 amzn-updates               1.7 M
+ python-botocore               noarch               0.53.0-1.0.amzn1                    amzn-updates               2.8 M
 
 Transaction Summary
-================================================================================================================================================================================
+=========================================================================================================================
 Upgrade  4 Packages
 
-Total download size: 5.3 M
+Total download size: 5.4 M
 Downloading packages:
-(1/4): aws-cli-1.3.17-1.1.amzn1.noarch.rpm                                                                                                               | 446 kB     00:00     
-(2/4): cloud-init-0.7.2-7.27.amzn1.noarch.rpm                                                                                                            | 334 kB     00:00     
-(3/4): openssl-1.0.1h-1.76.amzn1.x86_64.rpm                                                                                                              | 1.7 MB     00:00     
-(4/4): python-botocore-0.51.0-1.0.amzn1.noarch.rpm                                                                                                       | 2.8 MB     00:00     
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Total                                                                                                                                           8.5 MB/s | 5.3 MB  00:00:00     
+(1/4): aws-cli-1.3.19-1.0.amzn1.noarch.rpm                                                        | 475 kB     00:00     
+(2/4): cloud-init-0.7.2-7.27.amzn1.noarch.rpm                                                     | 334 kB     00:00     
+(3/4): openssl-1.0.1h-1.76.amzn1.x86_64.rpm                                                       | 1.7 MB     00:00     
+(4/4): python-botocore-0.53.0-1.0.amzn1.noarch.rpm                                                | 2.8 MB     00:00     
+-------------------------------------------------------------------------------------------------------------------------
+Total                                                                                     19 MB/s | 5.4 MB  00:00:00     
 Running transaction check
 Running transaction test
 Transaction test succeeded
 Running transaction
-  Updating   : python-botocore-0.51.0-1.0.amzn1.noarch                                                                                                                      1/8 
-  Updating   : aws-cli-1.3.17-1.1.amzn1.noarch                                                                                                                              2/8 
-  Updating   : 1:openssl-1.0.1h-1.76.amzn1.x86_64                                                                                                                           3/8 
-  Updating   : cloud-init-0.7.2-7.27.amzn1.noarch                                                                                                                           4/8 
-  Cleanup    : aws-cli-1.3.16-1.0.amzn1.noarch                                                                                                                              5/8 
-  Cleanup    : python-botocore-0.50.0-1.0.amzn1.noarch                                                                                                                      6/8 
-  Cleanup    : cloud-init-0.7.2-7.26.amzn1.noarch                                                                                                                           7/8 
-  Cleanup    : 1:openssl-1.0.1h-1.75.amzn1.x86_64                                                                                                                           8/8 
-  Verifying  : aws-cli-1.3.17-1.1.amzn1.noarch                                                                                                                              1/8 
-  Verifying  : cloud-init-0.7.2-7.27.amzn1.noarch                                                                                                                           2/8 
-  Verifying  : 1:openssl-1.0.1h-1.76.amzn1.x86_64                                                                                                                           3/8 
-  Verifying  : python-botocore-0.51.0-1.0.amzn1.noarch                                                                                                                      4/8 
-  Verifying  : python-botocore-0.50.0-1.0.amzn1.noarch                                                                                                                      5/8 
-  Verifying  : 1:openssl-1.0.1h-1.75.amzn1.x86_64                                                                                                                           6/8 
-  Verifying  : cloud-init-0.7.2-7.26.amzn1.noarch                                                                                                                           7/8 
-  Verifying  : aws-cli-1.3.16-1.0.amzn1.noarch                                                                                                                              8/8 
+  Updating   : python-botocore-0.53.0-1.0.amzn1.noarch                                                               1/8 
+  Updating   : aws-cli-1.3.19-1.0.amzn1.noarch                                                                       2/8 
+  Updating   : 1:openssl-1.0.1h-1.76.amzn1.x86_64                                                                    3/8 
+  Updating   : cloud-init-0.7.2-7.27.amzn1.noarch                                                                    4/8 
+  Cleanup    : aws-cli-1.3.16-1.0.amzn1.noarch                                                                       5/8 
+  Cleanup    : python-botocore-0.50.0-1.0.amzn1.noarch                                                               6/8 
+  Cleanup    : cloud-init-0.7.2-7.26.amzn1.noarch                                                                    7/8 
+  Cleanup    : 1:openssl-1.0.1h-1.75.amzn1.x86_64                                                                    8/8 
+  Verifying  : cloud-init-0.7.2-7.27.amzn1.noarch                                                                    1/8 
+  Verifying  : python-botocore-0.53.0-1.0.amzn1.noarch                                                               2/8 
+  Verifying  : 1:openssl-1.0.1h-1.76.amzn1.x86_64                                                                    3/8 
+  Verifying  : aws-cli-1.3.19-1.0.amzn1.noarch                                                                       4/8 
+  Verifying  : python-botocore-0.50.0-1.0.amzn1.noarch                                                               5/8 
+  Verifying  : 1:openssl-1.0.1h-1.75.amzn1.x86_64                                                                    6/8 
+  Verifying  : cloud-init-0.7.2-7.26.amzn1.noarch                                                                    7/8 
+  Verifying  : aws-cli-1.3.16-1.0.amzn1.noarch                                                                       8/8 
 
 Updated:
-  aws-cli.noarch 0:1.3.17-1.1.amzn1       cloud-init.noarch 0:0.7.2-7.27.amzn1       openssl.x86_64 1:1.0.1h-1.76.amzn1       python-botocore.noarch 0:0.51.0-1.0.amzn1      
+  aws-cli.noarch 0:1.3.19-1.0.amzn1           cloud-init.noarch 0:0.7.2-7.27.amzn1   openssl.x86_64 1:1.0.1h-1.76.amzn1  
+  python-botocore.noarch 0:0.53.0-1.0.amzn1  
 
 Complete!
 Connection to demos.glenjarvis.com closed.
-
-
-

@@ -1,17 +1,17 @@
 prompt> python access_machine.py 
+This example illustrates how to connect to your VM with ssh.
 
+This is the command line you would need to connect to this instance:
 
-    This is the command line you would need to connect to this instance:
+    ssh -i /Users/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com
 
-    ssh -i /home/glenjarvis/example_key.pem ec2-user@demos.glenjarvis.com
-
-    Press the RETURN to execute the command now
-    (and connect to the machine)
+Press RETURN to execute the command now:
 --> 
-The authenticity of host 'demos.glenjarvis.com (demos.glenjarvis.com)' can't be established.
-RSA key fingerprint is 93:6e:9a:3c:aa:d9:71:a4:ad:48:d1:bf:41:4e:2a:89.
+The authenticity of host 'demos.glenjarvis.com (54.191.42.56)' can't be established.
+RSA key fingerprint is f6:2c:1d:e7:14:91:ff:89:1c:78:f0:c7:72:52:b1:c9.
 Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'demos.glenjarvis.com' (RSA) to the list of known hosts.
+Warning: Permanently added 'demos.glenjarvis.com,54.191.42.56' (RSA) to the list of known hosts.
+Last login: Sun Jun 29 17:39:05 2014 from c-76-21-58-72.hsd1.ca.comcast.net
 
        __|  __|_  )
        _|  (     /   Amazon Linux AMI
@@ -20,9 +20,6 @@ Warning: Permanently added 'demos.glenjarvis.com' (RSA) to the list of known hos
 https://aws.amazon.com/amazon-linux-ami/2014.03-release-notes/
 No packages needed for security; 4 packages available
 Run "sudo yum update" to apply all updates.
-[ec2-user@ip-172-31-8-225 ~]$ exit
+[ec2-user@ip-172-31-15-107 ~]$ exit
 logout
 Connection to demos.glenjarvis.com closed.
-
-
-

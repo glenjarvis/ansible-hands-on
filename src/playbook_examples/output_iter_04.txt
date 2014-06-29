@@ -1,5 +1,4 @@
-prompt> demo_playbook_iter_04.yml
-
+prompt> ansible-playbook demo_playbook_iter_04.yml
 
 PLAY [webservers] ************************************************************* 
 

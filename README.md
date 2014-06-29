@@ -108,15 +108,23 @@ video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
     ```bash
     prompt> ( cd src; python configure.py )
 
+    This script creates configuration files for using Ansible to
+    configure a newly-created virtual machine.
+    It has been tested by the author on an AWS free tier VM.
+    This has the best chance of working on an AWS free tier VM, or
+    failing that, on a VM with a recent version of CentOS.
+
         No configuration file found. Let me ask questions so that we can configure.
 
-    What is the path to your Amazon pem key?
-    --> example_key.pem
+    What is the path to your .pem key file for  the virtual machine?
+    --> ~/example_key.pem
 
+    What user to use to ssh to the remote system [ec2-user]?
+    -->
     Configuring `ansible_hosts` file ./ansible_hosts...
 
-    What is the IP address of the Amazon Linux free tier machine?
-    --> demo.example.com
+    What is the IP address of the virtual machine?
+    --> demos.glenjarvis.com
 
     Configuration is complete.
     ```

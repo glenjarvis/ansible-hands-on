@@ -6,15 +6,15 @@ This can be done by "pip install ansible==1.6.3"
 
 Here is the command that should ping your webservers:
 
-    ansible webservers -m ping
+    ansible -m ping webservers
 
 To get more verbose output, use the `-v` (verbose) option, which can be
 specified multiple times.
 
 Try:
 
-    ansible webservers -vv -m ping
+    ansible -vv -m ping webservers
 
 or:
 
-    ansible webservers -vvv -m ping
+    ansible -vvv -m ping webservers
