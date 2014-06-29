@@ -72,7 +72,7 @@ the easiest tool to get started with if you are new in the machine build
 automation frameworks.
 
 We will start with a newly built machine and obtain it's public IP address. We
-will configure the `ansible_host` file with the IP address, and add/build plays
+will configure the `ansible_hosts` file with the IP address, and add/build plays
 (like recipes) to gradually configure that machine so that it is a
 [Django](https://www.djangoproject.com/) web server running in the cloud. When
 we are finished, we should have a running machine and a recipe to easily build
@@ -86,35 +86,41 @@ video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
 ## Getting Started (Installing and following-along)
 
 1. Clone this repo.
-```bash
-prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
-Cloning into 'ansible_tutorial'...
-remote: Reusing existing pack: 112, done.
-remote: Total 112 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (48/48), done.
-Checking connectivity... done.
-```
+
+    ```bash
+    prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
+    Cloning into 'ansible_tutorial'...
+    remote: Reusing existing pack: 112, done.
+    remote: Total 112 (delta 0), reused 0 (delta 0)
+    Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
+    Resolving deltas: 100% (48/48), done.
+    Checking connectivity... done.
+    ```
+
 2. Change to the src directory.
-```bash
-prompt> cd ansible_tutorial/src/
-```
+
+    ```bash
+    prompt> cd ansible_tutorial
+    ```
+
 3. Configure the repo for your account and settings
-```bash
-prompt> python configure.py 
 
-    No configuration file found. Let me ask questions so that we can configure.
-    
-What is the path to your Amazon pem key?
---> example_key.pem
+    ```bash
+    prompt> ( cd src; python configure.py )
 
-Configuring `ansible_hosts` file ./ansible_hosts...
+        No configuration file found. Let me ask questions so that we can configure.
 
-What is the IP address of the Amazon Linux free tier machine?
---> demo.example.com
+    What is the path to your Amazon pem key?
+    --> example_key.pem
 
-Configuration is complete.
-```
+    Configuring `ansible_hosts` file ./ansible_hosts...
+
+    What is the IP address of the Amazon Linux free tier machine?
+    --> demo.example.com
+
+    Configuration is complete.
+    ```
+
 4. Follow the examples (starting with the `example_01` subdirectory).
 
 ## Examples
@@ -122,26 +128,26 @@ Configuration is complete.
 Here is a list of the examples just in case there's any confusion in which
 order the examples should be executed:
 
-0. Configure (see instructions above)
-1. cd src/example1; python access_machine.py
-2. cd src/example2; python auto_update_machine.py
-3. cd src/example3; Read the README file (it's not really meant to be executed)
-4. cd src/example4; ansible -m 'ping' webservers
-5. cd src/example5; ansible webservers -a 'sudo yum update -y'
-6. cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml
-7. cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml
-8. cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml
-9. cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml
-10. cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml
-11. cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml
-12. cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml
-13. cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml
-14. cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml
-15. cd src/playbook_examples; Read (but don't execute): pedantically_commented_playbook.yml
-16. cd src/role_examples; ansible-playbook demo_play_role_01.yml
-17. cd src/role_examples; ansible-playbook demo_play_role_02.yml
-19. cd src/role_examples; ansible-playbook demo_play_role_03.yml
-20. Exploration: Log into machine; sudo su - webuser; cd /home/webuser/sample_project; python manage.py runserver
+1. `( cd src; python configure.py )` (see instructions above)
+2. `( cd src/example_01; python access_machine.py )`
+3. `( cd src/example_02; python auto_update_machine.py )`
+4. `( cd src/example_03; less README.txt )` (Read the `README.txt` file; it's not really meant to be executed)
+5. `( cd src/example_04; ansible webservers -m ping; ansible webservers -vvv -m ping )`
+6. `( cd src/example_05; ansible webservers -vvv -a 'sudo yum update -y' )`
+7. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml )`
+8. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml )`
+9. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml )`
+10. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml )`
+11. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml )`
+12. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml )`
+13. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml )`
+14. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml )`
+15. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml )`
+16. `( cd src/playbook_examples; less pedantically_commented_playbook )` (Read but don't execute: `pedantically_commented_playbook.yml`)
+17. `( cd src/role_examples; ansible-playbook demo_play_role_01.yml )`
+18. `( cd src/role_examples; ansible-playbook demo_play_role_02.yml )`
+19. `( cd src/role_examples; ansible-playbook demo_play_role_03.yml )`
+20. Exploration: Log into machine; `sudo su - webuser; cd /home/webuser/sample_project; python manage.py runserver`
 
 ## Bio
 Glen has been a full-time Python programmer since 2007 and has worked for
@@ -172,8 +178,9 @@ the [Bay Area Python Interest Group](http://baypiggies.net/) organization.
 
 ### Documentation for configure.py (if needed)
 
-Although this probably won't be needed, here is the coonfigure.py documentation
-that is used to help you configure your ansible.cfg and ansible_hosts files.
+Although this probably won't be needed, here is the `configure.py`
+documentation that is used to help you configure your `ansible.cfg` and
+`ansible_hosts` files.
 
 
 ```python
