@@ -1,6 +1,4 @@
-prompt> ansible-playbook  demo_playbook_iter_09.yml
-
-
+prompt> ansible-playbook demo_playbook_iter_09.yml
 PLAY [webservers] ************************************************************* 
 
 GATHERING FACTS *************************************************************** 
@@ -15,14 +13,14 @@ GATHERING FACTS ***************************************************************
 ok: [demos.glenjarvis.com]
 
 TASK: [Install our needed packages for AWS Linux] ***************************** 
-changed: [demos.glenjarvis.com]
+ok: [demos.glenjarvis.com]
 
 PLAY [webservers] ************************************************************* 
 
 GATHERING FACTS *************************************************************** 
 ok: [demos.glenjarvis.com]
 
-TASK: [Show off debugging and something special] ****************************** 
+TASK: [Show something special] ************************************************ 
 changed: [demos.glenjarvis.com]
 
 NOTIFIED: [print-or-not] ****************************************************** 
@@ -31,10 +29,10 @@ ok: [demos.glenjarvis.com] => {
 }
 
 NOTIFIED: [start-nginx] ******************************************************* 
-changed: [demos.glenjarvis.com]
+ok: [demos.glenjarvis.com]
 
 NOTIFIED: [stop-nginx] ******************************************************** 
-ok: [demos.glenjarvis.com]
+changed: [demos.glenjarvis.com]
 
 NOTIFIED: [fizz] ************************************************************** 
 ok: [demos.glenjarvis.com] => {
@@ -47,5 +45,5 @@ ok: [demos.glenjarvis.com] => {
 }
 
 PLAY RECAP ******************************************************************** 
-demos.glenjarvis.com       : ok=11   changed=4    unreachable=0    failed=0   
+demos.glenjarvis.com       : ok=11   changed=3    unreachable=0    failed=0   
 

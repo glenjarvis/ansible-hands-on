@@ -100,7 +100,7 @@ def configure_hosts(hostfile):
 
     print "Configuring `ansible_hosts` file {0}...\n".format(hostfile)
 
-    print "\n\nWhat is the IP address of the virtual machine?"
+    print "What is the IP address of the virtual machine?"
     machine_address = raw_input('--> ')
     machine_address = machine_address.strip()
 
@@ -112,7 +112,7 @@ def configure_hosts(hostfile):
 def check_and_configure():
     """Check/configure `ansible.cfg` and `ansible_hosts`"""
 
-    print "This script creates configuration files for using Ansible to "
+    print "\nThis script creates configuration files for using Ansible to "
     print "configure a newly-created virtual machine."
     print "It has been tested by the author on an AWS free tier VM."
     print "This has the best chance of working on an AWS free tier VM, or "

@@ -1,5 +1,4 @@
-prompt> ansible-playbook  demo_play_role_02.yml
-
+prompt> ansible-playbook demo_play_role_02.yml
 
 PLAY [Demonstrate a working deploy of nginx (using python_webstack)] ********** 
 
@@ -40,7 +39,7 @@ TASK: [python_stack | Revoke ec2-user's access to webuser] ********************
 ok: [demos.glenjarvis.com]
 
 TASK: [web_server_nginx | Install our needed packages for AWS Linux] ********** 
-changed: [demos.glenjarvis.com]
+ok: [demos.glenjarvis.com]
 
 TASK: [web_server_nginx | Temporarily grant ec2-user's access to webuser] ***** 
 ok: [demos.glenjarvis.com]
@@ -67,5 +66,5 @@ NOTIFIED: [web_server_nginx | restart-nginx] **********************************
 changed: [demos.glenjarvis.com]
 
 PLAY RECAP ******************************************************************** 
-demos.glenjarvis.com       : ok=20   changed=12   unreachable=0    failed=0   
+demos.glenjarvis.com       : ok=20   changed=11   unreachable=0    failed=0   
 

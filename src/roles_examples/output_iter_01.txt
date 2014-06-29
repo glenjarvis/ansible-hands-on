@@ -1,4 +1,4 @@
-prompt> ansible-playbook  demo_play_role_01.yml 
+prompt> ansible-playbook demo_play_role_01.yml 
 
 PLAY [Demonstrate our work in a directory (now called a 'role')] ************** 
 
@@ -24,7 +24,7 @@ TASK: [python_stack | Clean up compressed file] *******************************
 changed: [demos.glenjarvis.com]
 
 TASK: [python_stack | Check if virtualenv is already installed] *************** 
-failed: [demos.glenjarvis.com] => {"changed": true, "cmd": ["/bin/ls", "/home/webuser/.virtualenv/virtualenv-1.11"], "delta": "0:00:00.008015", "end": "2014-06-26 01:03:55.165821", "rc": 2, "start": "2014-06-26 01:03:55.157806"}
+failed: [demos.glenjarvis.com] => {"changed": true, "cmd": ["/bin/ls", "/home/webuser/.virtualenv/virtualenv-1.11"], "delta": "0:00:00.008068", "end": "2014-06-29 18:01:39.688524", "rc": 2, "start": "2014-06-29 18:01:39.680456"}
 stderr: /bin/ls: cannot access /home/webuser/.virtualenv/virtualenv-1.11: No such file or directory
 ...ignoring
 

@@ -1,6 +1,5 @@
 prompt> ansible-playbook demo_playbook_iter_05.yml
 
-
 PLAY [webservers] ************************************************************* 
 
 GATHERING FACTS *************************************************************** 

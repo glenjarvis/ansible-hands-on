@@ -1,6 +1,6 @@
 prompt> ansible-playbook demo_play_role_03.yml
 
-PLAY [Demonstrate a Django setup (But Django service NOT started)] ************
+PLAY [Demonstrate a Django setup (But Django service NOT started)] ************ 
 
 GATHERING FACTS *************************************************************** 
 ok: [demos.glenjarvis.com]
@@ -68,6 +68,9 @@ ok: [demos.glenjarvis.com]
 TASK: [app_server_django | Install Django Software] *************************** 
 changed: [demos.glenjarvis.com]
 
+TASK: [app_server_django | Install Gunicorn (not currently used)] ************* 
+changed: [demos.glenjarvis.com]
+
 TASK: [app_server_django | Upload Django's manage.py] ************************* 
 changed: [demos.glenjarvis.com]
 
@@ -84,5 +87,5 @@ TASK: [app_server_django | Revoke ec2-user's access to webuser] ***************
 ok: [demos.glenjarvis.com]
 
 PLAY RECAP ******************************************************************** 
-demos.glenjarvis.com       : ok=26   changed=13   unreachable=0    failed=0   
+demos.glenjarvis.com       : ok=27   changed=14   unreachable=0    failed=0   
 
