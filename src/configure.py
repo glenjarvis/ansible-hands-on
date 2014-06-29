@@ -63,6 +63,7 @@ def configure_config():
 
     print "What is the path to your .pem key file for  the virtual machine?"
     pem_file_path = raw_input('--> ')
+    pem_file_path = pem_file_path.strip()
     pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
     if not os.path.exists(pem_file_path):
@@ -72,9 +73,9 @@ def configure_config():
 
     print "\nWhat user to use to ssh to the remote system [ec2-user]?"
     user = raw_input('--> ') or 'ec2-user'
+    user = user.strip()
 
     write_ansible_cfg_file(pem_file_path, user)
-    print
 
 
 def get_configured_hosts():
@@ -101,10 +102,11 @@ def configure_hosts(hostfile):
 
     print "\n\nWhat is the IP address of the virtual machine?"
     machine_address = raw_input('--> ')
+    machine_address = machine_address.strip()
 
     with open(hostfile, 'w') as ansible_hosts_file:
         ansible_hosts_file.write("[webservers]\n")
-        ansible_hosts_file.write(machine_address)
+        ansible_hosts_file.write("{0}\n".format(machine_address))
 
 
 def check_and_configure():
