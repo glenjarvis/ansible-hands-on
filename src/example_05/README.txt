@@ -7,6 +7,13 @@ from this directory:
 
 ansible webservers -a 'sudo yum update -y'
 
-Or, if you wish to see more verbose output, you can use the '-vvv' options:
+To get more verbose output, use the `-v` (verbose) option, which can be
+specified multiple times.
 
-ansible webservers -vvv -a 'sudo yum update -y'
+Try:
+
+    ansible webservers -vv -a 'sudo yum update -y'
+
+or:
+
+    ansible webservers -vvv -a 'sudo yum update -y'
