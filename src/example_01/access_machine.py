@@ -45,11 +45,11 @@ def get_settings():
         sys.exit(1)
 
     config = ConfigParser.SafeConfigParser()
-    config.read('./ansible.cfg')
+    config.read(ANSIBLE_CFG)
 
     hostfile = config.get('defaults', 'hostfile')
     if hostfile is None:
-        print "We can't read the hostfile from ansible.cfg"
+        print "We can't read the hostfile from {0}".format(ANSIBLE_CFG)
         sys.exit(2)
 
     private_key = config.get('defaults', 'private_key_file')
