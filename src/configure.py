@@ -61,15 +61,32 @@ def configure_config():
     No configuration file found. Let me ask questions so that we can configure.
     """
 
-    print "What is the path to your .pem key file for  the virtual machine?"
-    pem_file_path = raw_input('--> ')
-    pem_file_path = pem_file_path.strip()
-    pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
-
-    if not os.path.exists(pem_file_path):
-        print "Nope. This file cannot be found: {pem_file_path}".format(
-            pem_file_path=pem_file_path)
-        sys.exit(1)
+    print "What is the path to your .pem key file for the virtual machine?"
+    print "Be sure to include the name of the file"
+    print "as well as the directory path to it."
+    while True:
+        pem_file_path = ''
+        pem_file_path = raw_input('My path is: ')
+        if not pem_file_path:
+            print "!!!!!!!!!!!!!!!\nYou haven't entered anything..."
+            response = \
+                raw_input("Are you sure you want to abort? (yes or no): ")
+            if response[0] in 'yY':
+                print "Too bad, good bye."
+                sys.exit(1)
+            else:
+                continue
+        pem_file_path = pem_file_path.strip()
+        pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
+        pem_file_path = os.path.abspath(pem_file_path)
+        if os.path.isdir(pem_file_path):
+            print "You have entered a directory, but no file name."
+        elif os.path.isfile(pem_file_path):
+            break
+        else:
+            print "Nope. This file cannot be found: {pem_file_path}".\
+                format(pem_file_path=pem_file_path)
+            print "Try again or simply Enter to abort."
 
     print "\nWhat user to use to ssh to the remote system [ec2-user]?"
     user = raw_input('--> ') or 'ec2-user'
