@@ -77,8 +77,11 @@ def configure_config():
             else:
                 continue
         pem_file_path = pem_file_path.strip()
-        pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
+        #pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
         #pem_file_path = os.path.abspath(pem_file_path)
+        # The above two lines have been commented out to preserve the
+        # user's option to use relative paths which in turn would give her
+        # the option of moving her directory without breaking the link.
         if os.path.isdir(pem_file_path):
             print "You have entered a directory, but no file name."
         elif os.path.isfile(pem_file_path):
