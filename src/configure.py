@@ -78,7 +78,7 @@ def configure_config():
                 continue
         pem_file_path = pem_file_path.strip()
         pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
-        pem_file_path = os.path.abspath(pem_file_path)
+        #pem_file_path = os.path.abspath(pem_file_path)
         if os.path.isdir(pem_file_path):
             print "You have entered a directory, but no file name."
         elif os.path.isfile(pem_file_path):
