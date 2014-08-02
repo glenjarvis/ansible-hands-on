@@ -61,14 +61,20 @@ def configure_config():
     No configuration file found. Let me ask questions so that we can configure.
     """
 
-    print "What is the path to your .pem key file for  the virtual machine?"
+    print "What is the path to your .pem key file for the virtual machine?"
+    print "Be sure to include the filename in the path."
     pem_file_path = raw_input('--> ')
     pem_file_path = pem_file_path.strip()
     pem_file_path = os.path.expanduser(pem_file_path)  # expand ~user
 
+    if os.path.isdir(pem_file_path):
+        print "We mean the path to (including the file name)."
+        print "You have entered a directory, but no file name: {0}".format(
+            pem_file_path)
+        sys.exit(1)
+
     if not os.path.exists(pem_file_path):
-        print "Nope. This file cannot be found: {pem_file_path}".format(
-            pem_file_path=pem_file_path)
+        print "Nope. This file cannot be found: {0}".format(pem_file_path)
         sys.exit(1)
 
     print "\nWhat user to use to ssh to the remote system [ec2-user]?"
