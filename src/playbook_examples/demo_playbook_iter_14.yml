@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  tasks:
+  - name: Does super crude but simple lock file exist
+    shell: ls /tmp/super_crude_lock
+    ignore_errors: true
+    register: super_crude_lock
+  - name: Predict this output
+    debug: msg="Fizz"
+    when: super_crude_lock|success
+  - name: Make super crude lock file
+    shell: touch /tmp/super_crude_lock
+  - name: Or maybe this output
+    debug: msg="Buzz"
+    when: super_crude_lock|failed

@@ -1,0 +1,55 @@
+prompt> ansible-playbook demo_playbook_iter_14.yml
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Does super crude but simple lock file exist] *************************** 
+failed: [demos.glenjarvis.com] => {"changed": true, "cmd": "ls /tmp/super_crude_lock", "delta": "0:00:00.002932", "end": "2014-08-09 18:40:32.231896", "rc": 2, "start": "2014-08-09 18:40:32.228964"}
+stderr: ls: cannot access /tmp/super_crude_lock: No such file or directory
+...ignoring
+
+TASK: [Predict this output] *************************************************** 
+skipping: [demos.glenjarvis.com]
+
+TASK: [Make super crude lock file] ******************************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [Or maybe this output] ************************************************** 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Buzz"
+}
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=4    changed=2    unreachable=0    failed=0   
+
+
+
+
+
+
+prompt> ansible-playbook demo_playbook_iter_14.yml
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Does super crude but simple lock file exist] *************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [Predict this output] *************************************************** 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Fizz"
+}
+
+TASK: [Make super crude lock file] ******************************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [Or maybe this output] ************************************************** 
+skipping: [demos.glenjarvis.com]
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=4    changed=2    unreachable=0    failed=0   
+
