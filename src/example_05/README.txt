@@ -1,19 +1,20 @@
-You should now be able to execute commands on all your "webservers" at once (in
-our example, it will just be the host. This command will upgrade the Operating
-System packages for all of your machines.
+You should be able to ping your "webservers" (the host that you previously
+configured). Just run this command from the this directory.
 
-Here is the command that should ping your webservers. Just run this command
-from this directory:
+Remember, you'll need to have ansible installed in your Python environment.
+This can be done by "pip install ansible==1.6.3"
 
-ansible webservers -a 'sudo yum update -y'
+Here is the command that should ping your webservers:
+
+    ansible -m ping webservers
 
 To get more verbose output, use the `-v` (verbose) option, which can be
 specified multiple times.
 
 Try:
 
-    ansible webservers -vv -a 'sudo yum update -y'
+    ansible -vv -m ping webservers
 
 or:
 
-    ansible webservers -vvv -a 'sudo yum update -y'
+    ansible -vvv -m ping webservers
