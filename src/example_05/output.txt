@@ -1,31 +1,31 @@
 With no verbose output:
 
-prompt> ansible webservers -a 'sudo yum update -y'
-demos.glenjarvis.com | success | rc=0 >>
-Loaded plugins: priorities, update-motd, upgrade-helper
-No packages marked for update
+prompt> ansible -m 'ping' webservers
+demos.glenjarvis.com | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
 
 ========================================
 With two levels of verbosity:
 
-prompt> ansible webservers -vv -a 'sudo yum update -y'
-
-<demos.glenjarvis.com> REMOTE_MODULE command sudo yum update -y
-demos.glenjarvis.com | success | rc=0 >>
-Loaded plugins: priorities, update-motd, upgrade-helper
-No packages marked for update
+prompt> ansible -vv -m ping webservers >> output.txt 
+<demos.glenjarvis.com> REMOTE_MODULE ping
+demos.glenjarvis.com | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
 
 ========================================
 With three levels of verbosity:
 
-prompt> ansible webservers -vvv -a 'sudo yum update -y'
-
+prompt> ansible -vvv -m ping webservers >> output.txt 
 <demos.glenjarvis.com> ESTABLISH CONNECTION FOR USER: ec2-user
-<demos.glenjarvis.com> REMOTE_MODULE command sudo yum update -y
-<demos.glenjarvis.com> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/Users/glenjarvis/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'IdentityFile=/Users/glenjarvis/example_key.pem', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'User=ec2-user', '-o', 'ConnectTimeout=10', 'demos.glenjarvis.com', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875 && echo $HOME/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875'"]
-<demos.glenjarvis.com> PUT /var/folders/35/lz6t83p56nd8td64ghzt12tm0000gn/T/tmpz25TOk TO /home/ec2-user/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875/command
-<demos.glenjarvis.com> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/Users/glenjarvis/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'IdentityFile=/Users/glenjarvis/example_key.pem', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'User=ec2-user', '-o', 'ConnectTimeout=10', 'demos.glenjarvis.com', u"/bin/sh -c 'LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 /usr/bin/python /home/ec2-user/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875/command; rm -rf /home/ec2-user/.ansible/tmp/ansible-tmp-1404064261.51-169185352229875/ >/dev/null 2>&1'"]
-demos.glenjarvis.com | success | rc=0 >>
-Loaded plugins: priorities, update-motd, upgrade-helper
-No packages marked for update
-
+<demos.glenjarvis.com> REMOTE_MODULE ping
+<demos.glenjarvis.com> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/Users/glenjarvis/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'IdentityFile=/Users/glenjarvis/example_key.pem', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'User=ec2-user', '-o', 'ConnectTimeout=10', 'demos.glenjarvis.com', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241 && echo $HOME/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241'"]
+<demos.glenjarvis.com> PUT /var/folders/35/lz6t83p56nd8td64ghzt12tm0000gn/T/tmplJepEm TO /home/ec2-user/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241/ping
+<demos.glenjarvis.com> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/Users/glenjarvis/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'IdentityFile=/Users/glenjarvis/example_key.pem', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'User=ec2-user', '-o', 'ConnectTimeout=10', 'demos.glenjarvis.com', u"/bin/sh -c 'LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 /usr/bin/python /home/ec2-user/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241/ping; rm -rf /home/ec2-user/.ansible/tmp/ansible-tmp-1404064070.59-181163338267241/ >/dev/null 2>&1'"]
+demos.glenjarvis.com | success >> {
+    "changed": false, 
+    "ping": "pong"
+}

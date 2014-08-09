@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  tasks:
+  - name: Predict this output
+    debug: msg="Fizz"
+    when: false
+  - name: Or maybe this output
+    debug: msg="Buzz"
+    when: true

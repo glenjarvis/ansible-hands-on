@@ -1,0 +1,197 @@
+demos.glenjarvis.com | success >> {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.31.32.143"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::10d1:4eff:fee8:ea70"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "06/02/2014", 
+        "ansible_bios_version": "4.2.amazon", 
+        "ansible_cmdline": {
+            "console": "ttyS0", 
+            "root": "LABEL=/"
+        }, 
+        "ansible_date_time": {
+            "date": "2014-08-09", 
+            "day": "09", 
+            "epoch": "1407606310", 
+            "hour": "17", 
+            "iso8601": "2014-08-09T17:45:10Z", 
+            "iso8601_micro": "2014-08-09T17:45:10.102078Z", 
+            "minute": "45", 
+            "month": "08", 
+            "second": "10", 
+            "time": "17:45:10", 
+            "tz": "UTC", 
+            "tz_offset": "+0000", 
+            "weekday": "Saturday", 
+            "year": "2014"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "172.31.32.143", 
+            "alias": "eth0", 
+            "gateway": "172.31.32.1", 
+            "interface": "eth0", 
+            "macaddress": "12:d1:4e:e8:ea:70", 
+            "mtu": 9001, 
+            "netmask": "255.255.240.0", 
+            "network": "172.31.32.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "xvda": {
+                "holders": [], 
+                "host": "", 
+                "model": null, 
+                "partitions": {
+                    "xvda1": {
+                        "sectors": "16773087", 
+                        "sectorsize": 512, 
+                        "size": "8.00 GB", 
+                        "start": "4096"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "0", 
+                "scheduler_mode": "noop", 
+                "sectors": "16777216", 
+                "sectorsize": "512", 
+                "size": "8.00 GB", 
+                "support_discard": "0", 
+                "vendor": null
+            }
+        }, 
+        "ansible_distribution": "Amazon", 
+        "ansible_distribution_major_version": "NA", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "2014.03", 
+        "ansible_domain": "ec2.internal", 
+        "ansible_env": {
+            "AWS_AUTO_SCALING_HOME": "/opt/aws/apitools/as", 
+            "AWS_CLOUDWATCH_HOME": "/opt/aws/apitools/mon", 
+            "AWS_ELB_HOME": "/opt/aws/apitools/elb", 
+            "AWS_IAM_HOME": "/opt/aws/apitools/iam", 
+            "AWS_PATH": "/opt/aws", 
+            "AWS_RDS_HOME": "/opt/aws/apitools/rds", 
+            "EC2_AMITOOL_HOME": "/opt/aws/amitools/ec2", 
+            "EC2_HOME": "/opt/aws/apitools/ec2", 
+            "HOME": "/home/ec2-user", 
+            "JAVA_HOME": "/usr/lib/jvm/jre", 
+            "LANG": "en_US.UTF-8", 
+            "LC_CTYPE": "en_US.UTF-8", 
+            "LESSOPEN": "|/usr/bin/lesspipe.sh %s", 
+            "LESS_TERMCAP_mb": "\u001b[01;31m", 
+            "LESS_TERMCAP_md": "\u001b[01;38;5;208m", 
+            "LESS_TERMCAP_me": "\u001b[0m", 
+            "LESS_TERMCAP_se": "\u001b[0m", 
+            "LESS_TERMCAP_ue": "\u001b[0m", 
+            "LESS_TERMCAP_us": "\u001b[04;38;5;111m", 
+            "LOGNAME": "ec2-user", 
+            "MAIL": "/var/mail/ec2-user", 
+            "PATH": "/usr/local/bin:/bin:/usr/bin:/opt/aws/bin", 
+            "PWD": "/home/ec2-user", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "2", 
+            "SSH_CLIENT": "205.179.122.158 64198 22", 
+            "SSH_CONNECTION": "205.179.122.158 64198 172.31.32.143 22", 
+            "SSH_TTY": "/dev/pts/0", 
+            "TERM": "xterm-256color", 
+            "USER": "ec2-user", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "ipv4": {
+                "address": "172.31.32.143", 
+                "netmask": "255.255.240.0", 
+                "network": "172.31.32.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::10d1:4eff:fee8:ea70", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "12:d1:4e:e8:ea:70", 
+            "mtu": 9001, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "ip-172-31-32-143.ec2.internal", 
+        "ansible_hostname": "ip-172-31-32-143", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_kernel": "3.10.42-52.145.amzn1.x86_64", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 660, 
+        "ansible_memtotal_mb": 996, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/xvda1", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,noatime,data=ordered", 
+                "size_available": 7000489984, 
+                "size_total": 8318783488
+            }
+        ], 
+        "ansible_nodename": "ip-172-31-32-143", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_processor": [
+            "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 1, 
+        "ansible_product_name": "HVM domU", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "4.2.amazon", 
+        "ansible_python_version": "2.6.9", 
+        "ansible_selinux": false, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAPKNrrpNyY0twmlLZAfzy/o7oYZgn5XbcORuOYJFpsOBrN7eiDlXiRIdmQgnPVCVFoXP1ewAggI8mzS+lgTpSeRSCL8GhMg5EKQ+Ls2bhwLE5KFi9iuVx9yKDCp5Y2Q00tB1BtFZvqwcq5kNxJEKZK49NOHi9oSwjDGNA4IvuhTtAAAAFQCLAezXZOvr+WPNWzr3ozEU3CZq1wAAAIEAzSBJ0hcNc5yX+C77a7xvUQG8VUteov52pafwnDHpdOqbeb6cBXuw5la+H3YwZ2j9bmbUWdqs6yg5Wz5dCCcS8aaTT4DEXBzyy5BrTOiDXwpEI8brn9S1UzvQEJ3Ynq31U+UqI2rhd5mXYBwKECDnG8ajNOSgQdgi+npc7wxUg4UAAACBALocQ0zd/uxVkbasCmU2rXIMysY2qPTwAN8pWMC+9RRJRHqx8wWnmD0VHT40x/SyWViSX4pTegcxL4/PgLvoSKEVbS7ZXKyry1kbx19idGaghbTDl5Ro6GJNK3eNiW7+RUhWADzCpv01SDPOz0TqPgLlPbV1Qt2ZxB63Lfb62uxi", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBc+FdRAxPpnVTEMRXNjzKyRoZJrD9ywmyEI+HI21SZpjkb3MMVNdBBudT/ZhBWq+KYnVW2UoDjfJoURRHmE7eM=", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDNZWeXjOhc5Ob3e2ppf+ZaDtcycZvpLOTulBAjg+D9deTkaAJSY8NFnsnhGfB24v+YXFYv56X59cHdcFhBfXdPZ4BPhCAMk2EAg2dWK5NrrGc6/DIldufir4qyU6Qo8gDmCGEZziEDjlVSQMNHcFvseSzAXXk4WdC7BRLJDAyMvzd2V7GNIqmsyURuy0/aXq5GIgbPkdoo64417AsYEyDytRbGgyBywhsK5IswWdsIo6oTM1JopOYAHPCJVgrjFiidJQHWXi334hRAoXoGNRKdMS3SSp5vkNP/4PmJV5ElJoDs8fFyh5BFa0HVMxgmfwzuo3mVRiMdwExu+74yRTh3", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Xen", 
+        "ansible_user_id": "ec2-user", 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "xen", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+

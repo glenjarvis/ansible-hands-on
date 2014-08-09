@@ -1,0 +1,33 @@
+prompt> ansible-playbook demo_playbook_iter_12.yml 
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Our previous example] ************************************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [Previous with filters] ************************************************* 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Return code was True"
+}
+
+TASK: [A failed example] ****************************************************** 
+failed: [demos.glenjarvis.com] => {"changed": true, "cmd": "ls /gobbledygook_file_that_does_not_exist", "delta": "0:00:00.003002", "end": "2014-08-09 18:22:50.699344", "rc": 2, "start": "2014-08-09 18:22:50.696342"}
+stderr: ls: cannot access /gobbledygook_file_that_does_not_exist: No such file or directory
+...ignoring
+
+TASK: [Failed with success filter] ******************************************** 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Was it successful? False"
+}
+
+TASK: [Failed with failure filter] ******************************************** 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Did it fail? True"
+}
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=6    changed=2    unreachable=0    failed=0   
+

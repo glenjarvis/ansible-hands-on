@@ -1,0 +1,39 @@
+prompt> ansible-playbook demo_playbook_iter_11.yml
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Show how variables can be registered] ********************************** 
+changed: [demos.glenjarvis.com]
+
+TASK: [What got saved] ******************************************************** 
+ok: [demos.glenjarvis.com] => {
+    "pwd_output": {
+        "changed": true, 
+        "cmd": "pwd", 
+        "delta": "0:00:00.002117", 
+        "end": "2014-08-09 18:13:43.257525", 
+        "invocation": {
+            "module_args": "pwd", 
+            "module_name": "shell"
+        }, 
+        "rc": 0, 
+        "start": "2014-08-09 18:13:43.255408", 
+        "stderr": "", 
+        "stdout": "/home/ec2-user", 
+        "stdout_lines": [
+            "/home/ec2-user"
+        ]
+    }
+}
+
+TASK: [The return code] ******************************************************* 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Return code was 0"
+}
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=4    changed=1    unreachable=0    failed=0   
+
