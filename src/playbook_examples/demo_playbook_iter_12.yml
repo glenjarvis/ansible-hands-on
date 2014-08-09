@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  tasks:
+  - name: Our previous example
+    shell: pwd
+    register: pwd_output
+  - name: Previous with filters
+    debug: msg="Return code was {{ pwd_output|success }}"
+  - name: A failed example
+    shell: ls /gobbledygook_file_that_does_not_exist
+    register: bad_file_example
+    ignore_errors: true
+  - name: Failed with success filter
+    debug: msg="Was it successful? {{ bad_file_example|success }}"
+  - name: Failed with failure filter
+    debug: msg="Did it fail? {{ bad_file_example|failed }}"
