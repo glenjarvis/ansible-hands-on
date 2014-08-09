@@ -1,0 +1,18 @@
+prompt> ansible-playbook demo_playbook_iter_13.yml
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Predict this output] *************************************************** 
+skipping: [demos.glenjarvis.com]
+
+TASK: [Or maybe this output] ************************************************** 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Buzz"
+}
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=2    changed=0    unreachable=0    failed=0   
+
