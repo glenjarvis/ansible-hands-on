@@ -1,0 +1,20 @@
+prompt> ansible-playbook demo_playbook_iter_10.yml 
+
+PLAY [webservers] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [demos.glenjarvis.com]
+
+TASK: [Show how errors can be ignored] **************************************** 
+failed: [demos.glenjarvis.com] => {"changed": true, "cmd": "ls /gobbledygook_file_that_does_not_exist", "delta": "0:00:00.002615", "end": "2014-08-09 18:02:15.869526", "rc": 2, "start": "2014-08-09 18:02:15.866911"}
+stderr: ls: cannot access /gobbledygook_file_that_does_not_exist: No such file or directory
+...ignoring
+
+TASK: [Another simple command] ************************************************ 
+ok: [demos.glenjarvis.com] => {
+    "msg": "Do you see this?"
+}
+
+PLAY RECAP ******************************************************************** 
+demos.glenjarvis.com       : ok=3    changed=1    unreachable=0    failed=0   
+
