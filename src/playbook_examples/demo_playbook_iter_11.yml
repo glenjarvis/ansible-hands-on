@@ -6,7 +6,7 @@
     register: pwd_output
   - name: What got saved
     debug: var=pwd_output
-  - name: The return code
+  - name: Show the return code stored in the pwd_output variable
     debug: msg="Return code was {{ pwd_output['rc'] }}"
-  - name: The output was this
-    debug: msg="The output was {{ pwd_output['stdout'] }}"
+  - name: Show the standard output (stdout) stored in the pwd_output variable
+    debug: msg="The standard output (stdout) was {{ pwd_output['stdout'] }}"
