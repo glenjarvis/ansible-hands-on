@@ -3,15 +3,30 @@
 
 ## Videos of Talk
 
-* 26-June, 2014 ([Bay Area Python Interest Group (BayPIGgies)/Silicon Valley Python MeetUp Video](https://plus.google.com/hangouts/onair/watch?hid=hoaevent%2Fcf7vrv1f9q5e8bojpslfjjen8gk&ytl=ptzruazbRXY&hl=en)
+### Prerequisite Talks
+
+* [Building an AWS Instance](https://www.youtube.com/watch?v=tmNgXQXkpWs)
+
+
+### Slow Walkthrough
+
+Same material / Digestible pace / Longer Video:
+
+* 9-Aug, 2014 [Hands-On Training](https://www.youtube.com/watch?v=w8fOEEMqpOw)
+
+
+### Fast Overview
+
+Same material / Quickly covered / Shorter Video:
+
+* 26-June, 2014 [Bay Area Python Interest Group (BayPIGgies)/Silicon Valley Python MeetUp Video](https://plus.google.com/hangouts/onair/watch?hid=hoaevent%2Fcf7vrv1f9q5e8bojpslfjjen8gk&ytl=ptzruazbRXY&hl=en)
 
 
 ## Practice Sessions
 
 * Hands-On Training: 
-  - Next Session:
-    - 9-Aug, 2014
-    - http://www.meetup.com/silicon-valley-python/events/196944262/
+  - No sessions currently scheduled
+
 
 ## Talk description
 As we have seen with the previous talk, "Red Pill, Blue Pill Virtual Machines
