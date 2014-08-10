@@ -8,3 +8,5 @@
     debug: var=pwd_output
   - name: The return code
     debug: msg="Return code was {{ pwd_output['rc'] }}"
+  - name: The output was this
+    debug: msg="The output was {{ pwd_output['stdout'] }}"
