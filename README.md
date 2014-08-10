@@ -189,7 +189,19 @@ FUNCTIONS
     
     configure_config()
         Assuming no ansible.cfg exists, ask questions and create a new one
-    
+
+    configure_hosts(hostfile)
+        Assuming no hostfile file exists, ask questions and create a new one
+
+    fix_pem_permissons(pem_file_path)
+        Forcefully fix the PEM file permissions
+
+        The largest problem that new users have when connecting ot their
+        first AWS instance is that the permissions on the *.pem key that
+        they downloaded is too permissive. It really isn't a *private* key
+        if anyone else on the system (group or other) can read the file.
+        Assuming no ansible.cfg exists, ask questions and create a new one
+
     configure_hosts(hostfile)
         Assuming no hostfile file exists, ask questions and create a new one
     
@@ -209,7 +221,7 @@ FUNCTIONS
     get_configured_hosts()
         Read the ansible.cfg file and parse hostfile pathname
     
-    write_ansible_cfg_file(pem_file_path)
+    write_ansible_cfg_file(pem_file_path, user)
         Given a validated pem_file_path, write the ansible configuration file
 
 DATA
