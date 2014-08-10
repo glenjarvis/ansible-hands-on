@@ -219,7 +219,7 @@ FUNCTIONS
     fix_pem_permissons(pem_file_path)
         Forcefully fix the PEM file permissions
 
-        The larest problem that new users have when connecting ot their
+        The largest problem that new users have when connecting ot their
         first AWS instance is that the permissions on the *.pem key that
         they downloaded is too permissive. It really isn't a *private* key
         if anyone else on the system (group or other) can read the file.
