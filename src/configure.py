@@ -77,7 +77,10 @@ def configure_config():
         print "Nope. This file cannot be found: {0}".format(pem_file_path)
         sys.exit(1)
 
-    print "\nWhat user to use to ssh to the remote system [ec2-user]?"
+    print """\nYou are now being given the opportunity of over-riding
+    the 'ec2-user' default user name.  Unless you know what you are doing,
+    and specifically want to change the user name, please just hit the 
+    <Enter> key without making any other entry."""
     user = raw_input('--> ') or 'ec2-user'
     user = user.strip()
 
