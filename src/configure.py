@@ -77,7 +77,8 @@ def configure_config():
         print "Nope. This file cannot be found: {0}".format(pem_file_path)
         sys.exit(1)
 
-    print "\nWhat user to use to ssh to the remote system?\nIf no user is specified, ec2-user will be chosen as user."
+    print "\nWhat user to use to ssh to the remote system?"
+    print "\nIf no user is specified, ec2-user will be chosen as user."
     user = raw_input('--> ') or 'ec2-user'
     user = user.strip()
 
