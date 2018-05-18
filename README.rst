@@ -284,9 +284,9 @@ Journals) <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2896197/>`_ He is a
 certified DBA and has also been certified in Linux/Unix Administration.
 
 He is a DevOps engineer and uses `Ansible <http://www.ansible.com/home>`__
-heavily. He just finished working for a startup after 5 years. He is creating a
-Coursera course in collaboration with a UC campus on Source Code Mangement
-Systems for the DevOps developer.
+heavily. After five years, he just finished working for a startup. He is
+creating a Coursera course in collaboration with a UC campus on Source Code
+Mangement Systems for the DevOps developer.
 
 Additionally, he runs a small start up, `Glen Jarvis Training & Consulting, LLC
 <http://glenjarvis.com/>`_, that does online technical training and assists
