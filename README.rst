@@ -296,11 +296,16 @@ Glen is the organizer for the `Silicon Valley Python MeetUp
 Group <http://www.meetup.com/silicon-valley-python/>`_ and a co-organizer of the
 `Bay Area Python Interest Group <http://baypiggies.net/>`_.
 
-`GitHub <https://github.com/glenjarvis/>`__
+More information:
 
-`Google+ <https://plus.google.com/u/0/+GlenJarvis/posts>`_
+* `GlenJarvis.com <https://glenjarvis.com>`_
 
-`LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
+* `GitHub <https://github.com/glenjarvis/>`__
+
+* `Google+ <https://plus.google.com/u/0/+GlenJarvis/posts>`_
+
+* `LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
+
 
 
 
