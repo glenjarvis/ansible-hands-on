@@ -254,7 +254,7 @@ two courses:
    Coursera link here in these Guidelines.
 
 *  An OnLine course "How to Contribute to Open Source Projects" at
-   https://GlenJarvis.com/v/contribute-open-source. This course isn't yet
+   https://GlenJarvis.com/v/how-to-open-source. This course isn't yet
    finished. Email glen@glenjarvis.com for an early adoptor invitation.
 
 If you don't understand all of the following, you should take one of these
