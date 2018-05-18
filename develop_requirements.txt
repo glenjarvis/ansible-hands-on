@@ -1,4 +1,4 @@
-ansible
+ansible==2.5.3
 pip==10.0.1
 wheel==0.31.1
 watchdog==0.8.3
