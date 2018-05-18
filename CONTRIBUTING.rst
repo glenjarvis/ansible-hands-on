@@ -8,17 +8,26 @@ Ready to contribute? Your contributions are very much welcomed and credit will
 be given. These Guidelines will help you effectively contribute to this project
 and guide you to successfully merged Pull Requests.
 
+If you haven't contributed to an Open Source project before, these Guidelines
+may feel intimidating - there may be a lot of things here you hadn't heard about
+(like TDD, rebases, tox, Travis, etc.). Consider taking my online course `How to
+contribute to an Open Source Project
+<https://GlenJarvis.com/v/how-to-open-source>`_.
+
 Here's how to set up the **ansible_tutorial** for local development.
 
 
 Getting Started!
 ----------------
 
-This repository is in standard wheel format so it can be used like a normal Python Package. However, if you follow these instructions, you can avoid having your python environment look like this:
+This repository is in standard wheel format so it can be used like a normal
+Python Package. However, if you follow these instructions, you can avoid having
+your python environment look like this:
 
 .. image:: https://imgs.xkcd.com/comics/python_environment.png
 
-If you need help with background knowledge, see online training video: https://GlenJarvis.com/v/virtual-environments.
+If you need help with background knowledge, see online training video:
+https://GlenJarvis.com/v/virtual-environments.
 
 1. Find a place to work::
 
@@ -165,8 +174,12 @@ Extra Code Style
   smaller functions/methods whenever possible.
 
 * The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy.
-  Check https://travis-ci.org/glenjarvis/ansible_tutorial/pull_requests and make sure that the tests pass
-  for all supported Python versions.
+  Either run `tox` locally, or check
+  https://travis-ci.org/glenjarvis/ansible_tutorial/pull_requests and make sure
+  that the tests pass for all supported Python versions::
+
+      $ tox
+
 
 * Follow the Zen::
 
@@ -219,7 +232,7 @@ Tips and Tricks
 Commit Guidelines
 -----------------
 
-All commits should follow `The seven rules of a great Git commit
+All commits should follow `the seven rules of a great Git commit
 <https://chris.beams.io/posts/git-commit/>`_
 
 
@@ -241,7 +254,7 @@ two courses:
    Coursera link here in these Guidelines.
 
 *  An OnLine course "How to Contribute to Open Source Projects" at
-   https://GlenJarvis.com/v/contribute-open-source. This course isn't yet
+   https://GlenJarvis.com/v/how-to-open-source. This course isn't yet
    finished. Email glen@glenjarvis.com for an early adoptor invitation.
 
 If you don't understand all of the following, you should take one of these

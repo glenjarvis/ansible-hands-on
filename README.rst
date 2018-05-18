@@ -29,6 +29,14 @@ Project and Build Status
       :target: https://ci.appveyor.com/project/glenjarvis/ansible_tutorial/branch/master
       :alt: Windows build status on Appveyor
 
+**This Repository is now out of date**. This was written against an older
+version of Ansible. The build looks like it passes, but that is because this is
+out of date. I am writing this note on 18-May, 2018 and hope to get to upgrading
+this repository to work with current versions of Ansible. This issue tracks:
+
+https://github.com/glenjarvis/ansible_tutorial/issues/78
+
+
 * GitHub repo: https://github.com/glenjarvis/ansible_tutorial/
 * Documentation: `Read The Docs <https://ansible_tutorial.readthedocs.io/>`_
 * Free software: `LICENSE <https://github.com/glenjarvis/ansible_tutorial/blob/master/LICENSE>`_
@@ -93,7 +101,7 @@ Talk description
 As we have seen with the previous talk, "Red Pill, Blue Pill Virtual Machines
 and Virtual Environments" (`GitHub
 <https://github.com/glenjarvis/red-pill-blue-pill>`_ / `YouTube
-<https://www.youtube.com/watch?v=xZb3cr1JrMg>`), we can create virtual machines
+<https://www.youtube.com/watch?v=xZb3cr1JrMg>`_), we can create virtual machines
 in the cloud.
 
 But, how do you "stamp" those machines differently? If you need to build a web
@@ -132,7 +140,7 @@ seconded machine with a few keystrokes.
 
 P.S. If you haven't previously built an `Amazon Web Instance
 <http://aws.amazon.com/>`_, I highly recommend `watching this video
-<https://www.youtube.com/watch?v=xZb3cr1JrMg>`_ in advance of the talk.
+<https://www.youtube.com/watch?v=tmNgXQXkpWs>`_ in advance of the talk.
 
 
 Getting Started (Installing and following-along)
@@ -148,7 +156,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
 1. Clone this repo.
 
-   ::code: bash
+   ..code:: bash
 
        $ git clone https://github.com/glenjarvis/ansible_tutorial.git
        Cloning into 'ansible_tutorial'...
@@ -172,7 +180,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 3. Activate the Virtual Enviroment. Every time you come back to work on this
    project, you will need to activate your virtual environment::
 
-       $ cd full_path_of_this_repo
+       $ cd full_path_to_this_repo
        $ source venv/bin/activate
 
    When the Virtual Environment is activated, you should see ``venv`` in the
@@ -187,7 +195,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
    .. code-block:: bash
 
-       function cd-ansible_tutorial {
+       function cd_ansible_tutorial {
            deactivate 2> /dev/null
            cd /FULL_PATH_TO_THIS_DIRECTORY
            source venv/bin/activate
@@ -268,17 +276,17 @@ order the examples should be executed:
 Bio
 ---
 
-Glen has been a full-time Python programmer since 2007 and has worked for
-companies such as IBM, UC Berkeley, Sprint, Informix, and many small start-ups.
+Glen has been a Python programmer since 2007 and has worked for
+companies such as IBM, UC Berkeley, Sprint, Informix, and many start-ups.
 He has also worked both in the US and in the UK and has had Bioinformatics
 research published in `Nucleic Acids Research (Oxford
 Journals) <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2896197/>`_ He is a
 certified DBA and has also been certified in Linux/Unix Administration.
 
 He is a DevOps engineer and uses `Ansible <http://www.ansible.com/home>`__
-heavily. He just finished working for a startup after 5 years. He is creating a
-Coursera course in collaboration with a UC campus on Source Code Mangement
-Systems for the DevOps developer.
+heavily. After five years, he just finished working for a startup. He is
+creating a Coursera course in collaboration with a UC campus on Source Code
+Mangement Systems for the DevOps developer.
 
 Additionally, he runs a small start up, `Glen Jarvis Training & Consulting, LLC
 <http://glenjarvis.com/>`_, that does online technical training and assists
@@ -288,11 +296,16 @@ Glen is the organizer for the `Silicon Valley Python MeetUp
 Group <http://www.meetup.com/silicon-valley-python/>`_ and a co-organizer of the
 `Bay Area Python Interest Group <http://baypiggies.net/>`_.
 
-`GitHub <https://github.com/glenjarvis/>`__
+More information:
 
-`Google+ <https://plus.google.com/u/0/+GlenJarvis/posts>`_
+* `GlenJarvis.com <https://glenjarvis.com>`_
 
-`LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
+* `GitHub <https://github.com/glenjarvis/>`__
+
+* `Google+ <https://plus.google.com/u/0/+GlenJarvis/posts>`_
+
+* `LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
+
 
 
 
