@@ -156,7 +156,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
 1. Clone this repo.
 
-   ::code: bash
+   ..code:: bash
 
        $ git clone https://github.com/glenjarvis/ansible_tutorial.git
        Cloning into 'ansible_tutorial'...
