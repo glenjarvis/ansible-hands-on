@@ -195,7 +195,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
    .. code-block:: bash
 
-       function cd-ansible_tutorial {
+       function cd_ansible_tutorial {
            deactivate 2> /dev/null
            cd /FULL_PATH_TO_THIS_DIRECTORY
            source venv/bin/activate
