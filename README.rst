@@ -277,7 +277,7 @@ Bio
 ---
 
 Glen has been a Python programmer since 2007 and has worked for
-companies such as IBM, UC Berkeley, Sprint, Informix, and many small start-ups.
+companies such as IBM, UC Berkeley, Sprint, Informix, and many start-ups.
 He has also worked both in the US and in the UK and has had Bioinformatics
 research published in `Nucleic Acids Research (Oxford
 Journals) <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2896197/>`_ He is a
