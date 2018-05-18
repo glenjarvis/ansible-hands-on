@@ -20,8 +20,8 @@ Project and Build Status
      :target: https://pyup.io/repos/github/glenjarvis/ansible_tutorial/
      :alt: Python 3
 
-.. image:: https://readthedocs.org/projects/test-20180517-03/badge/?version=latest
-     :target: http://test-20180517-03.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/ansible_tutorial/badge/?version=latest
+     :target: http://ansible_tutorial.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
 .. There is currently a problem at Appveyor
