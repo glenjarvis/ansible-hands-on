@@ -101,7 +101,7 @@ Talk description
 As we have seen with the previous talk, "Red Pill, Blue Pill Virtual Machines
 and Virtual Environments" (`GitHub
 <https://github.com/glenjarvis/red-pill-blue-pill>`_ / `YouTube
-<https://www.youtube.com/watch?v=xZb3cr1JrMg>`), we can create virtual machines
+<https://www.youtube.com/watch?v=xZb3cr1JrMg>`_), we can create virtual machines
 in the cloud.
 
 But, how do you "stamp" those machines differently? If you need to build a web
