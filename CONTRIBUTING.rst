@@ -20,11 +20,14 @@ Here's how to set up the **ansible_tutorial** for local development.
 Getting Started!
 ----------------
 
-This repository is in standard wheel format so it can be used like a normal Python Package. However, if you follow these instructions, you can avoid having your python environment look like this:
+This repository is in standard wheel format so it can be used like a normal
+Python Package. However, if you follow these instructions, you can avoid having
+your python environment look like this:
 
 .. image:: https://imgs.xkcd.com/comics/python_environment.png
 
-If you need help with background knowledge, see online training video: https://GlenJarvis.com/v/virtual-environments.
+If you need help with background knowledge, see online training video:
+https://GlenJarvis.com/v/virtual-environments.
 
 1. Find a place to work::
 
