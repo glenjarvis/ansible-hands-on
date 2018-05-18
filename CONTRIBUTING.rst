@@ -232,7 +232,7 @@ Tips and Tricks
 Commit Guidelines
 -----------------
 
-All commits should follow `The seven rules of a great Git commit
+All commits should follow `the seven rules of a great Git commit
 <https://chris.beams.io/posts/git-commit/>`_
 
 
