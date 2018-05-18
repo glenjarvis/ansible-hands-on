@@ -268,7 +268,7 @@ order the examples should be executed:
 Bio
 ---
 
-Glen has been a full-time Python programmer since 2007 and has worked for
+Glen has been a Python programmer since 2007 and has worked for
 companies such as IBM, UC Berkeley, Sprint, Informix, and many small start-ups.
 He has also worked both in the US and in the UK and has had Bioinformatics
 research published in `Nucleic Acids Research (Oxford
