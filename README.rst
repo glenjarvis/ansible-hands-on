@@ -140,7 +140,7 @@ seconded machine with a few keystrokes.
 
 P.S. If you haven't previously built an `Amazon Web Instance
 <http://aws.amazon.com/>`_, I highly recommend `watching this video
-<https://www.youtube.com/watch?v=xZb3cr1JrMg>`_ in advance of the talk.
+<https://www.youtube.com/watch?v=tmNgXQXkpWs>`_ in advance of the talk.
 
 
 Getting Started (Installing and following-along)
