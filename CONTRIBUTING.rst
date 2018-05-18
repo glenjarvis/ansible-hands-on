@@ -8,6 +8,12 @@ Ready to contribute? Your contributions are very much welcomed and credit will
 be given. These Guidelines will help you effectively contribute to this project
 and guide you to successfully merged Pull Requests.
 
+If you haven't contributed to an Open Source project before, these Guidelines
+may feel intimidating - there may be a lot of things here you hadn't heard about
+(like TDD, rebases, tox, Travis, etc.). Consider taking my online course `How to
+contribute to an Open Source Project
+<https://GlenJarvis.com/v/how-to-open-source>`_.
+
 Here's how to set up the **ansible_tutorial** for local development.
 
 
