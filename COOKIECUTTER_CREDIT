@@ -1,0 +1,34 @@
+Although all of the project code in this project is licensed with the
+LICENSE file, the following supporting files were generated from the
+cookiecutter template https://github.com/audreyr/cookiecutter-pypackage which is
+protected by another license:
+
++-- MANIFEST.in
++-- Makefile
++-- docs
+|   +-- Makefile
+|   +-- authors.rst
+|   +-- conf.py
+|   +-- contributing.rst
+|   +-- history.rst
+|   +-- index.rst
+|   +-- installation.rst
+|   +-- make.bat
+|   +-- readme.rst
+|   +-- usage.rst
++-- setup.cfg
++-- tox.ini
+
+Any file not listed above (except for README.rst and CONTRIBUTING.rst) was
+either never in the original cookiecutter template or was written in a "clean
+room" without influence from the code at
+https://github.com/audreyr/cookiecutter-pypackage
+
+Although the README.rst and CONTRIBUTING.rst files were freshly written, they
+were influenced by the original cookiecutter-pypackage template.
+
+The original Cookie Cutter Template can be found at:
+https://github.com/audreyr/cookiecutter-pypackage
+
+It's license can be found at:
+https://github.com/audreyr/cookiecutter-pypackage/blob/master/LICENSE

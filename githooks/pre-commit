@@ -1,0 +1,99 @@
+#!venv/bin/python
+
+"""
+Pre-Commit Git Hook to enforce coding and style standards
+
+This script assumes a Python virtual environment named (venv) was
+installed on the root level of this Git repository (as is described by
+the setup instructions). As Git will change the directory to the root
+of the directory when executing this script (ignoring bare repos which
+are not applicable to this GitHook), This will be the Python path being
+executed: `venv/bin/python`
+
+If you wish to contribute to this repository, you should enable this
+pre-hook script as described in the `CONTRIBUTING.md` file at the root
+level of this repository.
+"""
+
+# "pre-commit" filename name is a hard Git dependency
+# pylint: disable=invalid-name
+
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
+
+import re
+import subprocess
+
+
+PYLINT_RE = r'Your code has been rated at (\d+\.\d+)/10 .*'
+
+
+def lint_contents(filename):
+    """Execute pylint against filename and return results as list"""
+
+    output = []
+    with subprocess.Popen(["pylint", filename],
+                          stdout=subprocess.PIPE) as proc:
+        output += proc.stdout.read().decode("utf-8").strip().split('\n')
+    return output
+
+
+def lint_code(filename, lower_threshold):
+    """Lint filecontents with PyLint return appropriate error code
+
+    If lint result is less than lower_threshold, return 1
+    Otherwise, return 0
+    """
+
+    match = re.match(PYLINT_RE, lint_contents(filename)[-1])
+    return_code = 0
+    if lower_threshold < float(match.groups()[0]):
+        return_code = 0
+    else:
+        print("File '{}' did not pass pylint.".format(filename))
+        print("Run: 'pylint {}".format(filename))
+        return_code = 1
+
+    return return_code
+
+
+def check_codestyle(filename):
+    """Check file given by filename against pycodestyle process
+
+    If pycodestyle returns anything other than 0, then print an error
+    and command so that this can be checked before committed.
+    """
+
+    return_code = subprocess.call(["pycodestyle", filename])
+    if return_code != 0:
+        print("File '{}' did not pass pycodestyle check.".format(filename))
+        print("Run: 'pycodestyle {}".format(filename))
+
+    return return_code
+
+
+def check(line):
+    """If line contains a valid python filename that isn't deleted, check it"""
+
+    return_code = 0
+    if len(line) > 0:
+        action, filename = line.split("\t")
+        if filename.endswith(".py") and not action == "D":
+            return_code = check_codestyle(filename) + lint_code(filename, 9)
+    return return_code
+
+
+def main():
+    """Main entry point"""
+
+    filelist = subprocess.check_output(["git", "diff",
+                                        "--cached", "--name-status"])
+    return_code = 0
+    for line in filelist.decode("utf-8").strip().split('\n'):
+        return_code += check(line)
+    return return_code
+
+
+if __name__ == '__main__':
+    exit(main())
