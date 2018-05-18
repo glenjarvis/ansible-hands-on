@@ -2,6 +2,16 @@
 History
 =======
 
+
+release-1.3.0
+-------------
+
+New Features
+^^^^^^^^^^^^
+
+  * `Apply Cookiecutter template <https://github.com/glenjarvis/ansible_tutorial/pull/80>`_
+
+
 release-1.2.0
 -------------
 
@@ -11,7 +21,6 @@ New Features
 ^^^^^^^^^^^^
 
 Abe Young
-
 
   * `Update Hands on Training Schedule <https://github.com/glenjarvis/ansible_tutorial/pull/77>`_
      Thanks to `@alexKleider <https://github.com/AlexKleider>`_ for the merge
