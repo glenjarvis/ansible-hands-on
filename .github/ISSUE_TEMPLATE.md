@@ -1,15 +1,22 @@
-* ansible_tutorial version:
-* Python version:
+## Bug Report
+
+Details:
+
+* Commit: Output of `git log -n 1`:
+* Ansible version Output of `ansible --version`:
+* Python version `Output of python --version`:
 * Operating System:
 
-### Description
+### What did you expect?
 
-Describe what you were trying to get done.
-Tell us what happened, what went wrong, and what you expected to happen.
 
-### What I Did
+### What happened that contradicted that expectation?
+
+
+### Output of the problem.
 
 ```
-Paste the command(s) you ran and the output.
-If there was a crash, please include the traceback here.
+Copy and paste the output of what you are experiencing here.
 ```
+
+### Is there anythig else that you'd like to share?
