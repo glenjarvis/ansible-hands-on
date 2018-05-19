@@ -154,9 +154,9 @@ versions of Ansible. This issue tracks:
 https://github.com/glenjarvis/ansible_tutorial/issues/78
 
 
-1. Clone this repo.
+1. Clone this repo to the directory you would like to have your work in.
 
-   ..code:: bash
+   .. code-block:: bash
 
        $ git clone https://github.com/glenjarvis/ansible_tutorial.git
        Cloning into 'ansible_tutorial'...
@@ -180,14 +180,15 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 3. Activate the Virtual Enviroment. Every time you come back to work on this
    project, you will need to activate your virtual environment::
 
-       $ cd full_path_to_this_repo
+       $ cd <full path to this repo>
        $ source venv/bin/activate
 
    When the Virtual Environment is activated, you should see ``venv`` in the
    prompt. It may look something  to this::
 
        (venv) $
-
+   
+   (OPTIONAL)
    I often like to be able to jump to this folder quickly from
    anywhere and have it automatically setup my virtual environment.
    So, I put something like this in my ``$HOME/.bashrc`` (or equivalent)
