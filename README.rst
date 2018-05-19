@@ -180,7 +180,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 3. Activate the Virtual Enviroment. Every time you come back to work on this
    project, you will need to activate your virtual environment::
 
-       $ cd [full_path_to_this_repo]
+       $ cd <full path to this repo>
        $ source venv/bin/activate
 
    When the Virtual Environment is activated, you should see ``venv`` in the
