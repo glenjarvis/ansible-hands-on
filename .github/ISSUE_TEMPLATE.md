@@ -19,4 +19,4 @@ Details:
 Copy and paste the output of what you are experiencing here.
 ```
 
-### Is there anythig else that you'd like to share?
+### Is there anything else that you'd like to share?
