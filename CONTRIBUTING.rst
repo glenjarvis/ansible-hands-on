@@ -31,7 +31,7 @@ https://GlenJarvis.com/v/virtual-environments.
 
 1. Find a place to work::
 
-    $ cd path_where_you_want_this_repo
+    $ cd <path where you want this repo>
 
 2. Clone the project::
 
@@ -51,7 +51,7 @@ https://GlenJarvis.com/v/virtual-environments.
 4. Activate the Virtual Enviroment. Every time you come back to work on this
    project, you will need to activate your virtual environment::
 
-       $ cd path_of_this_repo
+       $ cd <path of this repo>
        $ source venv/bin/activate
 
    When the Virtual Environment is activated, you should see ``venv`` in the
@@ -59,6 +59,7 @@ https://GlenJarvis.com/v/virtual-environments.
 
        (venv) $
 
+   (OPTIONAL)
    I often like to be able to jump to this folder quickly from
    anywhere and have it automatically setup my virtual environment.
    So, I put something like this in my ``$HOME/.bashrc`` (or equivalent)
