@@ -3,7 +3,7 @@ pip==19.1
 wheel==0.33.4
 watchdog==0.9.0
 flake8==3.7.6
-tox==3.10.0
+tox==3.11.0
 coverage==4.5.3
 Sphinx==2.0.0
 twine==1.12.1
