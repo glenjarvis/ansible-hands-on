@@ -9,4 +9,4 @@ Sphinx==2.2.0
 twine==2.0.0
 rstcheck==3.3.1
 pycodestyle==2.5.0
-pylint==2.4.1
+pylint==2.4.2
