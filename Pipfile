@@ -4,10 +4,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+watchdog = "*"
+flake8 = "*"
+tox = "*"
+coverage = "*"
+sphinx = "*"
+twine = "*"
+rstcheck = "*"
+pycodestyle = "*"
+pylint = "*"
 
 [packages]
-ansible = "==2.8.6"
-tox = "==3.14.0"
-
-[requires]
-python_version = "3.7"
+ansible = "*"
