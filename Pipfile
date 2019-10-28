@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+watchdog = "*"
+flake8 = "*"
+tox = "*"
+coverage = "*"
+sphinx = "*"
+twine = "*"
+rstcheck = "*"
+pycodestyle = "*"
+pylint = "*"
+
+[packages]
+ansible = "*"
