@@ -1,5 +1,5 @@
 -i https://pypi.org/simple
-ansible==2.9.0
+ansible==2.9.1
 cffi==1.13.2
 cryptography==2.8
 jinja2==2.10.3
