@@ -24,18 +24,6 @@ Project and Build Status
      :target: http://ansible_tutorial.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
-.. There is currently a problem at Appveyor
-.. .. image:: https://ci.appveyor.com/api/projects/status/github/glenjarvis /ansible_tutorial?branch=master&svg=true
-      :target: https://ci.appveyor.com/project/glenjarvis/ansible_tutorial/branch/master
-      :alt: Windows build status on Appveyor
-
-**This Repository is now out of date**. This was written against an older
-version of Ansible. The build looks like it passes, but that is because this is
-out of date. I am writing this note on 18-May, 2018 and hope to get to upgrading
-this repository to work with current versions of Ansible. This issue tracks:
-
-https://github.com/glenjarvis/ansible_tutorial/issues/78
-
 
 * GitHub repo: https://github.com/glenjarvis/ansible_tutorial/
 * Documentation: `Read The Docs <https://ansible_tutorial.readthedocs.io/>`_
