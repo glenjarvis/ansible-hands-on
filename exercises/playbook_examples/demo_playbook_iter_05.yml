@@ -1,9 +1,0 @@
----
-- include: demo_playbook_iter_01.yml
-- hosts: webservers
-  vars:
-    our_desired_package_name: git
-  tasks:
-  - name: Install our needed packages for AWS Linux
-    yum: state=present name={{ our_desired_package_name }}
-    sudo: yes

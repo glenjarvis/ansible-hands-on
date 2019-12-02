@@ -1,0 +1,12 @@
+---
+- hosts: webservers
+  tasks:
+    - name: Show how variables can be registered
+      shell: pwd
+      register: pwd_output
+    - name: What got saved
+      debug: var=pwd_output
+    - name: Show the return code stored in the pwd_output variable
+      debug: msg="Return code was {{ pwd_output['rc'] }}"
+    - name: Show the standard output (stdout) stored in the pwd_output variable
+      debug: msg="The standard output (stdout) was {{ pwd_output['stdout'] }}"
