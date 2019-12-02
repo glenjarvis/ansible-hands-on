@@ -1,0 +1,24 @@
+---
+- hosts: demoserver
+  tasks:
+    - name: Ensure state before playbook starts
+      file:
+        path: /tmp/super_crude_lock
+        state: absent
+    - name: Does super crude but simple lock file exist
+      stat:
+        path: /tmp/super_crude_lock
+      register: super_crude_lock
+    - name: Predict this output
+      debug: msg="Fizz"
+      when: super_crude_lock.stat.exists
+    - name: Make super crude lock file
+      file:
+        path: /tmp/super_crude_lock
+        state: touch
+    - name: Are you sure?
+      debug: msg="Are you sure that super_crude_lock has checked state again?"
+      when: False
+    - name: Or maybe this output
+      debug: msg="Buzz"
+      when: super_crude_lock.stat.exists

@@ -1,5 +1,5 @@
 ---
-- import_playbook: ../014/demo_playbook_iter_05.yml our_desired_package_name=nginx
+- import_playbook: ../0104/playbook_0104.yml our_desired_package_name=nginx
 - hosts: demoserver
   vars:
      demo_message: 'Hello World (of course)'

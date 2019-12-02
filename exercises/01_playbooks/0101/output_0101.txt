@@ -1,0 +1,17 @@
+
+PLAY [demoserver] **************************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Make sure all OS patches are applied] ************************************************************************************
+[WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient you
+can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+changed: [demoserver.example.com]
+
+TASK [Install our needed packages for AWS Linux] *******************************************************************************
+changed: [demoserver.example.com]
+
+PLAY RECAP *********************************************************************************************************************
+demoserver.example.com     : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

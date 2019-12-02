@@ -1,0 +1,18 @@
+
+PLAY [demoserver] **************************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Show how errors can be ignored] ******************************************************************************************
+fatal: [demoserver.example.com]: FAILED! => {"changed": true, "cmd": "ls /gobbledygook_file_that_does_not_exist", "delta": "0:00:00.003404", "end": "2019-12-02 23:16:46.897571", "msg": "non-zero return code", "rc": 2, "start": "2019-12-02 23:16:46.894167", "stderr": "ls: cannot access /gobbledygook_file_that_does_not_exist: No such file or directory", "stderr_lines": ["ls: cannot access /gobbledygook_file_that_does_not_exist: No such file or directory"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [Another simple command] **************************************************************************************************
+ok: [demoserver.example.com] => {
+    "msg": "Do you see this?"
+}
+
+PLAY RECAP *********************************************************************************************************************
+demoserver.example.com     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+

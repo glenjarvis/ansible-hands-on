@@ -1,5 +1,5 @@
 ---
-- import_playbook: ../010/demo_playbook_iter_01.yml
+- import_playbook: ../0100/playbook_0100.yml
 - hosts: demoserver
   vars:
     our_desired_package_name: git
