@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: demoserver
   tasks:
     - name: Show how variables can be registered
       shell: pwd

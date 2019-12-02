@@ -64,7 +64,7 @@ def get_host(hostfile):
 
     if not os.path.exists(hostfile):
         print("""
-        The hostnames couldn't be read from the webservers
+        The hostnames couldn't be read from the demoserver
         section of this file '{0}'.
 
         {1}

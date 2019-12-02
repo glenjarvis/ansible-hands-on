@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: demoserver
   vars:
     our_desired_package_name: nginx
   tasks:

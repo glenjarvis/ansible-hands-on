@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: demoserver
   tasks:
     - name: Predict this output
       debug: msg="Fizz"

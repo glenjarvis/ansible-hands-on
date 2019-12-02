@@ -1,6 +1,6 @@
 ---
 - import_playbook: ../010/demo_playbook_iter_01.yml
-- hosts: webservers
+- hosts: demoserver
   tasks:
     - name: Install our needed packages for AWS Linux
       yum: state=present name=git

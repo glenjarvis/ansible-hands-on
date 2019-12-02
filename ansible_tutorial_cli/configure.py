@@ -111,7 +111,7 @@ def configure_hosts(hostfile):
     machine_address = machine_address.strip()
 
     with open(hostfile, 'w') as ansible_hosts_file:
-        ansible_hosts_file.write("[webservers]\n")
+        ansible_hosts_file.write("[demoserver]\n")
         ansible_hosts_file.write("{0}\n".format(machine_address))
 
 

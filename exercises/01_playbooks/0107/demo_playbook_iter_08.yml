@@ -2,7 +2,7 @@
 # Do you think "Start the nginx service" will run this time?
 # Handlers are nothing but tasks that get triggered by
 # a "notify"
-- hosts: webservers
+- hosts: demoserver
   vars:
     our_desired_package_name: nginx
   tasks:
