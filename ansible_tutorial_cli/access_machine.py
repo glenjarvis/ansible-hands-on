@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# pylint: disable=W0621,C0103
 
 
 """Example 01: Basic access to AWS machine
@@ -16,7 +15,7 @@ import os
 import sys
 import subprocess
 import textwrap
-import ConfigParser
+import configparser
 
 ANSIBLE_CFG = "./ansible.cfg"
 
@@ -36,20 +35,20 @@ def get_settings():
     """Read the ansible.cfg file and parse hostfile pathname"""
 
     if not os.path.exists(ANSIBLE_CFG):
-        print """
+        print("""
         The configuration file can't be found. Read the configuration
         instructions in README.md and run `python configure.py`.
 
         {0}
-        """.format(BYPASS_PHRASE)
+        """).format(BYPASS_PHRASE)
         sys.exit(1)
 
-    config = ConfigParser.SafeConfigParser()
+    config = configparser.ConfigParser.SafeConfigParser()
     config.read(ANSIBLE_CFG)
 
     hostfile = config.get('defaults', 'hostfile')
     if hostfile is None:
-        print "We can't read the hostfile from {0}".format(ANSIBLE_CFG)
+        print("We can't read the hostfile from {0}".format(ANSIBLE_CFG))
         sys.exit(2)
 
     private_key = config.get('defaults', 'private_key_file')
@@ -64,12 +63,12 @@ def get_host(hostfile):
     """Crudely parse hostname from hostfile"""
 
     if not os.path.exists(hostfile):
-        print """
+        print("""
         The hostnames couldn't be read from the webservers
         section of this file '{0}'.
 
         {1}
-        """.format(hostfile, BYPASS_PHRASE)
+        """).format(hostfile, BYPASS_PHRASE)
         sys.exit(3)
 
     data = None
@@ -99,7 +98,7 @@ def example_01(pem_file_path, remote_user, machine_address):
     raw_input('--> ')
     subprocess.call(cmd, shell=True)
 
-    print "\n"
+    print("\n")
 
 if __name__ == '__main__':
     settings = get_settings()
