@@ -45,9 +45,9 @@ def write_ansible_cfg_file(pem_file_path, user):
     fix_pem_permissons(pem_file_path)
     config = configparser.ConfigParser()
     config.add_section('defaults')
-    config['DEFAULT'] = {'inventory': ANSIBLE_HOSTS_FILENAME,
-                         'private_key_file': pem_file_path,
-                         'remote_user': user}
+    config['defaults'] = {'inventory': ANSIBLE_HOSTS_FILENAME,
+                          'private_key_file': pem_file_path,
+                          'remote_user': user}
 
     with open(ANSIBLE_CONFIG_FILENAME, 'w') as config_file:
         config.write(config_file)
@@ -92,23 +92,13 @@ def get_configured_hosts():
     config = configparser.ConfigParser()
     config.read(ANSIBLE_CONFIG_FILENAME)
 
-    hostfile = config.get('defaults', 'hostfile')
+    hostfile = config.get('defaults', 'inventory')
     if hostfile is None:
         print("We can't read the hostfile settings from {0}".format(
             ANSIBLE_CONFIG_FILENAME))
         sys.exit(2)
 
     return hostfile
-
-#>>> config.sections()
-#['bitbucket.org', 'topsecret.server.com']
-#>>> 'bitbucket.org' in config
-#True
-#>>> 'bytebong.com' in config
-#False
-#>>> config['bitbucket.org']['User']
-#'hg'
-#>>> config['
 
 def configure_hosts(hostfile):
 
