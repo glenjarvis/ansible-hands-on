@@ -1,0 +1,3 @@
+---
+python_virtualenv_root: /local/pythonvenv
+python_virtualenv_owner: web

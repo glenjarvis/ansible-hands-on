@@ -1,0 +1,36 @@
+---
+- name: Ensure needed Python 3.6 libraries are installed
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - python36-libs.x86_64
+  become: yes
+
+- name: Ensure python virtualenv directory exists
+  file:
+    path: "{{ python_virtualenv_root }}"
+    state: directory
+    mode: '0755'
+    owner: "{{ python_virtualenv_owner }}"
+  become: yes
+
+# TODO: Note:  /home/web/.ansible/tmp created as user. We may need to fix
+# permissions when using other users.
+- name: Create Python3 Virtualenv
+  command:
+    cmd: /usr/bin/python3 -m venv {{ python_virtualenv_dir }}
+    creates: "{{ python_virtualenv_dir }}"
+  become: yes
+  become_user: "{{ python_virtualenv_owner }}"
+
+- name: Activate Python Virtualenv when user logs in
+  blockinfile:
+    path: "{{ python_virutalenv_bashrc }}"
+    marker: "### {mark} ANSIBLE MANAGED BLOCK ###"
+    insertafter: EOF
+    block: |
+      echo "Activating Virtual environment"
+      source {{ python_virtualenv_dir }}/bin/activate
+  become: yes
+  become_user: "{{ python_virtualenv_owner }}"
