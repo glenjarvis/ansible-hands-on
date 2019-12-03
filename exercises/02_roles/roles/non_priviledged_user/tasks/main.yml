@@ -1,0 +1,13 @@
+---
+- name: Add non-privileged
+  user: name={{ non_priviledged_user_name }} uid={{ non_priviledged_user_uid}}
+  become: yes
+
+- name: Add .ssh directory for non-priviledges user
+  file: state=directory
+          path=/home/{{ non_priviledged_user_name }}/.ssh
+          owner={{ non_priviledged_user_name }}
+          group={{ non_priviledged_user_name }}
+          mode=0700
+  become: yes
+

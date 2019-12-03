@@ -1,4 +1,7 @@
 - name: Demonstrate our work in a directory (now called a 'role')
   hosts: demoserver
   roles:
+    - role: non_priviledged_user
+      non_priviledged_user_name: web
+      non_priviledged_user_uid: 1100
     - python_stack
