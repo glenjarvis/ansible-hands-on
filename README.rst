@@ -13,14 +13,8 @@ Project and Build Status
      :target: https://travis-ci.org/glenjarvis/ansible_hands_on_training
      :alt: Travis tests
 
-.. image:: https://readthedocs.org/projects/ansible_hands_on_training/badge/?version=latest
-     :target: http://ansible_hands_on_training.readthedocs.io/en/latest/?badge=latest
-     :alt: Documentation Status
-
-
 * GitHub repo: https://github.com/glenjarvis/ansible_hands_on_training/
-* Documentation: `Read The Docs <https://ansible_hands_on_training.readthedocs.io/>`_
-* Free software: `LICENSE <https://github.com/glenjarvis/ansible_hands_on_training/blob/master/LICENSE>`_
+* Free software: `LICENSE <https://github.com/glenjarvis/ansible_hands_on_training/blob/develop/LICENSE>`_
 
 
 *******
