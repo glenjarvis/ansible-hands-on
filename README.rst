@@ -13,14 +13,6 @@ Project and Build Status
      :target: https://travis-ci.org/glenjarvis/ansible_hands_on_training
      :alt: Travis tests
 
-#.. image:: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/shield.svg
-#     :target: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/
-#     :alt: Updates
-#
-#.. image:: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/python-3-shield.svg
-#     :target: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/
-#     :alt: Python 3
-
 .. image:: https://readthedocs.org/projects/ansible_hands_on_training/badge/?version=latest
      :target: http://ansible_hands_on_training.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
