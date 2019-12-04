@@ -1,44 +1,63 @@
-- include:
-    ../../common/tasks/grant_account_temp_permissions.yml
+---
+- name: Ensure latest version of Pip is installed
+  pip:
+    name: 'pip'
+    virtualenv: "{{ django_virtualenv_dir }}"
+  become: yes
+  become_user: "{{ django_user }}"
 
+# Normally, we would pull the Django version number from the code base (repo)
+# that we are using to install. We are avoiding that complexity for this
+# exercise.
 - name: Install Django Software
-  shell: '{{ python_stack_pip_path }} install Django==1.6.5'
-  remote_user: '{{ python_stack_non_priviledged_user }}'
+  pip:
+    name: 'django<2.2'
+    virtualenv: "{{ django_virtualenv_dir }}"
+  become: yes
+  become_user: "{{ django_user }}"
 
-# The django package that I uploaded was already configured and
-# tested with Gunicorn before I canned it. With over 20 examples
-# already (even if each took just 3 minutes), we are out of time.
-# Instead of having to back out a compressed file, I am just adding
-# gunicorn for now.
-- name: Install Gunicorn (not currently used)
-  shell: '{{ python_stack_pip_path }} install gunicorn==19.0.0'
-  remote_user: '{{ python_stack_non_priviledged_user }}'
+- name: Ensure app_server directory exists
+  file:
+    path: "{{ django_app_path }}"
+    state: directory
+    mode: 0755
+    owner: "{{ django_group }}"
+    group: "{{ django_group }}"
+  become: yes
 
-- name: Upload Django's manage.py
-  copy:
-    src: manage.py
-    dest: '/home/{{ python_stack_non_priviledged_user }}/sample_project/manage.py'
-    owner: '{{ python_stack_non_priviledged_user }}'
-    group: '{{ python_stack_non_priviledged_user }}'
-    mode: 0600
-  sudo: yes
+# Normally, we would pull latest app source from the code base (repo) that we
+# are using to install. We are avoiding that complexity for this exercise.
+#
+# Note: This demo app isn't really production level security. The example has
+# embedded SECRET_KEY for example. This has been simplified for instruction
+- name: Upload the example django app
+  unarchive:
+    src: example_django_app.tar
+    dest: "{{ django_app_path }}"
+    owner: "{{ django_group }}"
+    group: "{{ django_group }}"
+  become: yes
 
-- name: Upload Initial Django (tiny) Deployment
-  copy:
-    src: sample_project_django.tar
-    dest: '/home/{{ python_stack_non_priviledged_user }}/sample_project/sample_project_django.tar'
-    owner: '{{ python_stack_non_priviledged_user }}'
-    group: '{{ python_stack_non_priviledged_user }}'
-    mode: 0600
-  sudo: yes
+- name: Collect the Django static files into Nginx directory
+  django_manage:
+    command: collectstatic
+    app_path: "{{ django_app_path }}"
+    virtualenv: "{{ django_virtualenv_dir }}"
+    settings: walking_skeleton.settings.production
+  become: yes
+  become_user: "{{ django_group }}"
 
-- name: Extract virtualenv source code
-  shell: 'cd /home/{{ python_stack_non_priviledged_user }}/sample_project; tar -xvf sample_project_django.tar'
-  remote_user: '{{ python_stack_non_priviledged_user }}'
+# There shouldn't be any significant migrations. However, this is included for
+# both compeleteness and to demonstrate another Django command
+#
+# Note: This demo app isn't really production level security. The example has
+# embedded SECRET_KEY for example. This has been simplified for instruction
+- name: Migrate database
+  django_manage:
+    command: migrate
+    app_path: "{{ django_app_path }}"
+    virtualenv: "{{ django_virtualenv_dir }}"
+    settings: walking_skeleton.settings.production
+  become: yes
+  become_user: "{{ django_group }}"
 
-- name: Clean-up Django delivery tarball
-  command: /bin/rm /home/{{ python_stack_non_priviledged_user }}/sample_project/sample_project_django.tar
-  remote_user: '{{ python_stack_non_priviledged_user }}'
-
-- include:
-    ../../common/tasks/revoke_account_temp_permissions.yml

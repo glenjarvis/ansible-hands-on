@@ -1,0 +1,5 @@
+---
+django_virtualenv_dir: /local/pythonvenv/venv
+django_user: django
+django_group: django
+django_app_path: /local/app_server

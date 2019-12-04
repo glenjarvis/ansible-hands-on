@@ -1,3 +1,1 @@
 ---
-python_virtualenv_dir: "{{ python_virtualenv_root }}/venv"
-python_virutalenv_bashrc: /home/{{ python_virtualenv_owner }}/.bashrc

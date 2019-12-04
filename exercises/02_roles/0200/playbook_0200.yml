@@ -1,6 +1,7 @@
 - hosts: demoserver
   vars:
     - username: web
+    - virtualenv_root: /local/pythonvenv
   roles:
     - role: non_priviledged_user
       non_priviledged_user_name: "{{ username }}"
@@ -11,5 +12,11 @@
       nginx_non_privileged_user: "{{ username }}"
 
     - role: python3_6
-      python_virtualenv_root: /local/pythonvenv
+      python_virtualenv_root: "{{ virtualenv_root }}"
       python_virtualenv_owner: "{{ username }}"
+
+    - role: app_server_django
+      django_app_path: /local/app_server
+      django_user: "{{ username }}"
+      django_group: "{{ username }}"
+      django_virtualenv_dir: "{{ virtualenv_root }}/venv"
