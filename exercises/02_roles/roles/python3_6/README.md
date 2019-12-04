@@ -20,9 +20,9 @@ dynamically handle different packaging tools, at this stage in the learner's
 path, we keep it simple to only using the "yum" package manager.
 
 Therefore, this should be an Amazon Linux, RedHat, Centos, or other
-distribution that can install the *python36-libs.x86_64* via YUM. In the
-learner's future path, we will see how to make this more dynamic and fetch the
-packages and installation method via operating system.
+distribution that can install the *python36-libs.x86_64* package via YUM. In
+the learner's future path, we will see how to make this more dynamic and fetch
+the packages and installation method via operating system.
 
 Role Variables
 --------------

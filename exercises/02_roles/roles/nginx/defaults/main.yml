@@ -1,0 +1,9 @@
+---
+nginx_user: nginx
+nginx_non_privileged_user: nginx
+nginx_server_name: www.example.com
+nginx_server_host: 127.0.0.1
+nginx_server_port: 8000
+nginx_log_dir: /var/log/nginx
+nginx_static_dir: /local/static
+nginx_media_dir: /local/media

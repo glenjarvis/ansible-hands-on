@@ -1,3 +1,0 @@
----
-dependencies:
-  - { role: python_stack }

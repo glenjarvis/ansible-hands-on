@@ -1,11 +1,15 @@
-- name: Demonstrate our work in a directory (now called a 'role')
-  hosts: demoserver
+- hosts: demoserver
   vars:
     - username: web
   roles:
     - role: non_priviledged_user
       non_priviledged_user_name: "{{ username }}"
       non_priviledged_user_uid: 1100
+
+    - role: nginx
+      nginx_user: nginx
+      nginx_non_privileged_user: "{{ username }}"
+
     - role: python3_6
       python_virtualenv_root: /local/pythonvenv
       python_virtualenv_owner: "{{ username }}"
