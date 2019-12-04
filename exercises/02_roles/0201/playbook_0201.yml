@@ -1,0 +1,7 @@
+- hosts: demoserver
+  vars:
+    - username: web
+  roles:
+    - role: nginx
+      nginx_user: nginx
+      nginx_non_privileged_user: "{{ username }}"
