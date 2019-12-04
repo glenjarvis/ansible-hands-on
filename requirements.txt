@@ -5,5 +5,5 @@ cryptography==2.8
 jinja2==2.10.3
 markupsafe==1.1.1
 pycparser==2.19
-pyyaml==5.1.2
+pyyaml==5.2
 six==1.13.0

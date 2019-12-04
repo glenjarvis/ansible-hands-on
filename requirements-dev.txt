@@ -30,7 +30,7 @@ pygments==2.5.2
 pylint==2.4.4
 pyparsing==2.4.5
 pytz==2019.3
-pyyaml==5.1.2
+pyyaml==5.2
 readme-renderer==24.0
 requests-toolbelt==0.9.1
 requests==2.22.0
