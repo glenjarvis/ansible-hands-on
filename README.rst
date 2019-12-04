@@ -254,8 +254,6 @@ More information:
 
 * `GitHub <https://github.com/glenjarvis/>`__
 
-* `Google+ <https://plus.google.com/u/0/+GlenJarvis/posts>`_
-
 * `LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
 
 
