@@ -37,7 +37,7 @@ requests==2.22.0
 rstcheck==3.3.1
 six==1.13.0
 snowballstemmer==2.0.0
-sphinx==2.2.1
+sphinx==2.2.2
 sphinxcontrib-applehelp==1.0.1
 sphinxcontrib-devhelp==1.0.1
 sphinxcontrib-htmlhelp==1.0.2
