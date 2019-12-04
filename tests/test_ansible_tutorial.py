@@ -5,7 +5,7 @@
 
 import unittest
 
-from ansible_hands_on_training import ansible_hands_on_training
+#from ansible_hands_on_training import ansible_hands_on_training
 
 
 class TestAnsible_tutorial(unittest.TestCase):
@@ -19,3 +19,7 @@ class TestAnsible_tutorial(unittest.TestCase):
 
     def test_000_something(self):
         """Test something."""
+
+
+if __name__ == "__main__":
+    unittest.main()
