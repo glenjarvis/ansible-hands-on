@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use ansible_tutorial in a project::
+To use ansible_hands_on_training in a project::
 
-    import ansible_tutorial
+    import ansible_hands_on_training

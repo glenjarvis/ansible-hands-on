@@ -23,13 +23,13 @@ inventory:
 
     some_python = yaml.load(some_string)
 
-    print "YAML -> Python Example"
-    print "type(some_string): {0}".format(type(some_string))
-    print "type(some_python): {0}".format(type(some_python))
+    print("YAML -> Python Example")
+    print("type(some_string): {0}".format(type(some_string)))
+    print("type(some_python): {0}".format(type(some_python)))
 
-    print "\n\nYAML (really string in Python):"
+    print("\n\nYAML (really string in Python):")
     pprint.pprint(some_string)
-    print "\n\nPython:"
+    print("\n\nPython:")
     pprint.pprint(some_python)
 
 if __name__ == '__main__':

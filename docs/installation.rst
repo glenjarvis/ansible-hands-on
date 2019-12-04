@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install ansible_tutorial, run this command in your terminal:
+To install ansible_hands_on_training, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install ansible_tutorial
+    $ pip install ansible_hands_on_training
 
-This is the preferred method to install ansible_tutorial, as it will always install the most recent stable release.
+This is the preferred method to install ansible_hands_on_training, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for ansible_tutorial can be downloaded from the `Github repo`_.
+The sources for ansible_hands_on_training can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/glenjarvis/ansible_tutorial
+    $ git clone git://github.com/glenjarvis/ansible_hands_on_training
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/glenjarvis/ansible_tutorial/tarball/master
+    $ curl  -OL https://github.com/glenjarvis/ansible_hands_on_training/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/glenjarvis/ansible_tutorial
-.. _tarball: https://github.com/glenjarvis/ansible_tutorial/tarball/master
+.. _Github repo: https://github.com/glenjarvis/ansible_hands_on_training
+.. _tarball: https://github.com/glenjarvis/ansible_hands_on_training/tarball/master

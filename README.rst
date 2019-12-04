@@ -2,53 +2,51 @@
 Ansible Hands-On Training
 =========================
 
-A tutorial with video and code taking the user from AWS machine creation to their first deployment using Ansible
+Learn by doing. A step-by-step set of training exercises that take you from the
+basics to a fully built web application server.
 
 ************************
 Project and Build Status
 ************************
 
-.. image:: https://travis-ci.org/glenjarvis/ansible_tutorial.svg?branch=master
-     :target: https://travis-ci.org/glenjarvis/ansible_tutorial
+.. image:: https://travis-ci.org/glenjarvis/ansible_hands_on_training.svg?branch=master
+     :target: https://travis-ci.org/glenjarvis/ansible_hands_on_training
      :alt: Travis tests
 
-.. image:: https://pyup.io/repos/github/glenjarvis/ansible_tutorial/shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/ansible_tutorial/
+.. image:: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/shield.svg
+     :target: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/
      :alt: Updates
 
-.. image:: https://pyup.io/repos/github/glenjarvis/ansible_tutorial/python-3-shield.svg
-     :target: https://pyup.io/repos/github/glenjarvis/ansible_tutorial/
+.. image:: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/python-3-shield.svg
+     :target: https://pyup.io/repos/github/glenjarvis/ansible_hands_on_training/
      :alt: Python 3
 
-.. image:: https://readthedocs.org/projects/ansible_tutorial/badge/?version=latest
-     :target: http://ansible_tutorial.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/ansible_hands_on_training/badge/?version=latest
+     :target: http://ansible_hands_on_training.readthedocs.io/en/latest/?badge=latest
      :alt: Documentation Status
 
 
-* GitHub repo: https://github.com/glenjarvis/ansible_tutorial/
-* Documentation: `Read The Docs <https://ansible_tutorial.readthedocs.io/>`_
-* Free software: `LICENSE <https://github.com/glenjarvis/ansible_tutorial/blob/master/LICENSE>`_
+* GitHub repo: https://github.com/glenjarvis/ansible_hands_on_training/
+* Documentation: `Read The Docs <https://ansible_hands_on_training.readthedocs.io/>`_
+* Free software: `LICENSE <https://github.com/glenjarvis/ansible_hands_on_training/blob/master/LICENSE>`_
 
 
 *******
 Welcome
 *******
 
-A tutorial with video and code taking the user from AWS machine creation to their first deployment using Ansible
-
-
-Successfully automating your machines in the cloud using Ansible
-================================================================
+Successfully automating your machines in the cloud using Ansible. Start with
+the bascis of 'ssh' to access the machine, build up to Ansible modules, and
+then playbooks. You will progress to roles and custom modules for better
+organization.
 
 
 Videos of Talk
 --------------
 
-Prerequisite Talks
-^^^^^^^^^^^^^^^^^^
-
-* `Building an AWS Instance <https://www.youtube.com/watch?v=tmNgXQXkpWs>`_
-
+Even though the exercises have been updated to work with modern versions of
+Ansible and Python 3, there are currently no videos to match the exercises.
+There are videos, however, from 2014 for basic concepts:
 
 Slow Walkthrough
 ^^^^^^^^^^^^^^^^
@@ -67,15 +65,35 @@ Same material / Quickly covered / Shorter Video:
 * 26-June, 2014 `Bay Area Python Interest Group (BayPIGgies)/Silicon Valley Python MeetUp Video <https://plus.google.com/hangouts/onair/watch?hid=hoaevent%2Fcf7vrv1f9q5e8bojpslfjjen8gk&ytl=ptzruazbRXY&hl=en>`_
 
 
-Practice Sessions
-^^^^^^^^^^^^^^^^^
+Prerequisites
+^^^^^^^^^^^^^
 
-**This Repository is now out of date**. This was written against an older
-version of Ansible and hasn't yet been updated. I am writing this note on
-18-May, 2018 and hope to get to upgrading this repository to work with current
-versions of Ansible. This issue tracks:
+The exercises in this repository have been tested against an Amazon AMI. The
+decision to use an Amazon instances are:
 
-https://github.com/glenjarvis/ansible_tutorial/issues/78
+* They are kept current by Amazon
+
+* They are very cheap to spin up to do a test (less than 4 cents for this
+  training session). Free if it's an Amazon account that is less than 1 year
+  old. *Please remember to TERMINATE your instance when finished*.
+
+* We are using 'yum' as a package installer in the earlier exercises (to keep
+  different variations at a minimum). We later learn how to be more universal.
+
+* We need a standard to avoid the complications of too many choices to configure
+
+You are welcome to use any host that you wish for these exercises. However, to
+avoid confusion where playbooks will not work (e.g., package names differ, yum
+isn't supported, etc.), I suggest that you use:
+
+*Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type - ami-00eb20669e0990cb4*
+
+The *t2.micro* size is sufficient for these exercises and is what is used for
+testing.
+
+If you do not know how to build an AWS instance, this video will help you:
+
+* `Building an AWS Instance <https://www.youtube.com/watch?v=tmNgXQXkpWs>`_
 
 
 Hands-On Training
@@ -134,20 +152,13 @@ P.S. If you haven't previously built an `Amazon Web Instance
 Getting Started (Installing and following-along)
 ------------------------------------------------
 
-**This Repository is now out of date**. This was written against an older
-version of Ansible and hasn't yet been updated. I am writing this note on
-18-May, 2018 and hope to get to upgrading this repository to work with current
-versions of Ansible. This issue tracks:
-
-https://github.com/glenjarvis/ansible_tutorial/issues/78
-
 
 1. Clone this repo to the directory you would like to have your work in.
 
    .. code-block:: bash
 
-       $ git clone https://github.com/glenjarvis/ansible_tutorial.git
-       Cloning into 'ansible_tutorial'...
+       $ git clone https://github.com/glenjarvis/ansible_hands_on_training.git
+       Cloning into 'ansible_hands_on_training'...
        remote: Reusing existing pack: 112, done.
        remote: Total 112 (delta 0), reused 0 (delta 0)
        Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
@@ -157,13 +168,12 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
 2. Make a virtualenv named **venv** for your Python environment of choice.
 
-    * For Python2::
-
-        $ virtualenv venv
-
     * For Python3::
 
         $ python3 -m venv venv
+
+    Note:  Python 2 support has been dropped from this project. Only Python 3
+           is supported.
 
 3. Activate the Virtual Enviroment. Every time you come back to work on this
    project, you will need to activate your virtual environment::
@@ -184,7 +194,7 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 
    .. code-block:: bash
 
-       function cd_ansible_tutorial {
+       function cd_ansible_hands_on_training {
            deactivate 2> /dev/null
            cd /FULL_PATH_TO_THIS_DIRECTORY
            source venv/bin/activate
@@ -234,34 +244,6 @@ https://github.com/glenjarvis/ansible_tutorial/issues/78
 6. Follow the examples (starting with the ``example_01`` subdirectory).
 
 
-Examples
---------
-
-Here is a list of the examples just in case there's any confusion in which
-order the examples should be executed:
-
-1. ``( cd src; python configure.py )`` (see instructions above)
-2. ``( cd src/example_01; python access_machine.py )``
-3. ``( cd src/example_02; python auto_update_machine.py )``
-4. ``( cd src/example_03; less README.txt )`` (Read the ``README.txt`` file; it's not really meant to be executed)
-5. ``( cd src/example_04; ansible demoserver -m ping; ansible demoserver -vvv -m ping )``
-6. ``( cd src/example_05; ansible demoserver -vvv -a 'sudo yum update -y' )``
-7. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml )``
-8. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml )``
-9. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml )``
-10. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml )``
-11. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml )``
-12. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml )``
-13. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml )``
-14. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml )``
-15. ``( cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml )``
-16. ``( cd src/playbook_examples; less pedantically_commented_playbook )`` (Read but don't execute: ``pedantically_commented_playbook.yml``)
-17. ``( cd src/role_examples; ansible-playbook demo_play_role_01.yml )``
-18. ``( cd src/role_examples; ansible-playbook demo_play_role_02.yml )``
-19. ``( cd src/role_examples; ansible-playbook demo_play_role_03.yml )``
-20. Exploration: Log into machine; ``sudo su - webuser; cd /home/webuser/sample_project; python manage.py runserver``
-
-
 Bio
 ---
 
@@ -273,13 +255,8 @@ Journals) <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2896197/>`_ He is a
 certified DBA and has also been certified in Linux/Unix Administration.
 
 He is a DevOps engineer and uses `Ansible <http://www.ansible.com/home>`__
-heavily. After five years, he just finished working for a startup. He is
-creating a Coursera course in collaboration with a UC campus on Source Code
-Mangement Systems for the DevOps developer.
-
-Additionally, he runs a small start up, `Glen Jarvis Training & Consulting, LLC
-<http://glenjarvis.com/>`_, that does online technical training and assists
-employees obtaining telepresence in their current work place.
+heavily.  Additionally, he runs a start up, `Glen Jarvis Training &
+Consulting, LLC <http://glenjarvis.com/>`_.
 
 Glen is the organizer for the `Silicon Valley Python MeetUp
 Group <http://www.meetup.com/silicon-valley-python/>`_ and a co-organizer of the
@@ -296,8 +273,6 @@ More information:
 * `LinkedIn <http://www.linkedin.com/in/glenjarvis>`_
 
 
-
-
 ********************************
 Make this better by Contributing
 ********************************
@@ -308,12 +283,7 @@ given.
 
 You can contribute in many ways:
 
-* `Report bugs <https://github.com/glenjarvis/ansible_tutorial/issues>`__
-* `Write Documentation <https://ansible_tutorial.readthedocs.io/>`__
-* `Fix bugs <https://github.com/glenjarvis/ansible_tutorial/issues>`__
-
-To maximize the chance that your hard work gets merged, we have these guidelines
-to guide you along the way to a successfully merged Pull Request:
-
-* :ref:`contribution_link`
-* https://github.com/glenjarvis/ansible_tutorial/blob/master/CONTRIBUTING.rst
+* `Report bugs <https://github.com/glenjarvis/ansible_hands_on_training/issues>`__
+* `Write Documentation <https://ansible_hands_on_training.readthedocs.io/>`__
+* `Fix bugs <https://github.com/glenjarvis/ansible_hands_on_training/issues>`__
+* `CONTRIBUTING <https://github.com/glenjarvis/ansible_hands_on_training/blob/master/CONTRIBUTING.rst>`__

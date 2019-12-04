@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=ansible_tutorial
+set SPHINXPROJ=ansible_hands_on_training
 
 if "%1" == "" goto help
 

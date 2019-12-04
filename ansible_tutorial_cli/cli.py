@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for ansible_tutorial."""
+"""Console script for ansible_hands_on_training."""
 import sys
 import click
 
 
 @click.command()
 def main(args=None):
-    """Console script for ansible_tutorial."""
+    """Console script for ansible_hands_on_training."""
     return 0
 
 

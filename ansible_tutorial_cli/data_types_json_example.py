@@ -20,12 +20,12 @@ def python_to_json():
 
     some_json = json.dumps(some_python)
 
-    print "Python -> JSON Example"
-    print "type(some_python): {0}".format(type(some_python))
-    print "type(some_json): {0}".format(type(some_json))
-    print "\n\nPython:"
+    print("Python -> JSON Example")
+    print("type(some_python): {0}".format(type(some_python)))
+    print("type(some_json): {0}".format(type(some_json)))
+    print("\n\nPython:")
     pprint.pprint(some_python)
-    print "\n\nJSON:"
+    print("\n\nJSON:")
     pprint.pprint(some_json)
 
 
@@ -36,13 +36,13 @@ def json_to_python():
     some_string = '{"apple": 1, "pear": 2}'
     some_python = json.loads(some_string)
 
-    print "JSON Example -> Python Example"
-    print "type(some_string): {0}".format(type(some_string))
-    print "type(some_python): {0}".format(type(some_python))
+    print("JSON Example -> Python Example")
+    print("type(some_string): {0}".format(type(some_string)))
+    print("type(some_python): {0}".format(type(some_python)))
 
-    print "\n\nJSON (really string in Python):"
+    print("\n\nJSON (really string in Python):")
     pprint.pprint(some_string)
-    print "\n\nPython:"
+    print("\n\nPython:")
     pprint.pprint(some_python)
 
 if __name__ == '__main__':

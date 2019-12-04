@@ -35,12 +35,12 @@ def get_settings():
     """Read the ansible.cfg file and parse hostfile pathname"""
 
     if not os.path.exists(ANSIBLE_CFG):
-        print """
+        print("""
         The configuration file can't be found. Read the configuration
         instructions in README.md and run `python configure.py`.
 
         {0}
-        """.format(BYPASS_PHRASE)
+        """.format(BYPASS_PHRASE))
         sys.exit(1)
 
     config = ConfigParser.SafeConfigParser()
@@ -48,7 +48,7 @@ def get_settings():
 
     hostfile = config.get('defaults', 'hostfile')
     if hostfile is None:
-        print "We can't read the hostfile from ansible.cfg"
+        print("We can't read the hostfile from ansible.cfg")
         sys.exit(2)
 
     private_key = config.get('defaults', 'private_key_file')
@@ -63,12 +63,12 @@ def get_host(hostfile):
     """Crudely parse hostname from hostfile"""
 
     if not os.path.exists(hostfile):
-        print """
+        print("""
         The hostnames couldn't be read from the demoserver
         section of this file '{0}'.
 
         {1}
-        """.format(hostfile, BYPASS_PHRASE)
+        """.format(hostfile, BYPASS_PHRASE))
         sys.exit(3)
 
     data = None
@@ -87,7 +87,7 @@ def example_02(pem_file_path, remote_user, machine_address):
         machine_address=machine_address)
     new_cmd = "{0} -t 'sudo yum update -y'".format(old_cmd)
 
-    print textwrap.dedent("""
+    print(textwrap.dedent("""
 
     This is the command line you would need to update the operating
     system for this instance:
@@ -95,10 +95,10 @@ def example_02(pem_file_path, remote_user, machine_address):
         {0}
 
     Press RETURN to execute the command now:
-    """).format(new_cmd).strip("\n")
+    """).format(new_cmd).strip("\n"))
     raw_input('--> ')
 
-    print "\nCommand to execute: {0}\n".format(new_cmd)
+    print("\nCommand to execute: {0}\n".format(new_cmd))
 
     subprocess.call(new_cmd, shell=True)
 
