@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = ansible_tutorial
+SPHINXPROJ    = ansible_hands_on_training
 SOURCEDIR     = .
 BUILDDIR      = _build
 

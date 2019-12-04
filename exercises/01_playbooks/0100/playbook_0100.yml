@@ -1,0 +1,6 @@
+---
+- hosts: demoserver
+  tasks:
+    - name: Make sure all OS patches are applied
+      shell: yum update -y
+      become: yes 

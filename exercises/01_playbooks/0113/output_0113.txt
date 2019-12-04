@@ -1,0 +1,27 @@
+
+PLAY [demoserver] **************************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Ensure state before playbook starts] *************************************************************************************
+changed: [demoserver.example.com]
+
+TASK [Does super crude but simple lock file exist] *****************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Predict this output] *****************************************************************************************************
+skipping: [demoserver.example.com]
+
+TASK [Make super crude lock file] **********************************************************************************************
+changed: [demoserver.example.com]
+
+TASK [Are you sure?] ***********************************************************************************************************
+skipping: [demoserver.example.com]
+
+TASK [Or maybe this output] ****************************************************************************************************
+skipping: [demoserver.example.com]
+
+PLAY RECAP *********************************************************************************************************************
+demoserver.example.com     : ok=4    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+

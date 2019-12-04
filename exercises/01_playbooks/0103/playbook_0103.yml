@@ -1,0 +1,7 @@
+---
+- import_playbook: ../0100/playbook_0100.yml
+- hosts: demoserver
+  tasks:
+    - name: Install our needed packages for AWS Linux
+      yum: state=present name=git
+      become: yes

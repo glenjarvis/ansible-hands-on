@@ -1,0 +1,63 @@
+
+PLAY [demoserver] ************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************
+ok: [demoserver.example.com]
+
+TASK [non_priviledged_user : Add non-privileged] *****************************************************
+ok: [demoserver.example.com]
+
+TASK [non_priviledged_user : Add .ssh directory for non-priviledges user] ****************************
+ok: [demoserver.example.com]
+
+TASK [nginx : Install Nginx package] *****************************************************************
+ok: [demoserver.example.com]
+
+TASK [nginx : Upload /etc/nginx/nginx.conf] **********************************************************
+ok: [demoserver.example.com]
+
+TASK [nginx : Upload Virtual Server Configuration] ***************************************************
+ok: [demoserver.example.com]
+
+TASK [nginx : Ensure Static directory exists] ********************************************************
+ok: [demoserver.example.com]
+
+TASK [nginx : Ensure Media directory exists] *********************************************************
+ok: [demoserver.example.com]
+
+TASK [nginx : restart-nginx] *************************************************************************
+changed: [demoserver.example.com]
+
+TASK [python3_6 : Ensure needed Python 3.6 libraries are installed] **********************************
+ok: [demoserver.example.com]
+
+TASK [python3_6 : Ensure python virtualenv directory exists] *****************************************
+ok: [demoserver.example.com]
+
+TASK [python3_6 : Create Python3 Virtualenv] *********************************************************
+ok: [demoserver.example.com]
+
+TASK [python3_6 : Activate Python Virtualenv when user logs in] **************************************
+ok: [demoserver.example.com]
+
+TASK [app_server_django : Ensure latest version of Pip is installed] *********************************
+ok: [demoserver.example.com]
+
+TASK [app_server_django : Install Django Software] ***************************************************
+ok: [demoserver.example.com]
+
+TASK [app_server_django : Ensure app_server directory exists] ****************************************
+ok: [demoserver.example.com]
+
+TASK [app_server_django : Upload the example django app] *********************************************
+changed: [demoserver.example.com]
+
+TASK [app_server_django : Collect the Django static files into Nginx directory] **********************
+changed: [demoserver.example.com]
+
+TASK [app_server_django : Migrate database] **********************************************************
+changed: [demoserver.example.com]
+
+PLAY RECAP *******************************************************************************************
+demoserver.example.com     : ok=19   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

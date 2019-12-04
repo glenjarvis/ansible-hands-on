@@ -1,0 +1,48 @@
+---
+- name: Install Nginx package
+  yum:
+    name=nginx
+    state=present
+  become: yes
+
+- name: Upload /etc/nginx/nginx.conf
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+
+- name: Upload Virtual Server Configuration
+  template:
+    src: virtual.conf
+    dest: /etc/nginx/conf.d/virtual.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+
+- name: Ensure Static directory exists
+  file:
+    path: "{{ nginx_static_dir }}"
+    state: directory
+    mode: '0755'
+    owner: "{{ nginx_non_privileged_user }}"
+    group: "{{ nginx_non_privileged_user }}"
+  become: yes
+
+- name: Ensure Media directory exists
+  file:
+    path: "{{ nginx_media_dir }}"
+    state: directory
+    mode: '0755'
+    owner: "{{ nginx_non_privileged_user }}"
+    group: "{{ nginx_non_privileged_user }}"
+  become: yes
+
+- name: restart-nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes

@@ -1,4 +1,0 @@
-- name: Demonstrate a working deploy of nginx (using python_webstack)
-  hosts: webservers
-  roles:
-    - web_server_nginx

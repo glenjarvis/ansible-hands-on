@@ -1,0 +1,29 @@
+galaxy_info:
+  author: Glen Jarvis
+  description: This role is included as an exercise in "Ansible Hands On," a
+               hands-on training program that teaches Ansible through examples. Therefore,
+               some roles will not be optimized as students may not have yet encountered the
+               skill that could better optimize this role.
+
+  company: Glen Jarvis Training & Consulting, LLC
+
+  issue_tracker_url: https://github.com/glenjarvis/ansible_hands_on_training/issues
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: Amazon Linux
+    versions:
+    - all
+  - name: RedHat
+    versions:
+    - all
+  - name: CentOS
+    versions:
+    - all
+
+  galaxy_tags: []
+
+dependencies: []

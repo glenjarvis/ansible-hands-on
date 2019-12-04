@@ -1,0 +1,18 @@
+---
+# Do you think "Start the nginx service" will run this time?
+# Handlers are nothing but tasks that get triggered by
+# a "notify"
+- hosts: demoserver
+  vars:
+    our_desired_package_name: nginx
+  tasks:
+    - name: Make sure all OS patches are applied
+      shell: yum update -y
+      become: yes 
+    - name: Install our needed packages for AWS Linux
+      yum: state=present name={{ our_desired_package_name }}
+      become: yes
+  handlers:
+    - name: Start the nginx service
+      service: state=started name=nginx
+      become: yes

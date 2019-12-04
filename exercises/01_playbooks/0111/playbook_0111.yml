@@ -1,0 +1,17 @@
+---
+- hosts: demoserver
+  tasks:
+    - name: Our previous example
+      shell: pwd
+      register: pwd_output
+    - name: Getting output from previously registered variable
+      debug: msg="Return code was {{ pwd_output.rc }}"
+    - name: A failed example
+      shell: ls /gobbledygook_file_that_does_not_exist
+      register: bad_file_example
+      ignore_errors: true
+    - name: Failed with success filter
+      debug: msg="Was the return code zero? Return code is {{ bad_file_example.rc }}"
+    - name: Demo a skip if previous step failed
+      debug: msg="Did it fail?"
+      when: bad_file_example == 0

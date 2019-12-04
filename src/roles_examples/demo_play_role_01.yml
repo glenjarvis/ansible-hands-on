@@ -1,4 +1,0 @@
-- name: Demonstrate our work in a directory (now called a 'role')
-  hosts: webservers
-  roles:
-    - python_stack

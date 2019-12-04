@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `ansible_tutorial` package."""
+"""Tests for `ansible_hands_on_training` package."""
 
 import unittest
 
-from ansible_tutorial import ansible_tutorial
+from ansible_hands_on_training import ansible_hands_on_training
 
 
 class TestAnsible_tutorial(unittest.TestCase):
-    """Tests for `ansible_tutorial` package."""
+    """Tests for `ansible_hands_on_training` package."""
 
     def setUp(self):
         """Set up test components, if needed"""

@@ -1,0 +1,41 @@
+
+PLAY [demoserver] **************************************************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Show how variables can be registered] ************************************************************************************
+changed: [demoserver.example.com]
+
+TASK [What got saved] **********************************************************************************************************
+ok: [demoserver.example.com] => {
+    "pwd_output": {
+        "changed": true,
+        "cmd": "pwd",
+        "delta": "0:00:00.002712",
+        "end": "2019-12-02 23:18:45.097391",
+        "failed": false,
+        "rc": 0,
+        "start": "2019-12-02 23:18:45.094679",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "/home/ec2-user",
+        "stdout_lines": [
+            "/home/ec2-user"
+        ]
+    }
+}
+
+TASK [Show the return code stored in the pwd_output variable] ******************************************************************
+ok: [demoserver.example.com] => {
+    "msg": "Return code was 0"
+}
+
+TASK [Show the standard output (stdout) stored in the pwd_output variable] *****************************************************
+ok: [demoserver.example.com] => {
+    "msg": "The standard output (stdout) was /home/ec2-user"
+}
+
+PLAY RECAP *********************************************************************************************************************
+demoserver.example.com     : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
