@@ -1,0 +1,52 @@
+
+PLAY [demoserver] ******************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [process_monitor] *************************************************************************************************************************
+ok: [demoserver.example.com]
+
+TASK [Demo of all of the results] **************************************************************************************************************
+ok: [demoserver.example.com] => {
+    "monit": {
+        "changed": false,
+        "failed": false,
+        "message": [],
+        "processes": [
+            {
+                "%CPU": "7.0",
+                "COMMAND": "/usr/bin/python /home/ec2-user/.ansible/tmp/ansible-tmp-1575941989.579988-44644795755094/AnsiballZ_process_monitor.py",
+                "USER": "ec2-user"
+            },
+            {
+                "%CPU": "0.4",
+                "COMMAND": "sshd: ec2-user@pts/0",
+                "USER": "ec2-user"
+            },
+            {
+                "%CPU": "0.0",
+                "COMMAND": "/sbin/init",
+                "USER": "root"
+            }
+        ]
+    }
+}
+
+TASK [Demo how to fetch the most active process] ***********************************************************************************************
+ok: [demoserver.example.com] => {
+    "monit['processes'][0]": {
+        "%CPU": "7.0",
+        "COMMAND": "/usr/bin/python /home/ec2-user/.ansible/tmp/ansible-tmp-1575941989.579988-44644795755094/AnsiballZ_process_monitor.py",
+        "USER": "ec2-user"
+    }
+}
+
+TASK [debug] ***********************************************************************************************************************************
+ok: [demoserver.example.com] => {
+    "monit['processes'][0]['USER']": "ec2-user"
+}
+
+PLAY RECAP *************************************************************************************************************************************
+demoserver.example.com     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

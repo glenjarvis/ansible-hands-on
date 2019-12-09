@@ -1,0 +1,18 @@
+# https://stackoverflow.com/questions/20563639/ansible-playbook-shell-output
+- hosts: demoserver
+  tasks:
+    - process_monitor:
+        user_defined_fields: pcpu,user,args
+        sort_key: "%CPU"
+        number_of_results: 3
+        reverse: True
+      register: monit
+
+    - name: Demo of all of the results
+      debug: var=monit
+
+    - name: Demo how to fetch the most active process
+      debug: var=monit['processes'][0]
+
+    - debug: var=monit['processes'][0]['USER']
+
