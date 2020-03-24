@@ -1,12 +1,14 @@
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 alabaster==0.7.12
 appdirs==1.4.3
 astroid==2.3.3
 babel==2.8.0
-bleach==3.1.1
+bleach==3.1.2
 certifi==2019.11.28
+cffi==1.14.0
 chardet==3.0.4
 coverage==5.0.3
+cryptography==2.8
 distlib==0.3.0
 docutils==0.16
 entrypoints==0.3
@@ -15,8 +17,9 @@ flake8==3.7.9
 idna==2.9
 imagesize==1.2.0
 isort==4.3.21
+jeepney==0.4.3 ; sys_platform == 'linux'
 jinja2==2.11.1
-keyring==21.1.1
+keyring==21.2.0
 lazy-object-proxy==1.4.3
 markupsafe==1.1.1
 mccabe==0.6.1
@@ -26,15 +29,17 @@ pkginfo==1.5.0.1
 pluggy==0.13.1
 py==1.8.1
 pycodestyle==2.5.0
+pycparser==2.20
 pyflakes==2.1.1
 pygments==2.6.1
 pylint==2.4.4
 pyparsing==2.4.6
 pytz==2019.3
-readme-renderer==24.0
+readme-renderer==25.0
 requests-toolbelt==0.9.1
 requests==2.23.0
 rstcheck==3.3.1
+secretstorage==3.1.2 ; sys_platform == 'linux'
 six==1.14.0
 snowballstemmer==2.0.0
 sphinx==2.4.4
@@ -49,7 +54,7 @@ tox==3.14.5
 tqdm==4.43.0
 twine==3.1.1
 urllib3==1.25.8
-virtualenv==20.0.9
+virtualenv==20.0.13
 watchdog==0.10.2
 webencodings==0.5.1
 wrapt==1.11.2
