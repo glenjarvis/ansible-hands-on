@@ -1,4 +1,4 @@
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 ansible==2.9.6
 cffi==1.14.0
 cryptography==2.8
