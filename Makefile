@@ -53,10 +53,11 @@ clean-test: ## remove test and coverage artifacts
 lint: ## check style with flake8
 	flake8 ansible_hands_on_training tests
 
-reqs: ## Update all Pipenv requirements
-	 pipenv update
-	 pipenv lock -r > requirements.txt
-	 pipenv lock -r --dev > requirements-dev.txt
+reqs: ## Update all requirements
+	poetry update
+	poetry export --without-hashes -f requirements.txt -o requirements/requirements.txt
+	poetry export --without-hashes --dev -f requirements.txt -o requirements/development.txt
+	poetry show --tree > requirements/graph.txt
 
 test: ## run tests quickly with the default Python
 	python setup.py test
