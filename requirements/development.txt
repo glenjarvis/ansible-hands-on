@@ -9,7 +9,7 @@ cffi==1.14.0; sys_platform == "linux"
 chardet==3.0.4
 colorama==0.4.3; platform_system == "Windows" or sys_platform == "win32"
 coverage==5.1
-cryptography==2.9.2; sys_platform == "linux"
+cryptography==3.2; sys_platform == "linux"
 distlib==0.3.0
 docutils==0.16
 filelock==3.0.12
