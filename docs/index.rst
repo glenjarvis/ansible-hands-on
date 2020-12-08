@@ -11,6 +11,7 @@ Welcome to Ansible Hands-On Training's documentation!
    modules
    contributing
    authors
+   exercises
    history
 
 Indices and tables

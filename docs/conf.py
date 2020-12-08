@@ -47,8 +47,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ansible_hands_on_training'
-copyright = u"2018, Glen Jarvis"
+project = u'ansible_hands_on'
+copyright = u"2014-2020, Glen Jarvis Training & Consulting, LLC"
 author = u"Glen Jarvis"
 
 # The version info for the project you're documenting, acts as replacement
