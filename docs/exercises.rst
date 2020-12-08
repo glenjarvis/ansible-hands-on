@@ -1,0 +1,2 @@
+.. include:: ../exercises/README.rst
+
