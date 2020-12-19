@@ -1,22 +1,29 @@
-ansible 2.9.9 Radically simple IT automation
-coverage 5.1 Code coverage measurement for Python
-flake8 3.8.3 the modular source code checker: pep8 pyflakes and co
-|-- mccabe >=0.6.0,<0.7.0
-|-- pycodestyle >=2.6.0a1,<2.7.0
-`-- pyflakes >=2.2.0,<2.3.0
+ansible 2.10.4 Radically simple IT automation
+`-- ansible-base >=2.10.3,<2.11
+    |-- cryptography * 
+    |   |-- cffi >=1.12 
+    |   |   `-- pycparser * 
+    |   `-- six >=1.4.1 
+    |-- jinja2 * 
+    |   `-- markupsafe >=0.23 
+    |-- packaging * 
+    |   `-- pyparsing >=2.0.2 
+    `-- pyyaml * 
+coverage 5.3 Code coverage measurement for Python
 pycodestyle 2.6.0 Python style guide checker
-pylint 2.5.3 python code static checker
+pylint 2.6.0 python code static checker
 |-- astroid >=2.4.0,<=2.5
 |   |-- lazy-object-proxy >=1.4.0,<1.5.0 
 |   |-- six >=1.12,<2.0 
+|   |-- typed-ast >=1.4.0,<1.5 
 |   `-- wrapt >=1.11,<2.0 
 |-- colorama *
-|-- isort >=4.2.5,<5
+|-- isort >=4.2.5,<6
 |-- mccabe >=0.6,<0.7
 `-- toml >=0.7.1
 rstcheck 3.3.1 Checks syntax of reStructuredText and code blocks nested within it
 `-- docutils >=0.7
-sphinx 3.1.0 Python documentation generator
+sphinx 3.3.1 Python documentation generator
 |-- alabaster >=0.7,<0.8
 |-- babel >=1.3
 |   `-- pytz >=2015.7 
@@ -26,15 +33,13 @@ sphinx 3.1.0 Python documentation generator
 |-- jinja2 >=2.3
 |   `-- markupsafe >=0.23 
 |-- packaging *
-|   |-- pyparsing >=2.0.2 
-|   `-- six * 
+|   `-- pyparsing >=2.0.2 
 |-- pygments >=2.0
 |-- requests >=2.5.0
 |   |-- certifi >=2017.4.17 
-|   |-- chardet >=3.0.2,<4 
+|   |-- chardet >=3.0.2,<5 
 |   |-- idna >=2.5,<3 
-|   `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-|-- setuptools *
+|   `-- urllib3 >=1.21.1,<1.27 
 |-- snowballstemmer >=1.1
 |-- sphinxcontrib-applehelp *
 |-- sphinxcontrib-devhelp *
@@ -42,54 +47,43 @@ sphinx 3.1.0 Python documentation generator
 |-- sphinxcontrib-jsmath *
 |-- sphinxcontrib-qthelp *
 `-- sphinxcontrib-serializinghtml *
-tox 3.15.2 tox is a generic virtualenv management and test command line tool
-|-- colorama >=0.4.1
-|-- filelock >=3.0.0
-|-- packaging >=14
-|   |-- pyparsing >=2.0.2 
-|   `-- six * 
-|-- pluggy >=0.12.0
-|-- py >=1.4.17
-|-- six >=1.14.0
-|-- toml >=0.9.4
-`-- virtualenv >=16.0.0,<20.0.0 || >20.0.0,<20.0.1 || >20.0.1,<20.0.2 || >20.0.2,<20.0.3 || >20.0.3,<20.0.4 || >20.0.4,<20.0.5 || >20.0.5,<20.0.6 || >20.0.6,<20.0.7 || >20.0.7
-    |-- appdirs >=1.4.3,<2 
-    |-- distlib >=0.3.0,<1 
-    |-- filelock >=3.0.0,<4 
-    `-- six >=1.9.0,<2 
-twine 3.1.1 Collection of utilities for publishing packages on PyPI
+twine 3.2.0 Collection of utilities for publishing packages on PyPI
+|-- colorama >=0.4.3
+|-- importlib-metadata *
+|   |-- typing-extensions >=3.6.4 
+|   `-- zipp >=0.5 
 |-- keyring >=15.1
+|   |-- importlib-metadata >=1 
+|   |   |-- typing-extensions >=3.6.4 
+|   |   `-- zipp >=0.5 
 |   |-- jeepney >=0.4.2 
 |   |-- pywin32-ctypes <0.1.0 || >0.1.0,<0.1.1 || >0.1.1 
-|   `-- secretstorage >=3 
-|       |-- cryptography * 
-|       |   |-- cffi >=1.8,<1.11.3 || >1.11.3 
+|   `-- secretstorage >=3.2 
+|       |-- cryptography >=2.0 
+|       |   |-- cffi >=1.12 
 |       |   |   `-- pycparser * 
 |       |   `-- six >=1.4.1 
-|       `-- jeepney >=0.4.2 (circular dependency aborted here)
+|       `-- jeepney >=0.6 (circular dependency aborted here)
 |-- pkginfo >=1.4.2
 |-- readme-renderer >=21.0
 |   |-- bleach >=2.1.0 
 |   |   |-- packaging * 
-|   |   |   |-- pyparsing >=2.0.2 
-|   |   |   `-- six * 
-|   |   |-- six >=1.9.0 (circular dependency aborted here)
+|   |   |   `-- pyparsing >=2.0.2 
+|   |   |-- six >=1.9.0 
 |   |   `-- webencodings * 
 |   |-- docutils >=0.13.1 
 |   |-- pygments >=2.5.1 
 |   `-- six * (circular dependency aborted here)
 |-- requests >=2.20
 |   |-- certifi >=2017.4.17 
-|   |-- chardet >=3.0.2,<4 
+|   |-- chardet >=3.0.2,<5 
 |   |-- idna >=2.5,<3 
-|   `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
+|   `-- urllib3 >=1.21.1,<1.27 
 |-- requests-toolbelt >=0.8.0,<0.9.0 || >0.9.0
 |   `-- requests >=2.0.1,<3.0.0 
 |       |-- certifi >=2017.4.17 
-|       |-- chardet >=3.0.2,<4 
+|       |-- chardet >=3.0.2,<5 
 |       |-- idna >=2.5,<3 
-|       `-- urllib3 >=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26 
-|-- setuptools >=0.7.0
+|       `-- urllib3 >=1.21.1,<1.27 
+|-- rfc3986 >=1.4.0
 `-- tqdm >=4.14
-watchdog 0.10.2 Filesystem events monitoring
-`-- pathtools >=0.1.1
