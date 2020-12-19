@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Glens test
+    debug:
+       msg: "foo"
+
+  - name: Glens test
+    amazon.aws.ec2:
+      foo: 'bar'
+
