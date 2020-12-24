@@ -9,10 +9,6 @@ basics to a fully built web application server.
 Project and Build Status
 ************************
 
-.. image:: https://travis-ci.org/glenjarvis/ansible_hands_on_training.svg?branch=master
-     :target: https://travis-ci.org/glenjarvis/ansible_hands_on_training
-     :alt: Travis tests
-
 * GitHub repo: https://github.com/glenjarvis/ansible_hands_on_training/
 * Free software: `LICENSE <https://github.com/glenjarvis/ansible_hands_on_training/blob/develop/LICENSE>`_
 
