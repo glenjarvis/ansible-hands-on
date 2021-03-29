@@ -25,7 +25,7 @@ packaging==20.8; python_version >= "3.6" and python_full_version < "3.0.0" or py
 pkginfo==1.6.1; python_version >= "3.6"
 pycodestyle==2.6.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0")
 pycparser==2.20; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
-pygments==2.7.3; python_version >= "3.6"
+pygments==2.7.4; python_version >= "3.6"
 pylint==2.6.0; python_version >= "3.5"
 pyparsing==2.4.7; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
 pytz==2020.4; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
